@@ -1,0 +1,218 @@
+<div class="card">
+  <div class="card-body">
+    <div>
+      <h2 class="card-title">Contáctanos</h2>
+    </div>
+    <div>
+
+      <mat-stepper [linear]="false" #stepper>
+
+        <!-- first form -->
+        <mat-step [stepControl]="firstForm" label="Cuéntanos de tí">
+          <form [formGroup]="firstForm">
+            <div class="container">
+              <div class="row">
+
+                <div class="col">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Nombre/s</mat-label>
+                    <input matInput placeholder="Nombre/s" formControlName="name" class="capitalized" >
+                    <mat-icon matSuffix>face</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </div>
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput placeholder="Apellidos" formControlName="lastname" class="capitalized">
+                    <mat-icon matSuffix>face</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Número de teléfono</mat-label>
+                    <input matInput placeholder="+00 000 00 00" formControlName="phone">
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </div>
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput placeholder="Correo electrónico" formControlName="email">
+                    <mat-icon matSuffix>mail</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Típo de Establecimiento</mat-label>
+                    <mat-select formControlName="client_type">
+                      <input matInput #searchType (keyup)="filterType(searchType.value)" autocomplete="off" class="filter">
+                      <mat-option *ngFor="let client_type of client_types" [value]="client_type.id">
+                        {{client_type.name}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="firstForm.controls.client_type.hasError('required')">Campo requerido</mat-error>
+                    <mat-hint>Hint</mat-hint>
+                    <mat-icon matSuffix>business</mat-icon>
+                  </mat-form-field>
+                </div>
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>¿Desde dónde nos escribes?</mat-label>
+                    <mat-select formControlName="country">
+                      <input matInput #searchCountry (keyup)="filterCountry(searchCountry.value)" autocomplete="off" class="filter">
+                      <mat-option *ngFor="let country of countries_showed" [value]="country.code">
+                        {{country.name_es}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                    <mat-error *ngIf="firstForm.controls.country.hasError('required')">Campo requerido</mat-error>
+                  </mat-form-field>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-primary" [disabled]="firstForm.invalid" matStepperNext>Siguiente</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <!-- second form -->
+        <mat-step [stepControl]="secondForm" label="Descripción detallada de la solicitud">
+          <form [formGroup]="secondForm">
+            <div class="container">
+              <div class="row">
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>¿Qué tipo de servicio necesitas?</mat-label>
+                    <mat-select formControlName="service" #service (valueChange)="fillSubService(service.value)">
+                      <mat-option *ngFor="let service of services" [value]="service.id">
+                        {{service.desc}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                    <mat-error *ngIf="secondForm.controls.service.hasError('required')">Campo requerido</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Especifícanos un póco más</mat-label>
+                    <mat-select formControlName="subService" multiple>
+                      <input matInput #searchCountry (keyup)="filterCountry(searchCountry.value)" autocomplete="off" class="filter">
+                      <mat-option *ngFor="let subService of showedSubService" [value]="subService.id">
+                        {{subService.desc}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                    <mat-error *ngIf="secondForm.controls.subService.hasError('required')">Campo requerido</mat-error>
+                  </mat-form-field>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Descripción detallada de lo necesitado</mat-label>
+                    <textarea rows="6" matInput formControlName="message" placeholder="Descripción detallada de lo necesitado"
+                      required>
+                    </textarea>
+                  </mat-form-field>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <button mat-button matStepperPrevious>Atrás</button>
+                  <button matStepperNext class="btn btn-primary" [disabled]="secondForm.invalid" (click)="sendMessage()">
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <!-- confirmation -->
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <h2>Confirmar datos.</h2>
+          <div class="container">
+
+            <div class="row">
+              <div class="col">
+                <strong>Nombre/s:</strong> {{firstForm.get('name')?.value}}
+              </div>
+              <div class="col">
+                <strong>País:</strong> {{firstForm.get('country')?.value}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <strong>Apellidos:</strong> {{firstForm.get('lastname')?.value}}
+              </div>
+              <div class="col">
+                <strong>Establecimiento/s:</strong> {{firstForm.get('client_type')?.value}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <strong>Número de teléfono:</strong> {{firstForm.get('phone')?.value}}
+              </div>
+              <div class="col">
+                <strong>Servicio:</strong> {{secondForm.get('service')?.value}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <strong>Correo electrónico:</strong> {{firstForm.get('email')?.value}}
+              </div>
+              <div class="col">
+                <strong>Subservicio:</strong> {{secondForm.get('subService')?.value}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <strong>Descripción:</strong>
+                <br>
+                {{secondForm.get('message')?.value}}
+              </div>
+            </div>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Enviar Mensaje</button>
+          </div>
+        </mat-step>
+
+      </mat-stepper>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="menu d-none d-lg-block">
+  <div class="row">
+    <div class="col">
+      <a class="btn" routerLink="home" routerLinkActive="active" >
+        <h3 class="item">
+          INICIO
+        </h3>
+      </a>
+    </div>
+    <!-- <div class="col">
+      <a class="btn" routerLink="services" routerLinkActive="active" >
+        <h3 class="item">
+          SERVICIOS
+        </h3>
+      </a>
+    </div> -->
+    <div class="col">
+      <a class="btn" routerLink="proyects" routerLinkActive="active">
+        <h3 class="item">
+          PROYECTOS
+        </h3>
+      </a>
+    </div>
+    <div class="col">
+      <a class="btn" routerLink="home">
+        <img src="../../../assets/image/logos/logotipo.png" alt="">
+      </a>
+    </div>
+    <div class="col">
+      <a class="btn" routerLink="us" routerLinkActive="active">
+        <h3 class="item">
+          QUIENES SOMOS
+        </h3>
+      </a>
+    </div>
+    <!-- <div class="col">
+      <a class="btn" routerLink="more" routerLinkActive="active">
+        <h3 class="item">
+          ALGO MÁS
+        </h3>
+      </a>
+    </div> -->
+    <div class="col">
+      <a class="btn" routerLink="contact" routerLinkActive="active">
+        <h3 class="item">
+          CONTÁCTANOS
+        </h3>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="d-block d-lg-none">
+  <div class="menu-phone">
+    <div class="container">
+      <div class="row">
+        <div class="col text-left">
+          <button class="btn-phone" (click)="actionMenu()">
+            <fa-icon [icon]="bars"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer {{show ? 'active' : ''}}" (click)="actionMenu()">
+    <div class="content-menu">
+      <div class="container">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="home" routerLinkActive="active" >
+              <h3>
+                INICIO
+              </h3>
+            </a>
+          </li>
+          <!-- <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="services" routerLinkActive="active" >
+              <h3>
+                SERVICIOS
+              </h3>
+            </a>
+          </li> -->
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="proyects" routerLinkActive="active">
+              <h3>
+                PROYECTOS
+              </h3>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="us" routerLinkActive="active">
+              <h3>
+                QUIENES SOMOS
+              </h3>
+            </a>
+          </li>
+          <!-- <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="more" routerLinkActive="active">
+              <h3>
+                ALGO MÁS
+              </h3>
+            </a>
+          </li> -->
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="contact" routerLinkActive="active">
+              <h3>
+                CONTÁCTANOS
+              </h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

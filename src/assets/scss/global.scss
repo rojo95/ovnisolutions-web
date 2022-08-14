@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Highway Gothic Wide";
+  src: url("../fonts/HWYGWDE.ttf") format("woff2");
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Highway Gothic Wide' !important;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 33pt !important;
+}
+
+p,li {
+  font-family: 'Montserrat';
+  font-size: 15pt;
+}
