@@ -109,6 +109,17 @@
               </h3>
             </a>
           </li>
+          <li class="list-group-item li-select">
+            <form [formGroup]="langForm">
+              <mat-form-field appearance="standard" >
+                <mat-select formControlName="langControl">
+                  <mat-option value="1">Español</mat-option>
+                  <mat-option value="2">English</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>language</mat-icon>
+              </mat-form-field>
+            </form>
+          </li>
         </ul>
       </div>
     </div>

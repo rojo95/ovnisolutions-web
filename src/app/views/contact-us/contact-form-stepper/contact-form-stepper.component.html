@@ -204,10 +204,13 @@
                 {{secondForm.get('message')?.value}}
               </div>
             </div>
-          </div>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Enviar Mensaje</button>
+            <div class="row">
+              <div class="col">
+                <br>
+                <button mat-button matStepperPrevious>Atrás</button>
+                <button mat-button (click)="stepper.reset()">Enviar Mensaje</button>
+              </div>
+            </div>
           </div>
         </mat-step>
 
