@@ -1,0 +1,71 @@
+.row {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.col {
+  margin: 0px;
+  padding: 0px;
+}
+
+.margin-text {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.parallax-hidden {
+  overflow: hidden !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  z-index: 0;
+}
+
+.section {
+  height: 550px !important;
+}
+
+
+.pc {
+  z-index: 1;
+  position: absolute;
+  top: 300px;
+}
+
+.pc img {
+  animation: floating 2s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate-reverse;
+  position: relative;
+}
+
+.phone {
+  z-index: 2;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+}
+
+.phone img {
+  width: 220px;
+  animation: floating 2s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate;
+  position: relative;
+}
+
+@keyframes floating {
+  0% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}

@@ -8,11 +8,26 @@ import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
 })
 export class DevelopmentComponent implements OnInit {
 
-  ngParallaxConf: IParallaxScrollConfig = {
-    parallaxSpeed: .65,
+  ParallaxSliderConfBackground: IParallaxScrollConfig = {
+    parallaxSpeed: .06,
     parallaxSmoothness: 0,
     parallaxDirection: 'reverse',
     parallaxTimingFunction: 'ease-in',
+    parallaxThrottleTime: 0
+  };
+
+  ParallaxConfPC: IParallaxScrollConfig = {
+    parallaxSpeed: .2,
+    parallaxSmoothness: 0,
+    parallaxDirection: 'reverse',
+    parallaxTimingFunction: 'fade-in',
+    parallaxThrottleTime: 0
+  };
+  ParallaxConfPhone: IParallaxScrollConfig = {
+    parallaxSpeed: .1,
+    parallaxSmoothness: 0,
+    parallaxDirection: 'reverse',
+    parallaxTimingFunction: 'fade-in',
     parallaxThrottleTime: 0
   };
 

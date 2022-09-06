@@ -1,5 +1,5 @@
 .menu {
-  background-color: #660fef;
+  background-color: #69b3e7;
   padding-left: 50px;
   padding-right: 50px;
   text-align: center;
@@ -7,13 +7,9 @@
 }
 
 img {
-  position:absolute;
-  top: 10px;
-  left:0;
-  right:0;
   margin-left:auto;
   margin-right:auto;
-  width: 150px;
+  width: 100px;
   z-index: 2;
 }
 
@@ -23,35 +19,36 @@ a {
   font-weight: bold;
 }
 
-h3.item {
+h5.item {
   position:relative;
-  top: 20px;
+  top: 40%;
 }
 
-.btn:hover {
-  // background: radial-gradient(ellipse closest-side, #7f3fe7 50%, rgba(255, 255, 255, 0));
-  // background: linear-gradient(to bottom, #660fef, #7f3fe7);
-  // background-color: #7f3fe7;
-  background: linear-gradient(to left, #7f3fe7 50%, #660fef 50%) right;
-  background-size: 200% 100%;
+h5 {
+  font-size: 25px !important;
 }
+
+// .btn:hover {
+//   background: linear-gradient(to left, #7f3fe7 50%, #69b3e7 50%) right;
+//   background-size: 200% 100%;
+// }
 
 .btn {
   width: 100%;
   border: 0px;
   border-radius: 0px;
-  min-height: 70px;
+  height: 100%;
   transition: 0.3s !important;
 }
 
-a.active {
-  background: #7f3fe7 !important;
-}
+// a.active {
+//   background: #7f3fe7 !important;
+// }
 
 .menu-phone {
   width: 100%;
   position: fixed;
-  background-color: #660fef;
+  background-color: #69b3e7;
   padding-left: 0px;
   color: #fff;
   z-index: 10;
@@ -77,10 +74,10 @@ a.active {
   transition: .5s;
 }
 
-div.drawer.active {
-  left: 0%;
-  transition: .5s;
-}
+// div.drawer.active {
+//   left: 0%;
+//   transition: .5s;
+// }
 
 .content-menu {
   width: 80%;
@@ -95,7 +92,7 @@ div.drawer.active {
 }
 
 .btn-phone-menu.active {
-  color: #660fef;
+  color: #69b3e7;
 }
 
 .li-select {
@@ -109,4 +106,14 @@ mat-form-field {
 mat-icon{
   width: auto;
   height: auto;
+}
+
+// final
+.pointer {
+  cursor: pointer
+}
+
+.bg-menu {
+  background-color: #69b3e7;
+
 }

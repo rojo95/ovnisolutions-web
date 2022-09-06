@@ -1,66 +1,140 @@
-<div class="row">
-  <div class="col">
-    <app-carousel></app-carousel>
-  </div>
+<!-- Slider -->
+<div #home>
+  <app-slider></app-slider>
 </div>
+<!-- End Slider -->
 
-<div class="row">
-  <div class="col">
-    <app-development></app-development>
-  </div>
+<!-- Nosotros -->
+<div #team>
+  <app-ovni-team></app-ovni-team>
 </div>
+<!-- End nosotros -->
 
-<div class="row sections designs">
-  <div class="col-md-7 margin-text">
-    <h1>
-      DISEÑO GRÁFICO
-    </h1>
-    <br>
-    <p>
-      Nos encargamos de  diseñar  para comunicar visualmente los mensajes y valores  significativos que desea trasmitir su empresa.
-    </p>
-    <ul>
-      <li>
-        Identidad corporativa
-      </li>
-      <li>
-        Diseño de Packaging
-      </li>
-      <li>
-        Diseño publicitario
-      </li>
-      <li>
-        Diseño Editorial
-      </li>
-      <li>
-        Diseño web
-      </li>
-    </ul>
-  </div>
-  <div class="col parallax-hidden">
-    <ngx-parallax-scroll [config]="ngParallaxConf" >
-      <img src="../../../assets/image/logos/logotipo.png" alt="logo" class="logo">
-    </ngx-parallax-scroll>
-  </div>
+<!-- Inicio de servicios -->
+<div #services>
+  <!-- Servicios de Desarrollo -->
+  <app-development></app-development>
+  <!-- End Servicios de Desarrollo -->
+
+  <!-- Disenio web -->
+  <app-web-design></app-web-design>
+  <!-- End Disenio web -->
+
+  <!-- Servicios web -->
+  <app-web-services></app-web-services>
+  <!-- End Servicios web -->
 </div>
+<!-- end de servicios -->
 
-<div class="row sections services">
-  <div class="col-md-7 offset-md-5 margin-text">
-    <h1>
-      SERVICIO WEB
-    </h1>
-    <br>
-    <p>Aquí pues ya basicamente comenzamos a inventar, debido a que no estamos seguros de qué podemos colocar aquí, seguramente coloquemos algo que la gente se va a quedar con la boca abierta de lo increíble que será, pero mientras tanto, vamos a poner éste texto de pruebas, seguido de un monton de texto simulando los servicios.</p>
-    <ul>
-      <li>Bueno aquí irtía uno</li>
-      <li>Aquí podríamos el segundo</li>
-      <li>Y adivina qué, aquí iría el tercero.</li>
-    </ul>
+<!-- Proyectos -->
+<div #projects>
+  <!-- Disenio grafico -->
+  <div class="container p-5">
+    <div class="row">
+      <div class="col">
+        <h2>
+          Diseño Gráfico
+        </h2>
+      </div>
+    </div>
+    <div class="row p-5">
+      <div class="col px-2">
+        <mat-card>
+          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
+          <mat-card-content class="text-center">
+            <p>
+              <b>
+                Identidad corporativa
+              </b>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col px-2">
+        <mat-card>
+          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
+          <mat-card-content class="text-center">
+            <p>
+              <b>
+                Diseño publicitario
+              </b>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col px-2">
+        <mat-card>
+          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
+          <mat-card-content class="text-center">
+            <p>
+              <b>
+                Diseño editorial
+              </b>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="row sections contact">
+  <!-- Desarrollo -->
+  <div class="container px-5">
+    <div class="row">
+      <div class="col">
+        <h2>
+          Desarrollo Informático
+        </h2>
+      </div>
+    </div>
+    <div class="row p-5">
+      <div class="col px-2">
+        <mat-card>
+          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
+          <mat-card-content class="text-center">
+            <p>
+              <b>
+                Landing page
+              </b>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col px-2">
+        <mat-card>
+          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
+          <mat-card-content class="text-center">
+            <p>
+              <b>
+                One page
+              </b>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col px-2">
+        <mat-card>
+          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
+          <mat-card-content class="text-center">
+            <p>
+              <b>
+                E-Commerce
+              </b>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end Proyectos -->
+
+<!-- contact us -->
+<div #contact>
   <app-contact-us></app-contact-us>
 </div>
-
-<app-footer></app-footer>
+<!-- end contact us -->

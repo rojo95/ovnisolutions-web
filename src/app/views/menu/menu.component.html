@@ -1,55 +1,63 @@
+<!-- menu web -->
 <div class="menu d-none d-lg-block">
   <div class="row">
-    <div class="col">
+    <div class="col-1 my-1">
+      <img src="/assets/image/logos/logotipo.png" alt="">
+    </div>
+    <div class="col" (click)="emit(1)">
       <a class="btn" routerLink="home" routerLinkActive="active" >
-        <h3 class="item">
-          INICIO
-        </h3>
+        <h5 class="item">
+          Inicio
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(2)">
+      <a class="btn" routerLinkActive="active">
+        <h5 class="item">
+          ¿Quiénes somos?
+        </h5>
       </a>
     </div>
     <!-- <div class="col">
-      <a class="btn" routerLink="services" routerLinkActive="active" >
-        <h3 class="item">
-          SERVICIOS
-        </h3>
+      <a class="btn" routerLinkActive="active">
+        <div ngbDropdown class="d-inline-block">
+          <h5 class="item" id="dropdownBasic1" ngbDropdownToggle>
+            Servicios
+          </h5>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="emit(3)">Desarrollo Informático</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
       </a>
     </div> -->
-    <div class="col">
-      <a class="btn" routerLink="proyects" routerLinkActive="active">
-        <h3 class="item">
-          PROYECTOS
-        </h3>
-      </a>
-    </div>
-    <div class="col">
-      <a class="btn" routerLink="home">
-        <img src="../../../assets/image/logos/logotipo.png" alt="">
-      </a>
-    </div>
-    <div class="col">
+    <div class="col" (click)="emit(3)">
       <a class="btn" routerLink="us" routerLinkActive="active">
-        <h3 class="item">
-          QUIENES SOMOS
-        </h3>
+        <h5 class="item">
+          Servicios
+        </h5>
       </a>
     </div>
-    <!-- <div class="col">
-      <a class="btn" routerLink="more" routerLinkActive="active">
-        <h3 class="item">
-          ALGO MÁS
-        </h3>
+    <div class="col" (click)="emit(4)">
+      <a class="btn" routerLink="proyects" routerLinkActive="active">
+        <h5 class="item">
+          Proyectos
+        </h5>
       </a>
-    </div> -->
-    <div class="col">
+    </div>
+    <div class="col" (click)="emit(5)">
       <a class="btn" routerLink="contact" routerLinkActive="active">
-        <h3 class="item">
-          CONTÁCTANOS
-        </h3>
+        <h5 class="item">
+          Contáctanos
+        </h5>
       </a>
     </div>
   </div>
 </div>
+<!-- end menu web -->
 
+<!-- menu phone -->
 <div class="d-block d-lg-none">
   <div class="menu-phone">
     <div class="container">
@@ -69,44 +77,44 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <a class="btn-phone-menu" routerLink="home" routerLinkActive="active" >
-              <h3>
+              <h5>
                 INICIO
-              </h3>
+              </h5>
             </a>
           </li>
           <!-- <li class="list-group-item">
             <a class="btn-phone-menu" routerLink="services" routerLinkActive="active" >
-              <h3>
+              <h5>
                 SERVICIOS
-              </h3>
+              </h5>
             </a>
           </li> -->
           <li class="list-group-item">
             <a class="btn-phone-menu" routerLink="proyects" routerLinkActive="active">
-              <h3>
+              <h5>
                 PROYECTOS
-              </h3>
+              </h5>
             </a>
           </li>
           <li class="list-group-item">
             <a class="btn-phone-menu" routerLink="us" routerLinkActive="active">
-              <h3>
+              <h5>
                 QUIENES SOMOS
-              </h3>
+              </h5>
             </a>
           </li>
           <!-- <li class="list-group-item">
             <a class="btn-phone-menu" routerLink="more" routerLinkActive="active">
-              <h3>
+              <h5>
                 ALGO MÁS
-              </h3>
+              </h5>
             </a>
           </li> -->
           <li class="list-group-item">
             <a class="btn-phone-menu" routerLink="contact" routerLinkActive="active">
-              <h3>
+              <h5>
                 CONTÁCTANOS
-              </h3>
+              </h5>
             </a>
           </li>
           <li class="list-group-item li-select">
@@ -125,3 +133,4 @@
     </div>
   </div>
 </div>
+<!-- menu phone -->

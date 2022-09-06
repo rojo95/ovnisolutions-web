@@ -1,2 +1,7 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
+<app-menu (emitter)="scrollNav($event)"></app-menu>
+
+<!-- <router-outlet></router-outlet> -->
+<app-home></app-home>
+
+<!-- pie de pagina -->
+<app-footer (emitter)="scrollNav($event)"></app-footer>

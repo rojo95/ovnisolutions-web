@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes,RouterModule } from '@angular/router';
@@ -17,42 +17,22 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSelectModule } from "@angular/material/select";
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
+import { MatCardModule } from "@angular/material/card";
 
-import { CarouselComponent } from './views/home/carousel/carousel.component';
-import { DevelopmentComponent } from './views/home/development/development.component';
+import { DevelopmentComponent } from './views/development/development.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { MenuComponent } from './views/menu/menu.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
 import { InConstructionComponent } from './views/in-construction/in-construction.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
 import { FormStepperComponent } from './views/contact-us/contact-form-stepper/contact-form-stepper.component';
+import { SliderComponent } from './views/slider/slider.component';
+import { OvniTeamComponent } from './views/ovni-team/ovni-team.component';
+import { WebDesignComponent } from './views/web-design/web-design.component';
+import { WebServicesComponent } from './views/web-services/web-services.component';
 
 
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'services',
-    component: InConstructionComponent
-  },
-  {
-    path: 'proyects',
-    component: InConstructionComponent
-  },
-  {
-    path: 'us',
-    component: InConstructionComponent
-  },
-  {
-    path: 'more',
-    component: InConstructionComponent
-  },
-  {
-    path: 'contact',
-    component: ContactUsComponent
-  },
   {
     path: '**',
     component: HomeComponent
@@ -63,7 +43,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    CarouselComponent,
     DevelopmentComponent,
     FooterComponent,
     MenuComponent,
@@ -71,13 +50,17 @@ const routes: Routes = [
     InConstructionComponent,
     ContactUsComponent,
     FormStepperComponent,
+    SliderComponent,
+    OvniTeamComponent,
+    WebDesignComponent,
+    WebServicesComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(routes),
     MatFormFieldModule,
-    NgbCarouselModule,
+    NgbDropdownModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -87,7 +70,8 @@ const routes: Routes = [
     MatStepperModule,
     MatButtonModule,
     MatSelectModule,
-    NgxParallaxScrollModule
+    NgxParallaxScrollModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

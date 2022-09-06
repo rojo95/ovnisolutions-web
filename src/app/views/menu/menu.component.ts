@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,6 +8,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
+  @Output() emitter: EventEmitter<number> = new EventEmitter<number>();
 
   bars = faBars;
   show:boolean = false;
@@ -22,17 +24,15 @@ export class MenuComponent implements OnInit {
     }
   }
 
+  emit(id: number) {
+    this.emitter.emit(id);
+  }
+
   ngOnInit(): void {
   }
 
   actionMenu() {
     this.show = !this.show
-  }
-
-  changeLang(){}
-
-  getLanguage(){
-
   }
 
 }

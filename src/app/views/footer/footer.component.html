@@ -4,7 +4,7 @@
       <div class="col-md-4 mt-4 mb-md-4">
         <div class="row">
           <div class="col text-center d-none d-lg-block">
-            <img src="../../../assets/image/logos/logotipo.png" alt="logo ovnisolutions">
+            <img src="assets/image/logos/logotipo.png" alt="logo ovnisolutions">
           </div>
           <div class="col">
             Copyright {{date|date:'YYYY'}}. ovnisolutions.com
@@ -51,6 +51,23 @@
         <a class="icon m-2" href="https://instagram.com/ovnisolutions?igshid=YmMyMTA2M2Y=" target="_blank">
           <fa-icon [icon]="twitter"></fa-icon>
         </a>
+      </div>
+    </div>
+    <div class="row py-3 px-5">
+      <div class="col text-center " (click)="emit(1)">
+        <b>Inicio</b>
+      </div>
+      <div class="col text-center " (click)="emit(2)">
+        <b>¿Quiénes somos?</b>
+      </div>
+      <div class="col text-center " (click)="emit(3)">
+        <b>Servicios</b>
+      </div>
+      <div class="col text-center " (click)="emit(4)">
+        <b>Proyectos</b>
+      </div>
+      <div class="col text-center " (click)="emit(5)">
+        <b>Contáctanos</b>
       </div>
     </div>
   </div>

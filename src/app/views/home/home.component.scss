@@ -1,77 +1,142 @@
 
-// h1 {
-//   font-family: 'Highway Gothic Wide';
-//   font-size: 33pt;
+// .text-justify {
+//   text-align: justify;
 // }
 
-// p,li {
-//   font-family: 'Montserrat';
-//   font-size: 15pt;
+// .row {
+//   width: 100%;
+//   margin: 0px;
+//   padding: 0px;
+// }
+// .col {
+//   margin: 0px;
+//   padding: 0px;
 // }
 
-.text-justify {
-  text-align: justify;
-}
 
-.row {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-.col {
-  margin: 0px;
-  padding: 0px;
-}
+// // developments
+// .margin-text {
+//   padding-top: 90px;
+//   padding-bottom: 90px;
+//   padding-left: 100px;
+//   padding-right: 100px;
+// }
 
-// designs
-.designs {
-  background:url('../../../assets/image/backgrounds/recurso_2.png');
-}
-// designs end
+// .web-world {
+//   top: 400px;
+//   left: 60px;
+// }
 
-// services
-.services {
-  background:url('../../../assets/image/backgrounds/recurso_3.png');
-}
-// services end
+// .web-world img {
+//   width: 450px;
+//   animation: floating 2s;
+//   animation-iteration-count: infinite;
+//   animation-direction:alternate;
+//   position: relative;
+// }
 
-.sections {
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  // height: 600px;
-  padding: 0px;
-  margin: 0px;
-}
+// .shield {
+//   top: 650px;
+//   right: 150px;
+// }
 
-// developments
-.margin-text {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  padding-left: 100px;
-  padding-right: 100px;
-}
+// .shield img {
+//   width: 250px;
+//   animation: floating 2s;
+//   animation-iteration-count: infinite;
+//   animation-direction: alternate-reverse;
+//   position: relative;
+// }
 
-.logo{
-  position: relative;
-  top: 150px;
-  left: 30px;
-  width: 150px;
-  transform: rotate(20deg);
-  animation-name: logo1;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction:alternate
-}
+// @keyframes floating {
+//   0% {
+//     top: 10px;
+//   }
+//   100% {
+//     top: 15px;
+//   }
+// }
 
-@keyframes logo1 {
-  0% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-}
 
-.parallax-hidden {
-  overflow: hidden;
+// // final
+// // Slider
+// .parallax-hidden {
+//   overflow: hidden;
+// }
+
+// .section {
+//   height: 550px;
+// }
+
+// img.background {
+//   width: 100%;
+//   z-index: 0;
+// }
+
+// .relative {
+//   position: relative;
+
+// }
+
+// .slider {
+//   top:-10px;
+// }
+
+// .absolute {
+//   position: absolute;
+// }
+
+// .moon_slider {
+//   top: 400px;
+//   z-index: 2;
+//   width: 100%;
+// }
+
+// .ovni_slider {
+//   top: 350px;
+//   left: 100px;
+//   z-index: 3;
+// }
+
+// .title {
+//   color: #fff;
+// }
+
+// .title_slider {
+//   top: 120px;
+//   z-index: 4 !important;
+//   width: 100%;
+//   color: #fff;
+//   padding-left: 30px;
+//   padding-right: 30px;
+// }
+
+// p.subtitle {
+//   font-size: 40px !important;
+//   line-height: 40px;
+// }
+
+// .subtitle {
+//   font-weight: bold;
+// }
+
+// .planet_slider {
+//   top: 350px;
+//   right: 150px;
+//   z-index: 1;
+// }
+
+// .planet_slider img {
+//   width: 300px;
+//   height: 300px;
+// }
+
+// .center {
+//   text-align: center;
+// }
+
+
+mat-card {
+  background-color: #660fef;
+  color: #fff;
 }
