@@ -18,6 +18,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSelectModule } from "@angular/material/select";
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import { MatCardModule } from "@angular/material/card";
+import { GalleryModule } from  'ng-gallery';
+import { LightboxModule } from  'ng-gallery/lightbox';
 
 import { DevelopmentComponent } from './views/development/development.component';
 import { FooterComponent } from './views/footer/footer.component';
@@ -71,7 +73,9 @@ const routes: Routes = [
     MatButtonModule,
     MatSelectModule,
     NgxParallaxScrollModule,
-    MatCardModule
+    MatCardModule,
+    GalleryModule,
+    LightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
