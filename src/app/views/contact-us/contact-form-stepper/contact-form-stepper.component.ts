@@ -1584,17 +1584,23 @@ export class FormStepperComponent implements OnInit {
   showedSubService:any = [];
 
   public firstForm = this.formBuilder.group({
-    name: new FormControl ('Johan', [Validators.required,Validators.minLength(3)]),
-    lastname: new FormControl ('Román Pacheco', [Validators.required,Validators.minLength(3)]),
-    phone: new FormControl ('+584122967142', [Validators.required,Validators.minLength(7)]),
-    email: new FormControl ('r.johan95@gmail.com', [Validators.required, Validators.email]),
-    client_type: new FormControl (2, [Validators.required]),
-    country: new FormControl ('VE', [Validators.required]),
+    // name: new FormControl ('Johan', [Validators.required,Validators.minLength(3)]),
+    name: new FormControl ('', [Validators.required,Validators.minLength(3)]),
+    // lastname: new FormControl ('Román Pacheco', [Validators.required,Validators.minLength(3)]),
+    lastname: new FormControl ('', [Validators.required,Validators.minLength(3)]),
+    // phone: new FormControl ('+584122967142', [Validators.required,Validators.minLength(7)]),
+    phone: new FormControl ('', [Validators.required,Validators.minLength(7)]),
+    // email: new FormControl ('r.johan95@gmail.com', [Validators.required, Validators.email]),
+    email: new FormControl ('', [Validators.required, Validators.email]),
+    // client_type: new FormControl (2, [Validators.required]),
+    client_type: new FormControl ('', [Validators.required]),
+    // country: new FormControl ('VE', [Validators.required]),
+    country: new FormControl ('', [Validators.required]),
   });
   secondForm = this.formBuilder.group({
     service: new FormControl ('', [Validators.required]),
     subService: new FormControl ('', [Validators.required]),
-    message: new FormControl ('Necesitamos todo eso que te digo en el formulario', [Validators.required]),
+    message: new FormControl ('', [Validators.required]),
   });
 
   constructor(private formBuilder: FormBuilder) {}
