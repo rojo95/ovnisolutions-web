@@ -84,3 +84,30 @@ img.background {
     top: 15px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  // sm
+  .section {
+    height: 400px;
+  }
+}
+@media only screen and (min-width: 768px ) and (max-width: 992px) {
+  // md
+  .background {
+    height: 800px;
+  }
+  .post {
+    top: 350px;
+    right: 15px;
+  }
+  .post2 {
+    top: 1300px;
+    right: 18px;
+    z-index: 1;
+  }
+  .presentation_Card{
+    top: 400px;
+    left: 60px;
+    z-index: 2;
+  }
+}

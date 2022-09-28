@@ -5,7 +5,7 @@
     </div>
     <div>
 
-      <mat-stepper [linear]="false" #stepper>
+      <mat-stepper [linear]="true" #stepper>
 
         <!-- first form -->
         <mat-step [stepControl]="firstForm" label="Cuéntanos de tí">
@@ -18,7 +18,7 @@
                     <mat-label>Nombre/s</mat-label>
                     <input matInput placeholder="Nombre/s" formControlName="name" class="capitalized" >
                     <mat-icon matSuffix>face</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                   </mat-form-field>
                 </div>
 
@@ -27,7 +27,7 @@
                     <mat-label>Apellidos</mat-label>
                     <input matInput placeholder="Apellidos" formControlName="lastname" class="capitalized">
                     <mat-icon matSuffix>face</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                   </mat-form-field>
                 </div>
 
@@ -38,7 +38,7 @@
                     <mat-label>Número de teléfono</mat-label>
                     <input matInput placeholder="+00 000 00 00" formControlName="phone">
                     <mat-icon matSuffix>phone</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                   </mat-form-field>
                 </div>
 
@@ -47,7 +47,7 @@
                     <mat-label>Correo electrónico</mat-label>
                     <input matInput placeholder="Correo electrónico" formControlName="email">
                     <mat-icon matSuffix>mail</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                   </mat-form-field>
                 </div>
               </div>
@@ -63,7 +63,7 @@
                       </mat-option>
                     </mat-select>
                     <mat-error *ngIf="firstForm.controls.client_type.hasError('required')">Campo requerido</mat-error>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                     <mat-icon matSuffix>business</mat-icon>
                   </mat-form-field>
                 </div>
@@ -78,7 +78,7 @@
                       </mat-option>
                     </mat-select>
                     <mat-icon matSuffix>flag</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                     <mat-error *ngIf="firstForm.controls.country.hasError('required')">Campo requerido</mat-error>
                   </mat-form-field>
                 </div>
