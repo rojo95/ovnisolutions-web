@@ -1,0 +1,137 @@
+<!-- menu web -->
+<div class="menu d-none d-lg-block">
+  <div class="row">
+    <div class="col-1 my-1">
+      <img src="assets/image/logos/logotipo.png" alt="">
+    </div>
+    <div class="col" (click)="emit(1)">
+      <a class="btn" routerLink="home" routerLinkActive="active" >
+        <h5 class="item">
+          Inicio
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(2)">
+      <a class="btn" routerLink="us" routerLinkActive="active">
+        <h5 class="item">
+          ¿Quiénes somos?
+        </h5>
+      </a>
+    </div>
+    <!-- <div class="col">
+      <a class="btn" routerLinkActive="active">
+        <div ngbDropdown class="d-inline-block">
+          <h5 class="item" id="dropdownBasic1" ngbDropdownToggle>
+            Servicios
+          </h5>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="emit(3)">Desarrollo Informático</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
+      </a>
+    </div> -->
+    <div class="col" (click)="emit(3)">
+      <a class="btn" routerLink="services" routerLinkActive="active">
+        <h5 class="item">
+          Servicios
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(4)">
+      <a class="btn" routerLink="projects" routerLinkActive="active">
+        <h5 class="item">
+          Proyectos
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(5)">
+      <a class="btn" routerLink="contact" routerLinkActive="active">
+        <h5 class="item">
+          Contáctanos
+        </h5>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- end menu web -->
+
+<!-- menu phone -->
+<div class="d-none">
+  <!-- <div class="d-block d-lg-none"> -->
+  <div class="menu-phone">
+    <div class="container">
+      <div class="row">
+        <div class="col text-left">
+          <button class="btn-phone" (click)="actionMenu()">
+            <fa-icon [icon]="bars"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer {{show ? 'active' : ''}}" (click)="actionMenu()">
+    <div class="content-menu">
+      <div class="container">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="home" routerLinkActive="active" >
+              <h5>
+                INICIO
+              </h5>
+            </a>
+          </li>
+          <!-- <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="services" routerLinkActive="active" >
+              <h5>
+                SERVICIOS
+              </h5>
+            </a>
+          </li> -->
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="projects" routerLinkActive="active">
+              <h5>
+                PROYECTOS
+              </h5>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="us" routerLinkActive="active">
+              <h5>
+                QUIENES SOMOS
+              </h5>
+            </a>
+          </li>
+          <!-- <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="more" routerLinkActive="active">
+              <h5>
+                ALGO MÁS
+              </h5>
+            </a>
+          </li> -->
+          <li class="list-group-item">
+            <a class="btn-phone-menu" routerLink="contact" routerLinkActive="active">
+              <h5>
+                CONTÁCTANOS
+              </h5>
+            </a>
+          </li>
+          <li class="list-group-item li-select">
+            <form [formGroup]="langForm">
+              <mat-form-field appearance="standard" >
+                <mat-select formControlName="langControl">
+                  <mat-option value="1">Español</mat-option>
+                  <mat-option value="2">English</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>language</mat-icon>
+              </mat-form-field>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- menu phone -->

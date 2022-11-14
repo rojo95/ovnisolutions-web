@@ -1,0 +1,106 @@
+.row {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.col {
+  margin: 0px;
+  padding: 0px;
+}
+
+.margin-text {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.parallax-hidden {
+  overflow: hidden !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  z-index: 0;
+}
+
+.section {
+  height: 550px !important;
+}
+
+
+.pc {
+  z-index: 1;
+  position: absolute;
+  top: 300px;
+}
+
+.pc img {
+  animation: floating 2s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate-reverse;
+  position: relative;
+}
+
+.phone {
+  z-index: 2;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+}
+
+.phone img {
+  width: 220px;
+  animation: floating 2s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate;
+  position: absolute;
+}
+
+@keyframes floating {
+  0% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  // sm
+  .d-mobile {
+    background-image: url('../../../assets/image/backgrounds/background-section.png');
+    color: #fff;
+    padding-bottom: 590px !important;
+  }
+}
+@media only screen and (min-width: 768px ) and (max-width: 992px) {
+  // md
+  .background {
+    height: 800px;
+  }
+  .pc{
+    top: 450px;
+  }
+  .pc img {
+    width: 300px;
+  }
+  .phone {
+    top: 450px;
+    left: 200px;
+  }
+  .phone img {
+    width: 150px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+  // lg
+  .phone {
+    top: 450px;
+    left: 350px !important;
+  }
+}
