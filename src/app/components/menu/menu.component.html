@@ -1,0 +1,96 @@
+<!-- menu web -->
+<div class="menu d-none d-lg-block">
+  <div class="row">
+    <div class="col-1 my-1">
+      <img src="assets/image/logos/logotipo.png" alt="">
+    </div>
+    <div class="col" (click)="emit(1)">
+      <a class="btn" routerLink="home" routerLinkActive="active" >
+        <h5 class="item">
+          Inicio
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(2)">
+      <a class="btn" routerLink="us" routerLinkActive="active">
+        <h5 class="item">
+          ¿Quiénes somos?
+        </h5>
+      </a>
+    </div>
+    <!-- <div class="col">
+      <a class="btn" routerLinkActive="active">
+        <div ngbDropdown class="d-inline-block">
+          <h5 class="item" id="dropdownBasic1" ngbDropdownToggle>
+            Servicios
+          </h5>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="emit(3)">Desarrollo Informático</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
+      </a>
+    </div> -->
+    <div class="col" (click)="emit(3)">
+      <a class="btn" routerLink="services" routerLinkActive="active">
+        <h5 class="item">
+          Servicios
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(4)">
+      <a class="btn" routerLink="projects" routerLinkActive="active">
+        <h5 class="item">
+          Proyectos
+        </h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(5)">
+      <a class="btn" routerLink="contact" routerLinkActive="active">
+        <h5 class="item">
+          Contáctanos
+        </h5>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- end menu web -->
+
+<!-- menu phone -->
+<div class="d-lg-none">
+  <div class="sticky-navbar" *ngIf="show">
+    <button class="btn btn-lg btn-outline-primary close-button" (click)="actionMenu()">
+      <mat-icon matSuffix>close</mat-icon>
+    </button>
+    <div class="content">
+      <div class="row">
+        <div class="col col-12">
+          <div class="row">
+            <div class="col col-12 col-md-6 nav-phone">
+              <div>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(1,true);">Inicio</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(2,true);">¿Quiénes somos?</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(3,true);">Servicios</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(4,true);">Proyectos</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(5,true);">Contáctanos</button>
+                <hr>
+              </div>
+            </div>
+            <div class="col" (click)="actionMenu()"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-lg btn-primary button-open" (click)="actionMenu()">
+    <mat-icon matSuffix>menu</mat-icon>
+  </button>
+</div>
+<!-- menu phone -->

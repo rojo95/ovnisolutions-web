@@ -1,0 +1,140 @@
+.menu {
+  background-color: #69b3e7;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+img {
+  margin-left:auto;
+  margin-right:auto;
+  width: 100px;
+  z-index: 2;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+h5.item {
+  position:relative;
+  top: 40%;
+}
+
+h5 {
+  font-size: 25px !important;
+}
+
+.btn {
+  width: 100%;
+  border: 0px;
+  border-radius: 0px;
+  height: 100%;
+  transition: 0.3s !important;
+}
+
+.menu-phone {
+  width: 100%;
+  position: fixed;
+  background-color: #69b3e7;
+  padding-left: 0px;
+  color: #fff;
+  z-index: 10;
+}
+
+.btn-phone {
+  border: 0px;
+  border-radius: 0px;
+  min-height: 70px;
+  font-size: 30px;
+  padding: 0px;
+  color: #fff;
+  background: transparent;
+}
+
+.drawer {
+  position: fixed;
+  left: -100%;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.552);
+  z-index: 9;
+  transition: .5s;
+}
+
+.content-menu {
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 80px;
+}
+
+
+.btn-phone-menu {
+  color: black;
+}
+
+.btn-phone-menu.active {
+  color: #69b3e7;
+}
+
+.li-select {
+  padding: 0px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-icon{
+  width: auto;
+  height: auto;
+}
+
+// final
+.pointer {
+  cursor: pointer
+}
+
+.bg-menu {
+  background-color: #69b3e7;
+
+}
+
+.button-open {
+  position: fixed;
+  z-index: 10;
+  height: 40px;
+  background-color: #69b3e7;
+}
+
+.nav-phone {
+  background-color: white;
+  height: 100vh !important;
+  padding-top: 70px;
+}
+
+.sticky-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  background-color: rgba(75, 75, 75, 0.657);
+  height: 100%;
+}
+
+.close-button {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  right: 6px;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .close-button {
+    color: #69b3e7;
+  }
+}

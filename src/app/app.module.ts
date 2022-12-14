@@ -21,16 +21,16 @@ import { MatCardModule } from "@angular/material/card";
 import { GalleryModule } from  'ng-gallery';
 import { LightboxModule } from  'ng-gallery/lightbox';
 
-import { DevelopmentComponent } from './views/development/development.component';
-import { FooterComponent } from './views/footer/footer.component';
-import { MenuComponent } from './views/menu/menu.component';
+import { DevelopmentComponent } from './components/development/development.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
 import { InConstructionComponent } from './views/in-construction/in-construction.component';
-import { ContactUsComponent } from './views/contact-us/contact-us.component';
-import { FormStepperComponent } from './views/contact-us/contact-form-stepper/contact-form-stepper.component';
-import { SliderComponent } from './views/slider/slider.component';
-import { OvniTeamComponent } from './views/ovni-team/ovni-team.component';
-import { WebDesignComponent } from './views/web-design/web-design.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FormStepperComponent } from './components/contact-us/contact-form-stepper/contact-form-stepper.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { OvniTeamComponent } from './components/ovni-team/ovni-team.component';
+import { WebDesignComponent } from './components/web-design/web-design.component';
 import { WebServicesComponent } from './views/web-services/web-services.component';
 
 
