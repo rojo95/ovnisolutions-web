@@ -108,7 +108,7 @@
                       </mat-option>
                     </mat-select>
                     <mat-icon matSuffix>flag</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                     <mat-error *ngIf="secondForm.controls.service.hasError('required')">Campo requerido</mat-error>
                   </mat-form-field>
                 </div>
@@ -123,7 +123,7 @@
                       </mat-option>
                     </mat-select>
                     <mat-icon matSuffix>flag</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <!-- <mat-hint>Hint</mat-hint> -->
                     <mat-error *ngIf="secondForm.controls.subService.hasError('required')">Campo requerido</mat-error>
                   </mat-form-field>
                 </div>
@@ -161,54 +161,76 @@
           <h2>Confirmar datos.</h2>
           <div class="container">
 
-            <div class="row">
-              <div class="col">
-                <strong>Nombre/s:</strong> {{firstForm.get('name')?.value}}
-              </div>
-              <div class="col">
-                <strong>País:</strong> {{firstForm.get('country')?.value}}
-              </div>
-            </div>
 
             <div class="row">
-              <div class="col">
-                <strong>Apellidos:</strong> {{firstForm.get('lastname')?.value}}
+
+              <div class="col col-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Nombre/s:</strong><br> {{firstForm.get('name')?.value}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Apellidos:</strong><br> {{firstForm.get('lastname')?.value}}
+                  </div>
+                </div>
               </div>
-              <div class="col">
-                <strong>Establecimiento/s:</strong> {{firstForm.get('client_type')?.value}}
+
+              <div class="col col-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Número de teléfono:</strong><br> {{firstForm.get('phone')?.value}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Correo electrónico:</strong><br> {{firstForm.get('email')?.value}}
+                  </div>
+                </div>
               </div>
+
+              <div class="col col-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>País:</strong><br> {{firstForm.get('country')?.value}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Establecimiento/s:</strong><br> {{firstForm.get('client_type')?.value && ct[StringToNumb(firstForm.get('client_type')?.value)-1].name}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Servicio:</strong><br> {{secondForm.get('service')?.value && services[StringToNumb(secondForm.get('service')?.value)-1].desc}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Subservicio:</strong><br> {{secondForm.get('subService')?.value}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col mt-2">
+                  <strong>Descripción:</strong>
+                  <br>
+                  {{secondForm.get('message')?.value}}
+                </div>
+              </div>
+
             </div>
 
-            <div class="row">
-              <div class="col">
-                <strong>Número de teléfono:</strong> {{firstForm.get('phone')?.value}}
-              </div>
-              <div class="col">
-                <strong>Servicio:</strong> {{secondForm.get('service')?.value}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <strong>Correo electrónico:</strong> {{firstForm.get('email')?.value}}
-              </div>
-              <div class="col">
-                <strong>Subservicio:</strong> {{secondForm.get('subService')?.value}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <strong>Descripción:</strong>
-                <br>
-                {{secondForm.get('message')?.value}}
-              </div>
-            </div>
             <div class="row">
               <div class="col">
                 <br>
                 <button mat-button matStepperPrevious>Atrás</button>
-                <button mat-button (click)="stepper.reset()">Enviar Mensaje</button>
+                  <button mat-button class="btn btn-success" (click)="stepper.reset()">Enviar Mensaje <mat-icon matSuffix>send</mat-icon></button>
               </div>
             </div>
           </div>

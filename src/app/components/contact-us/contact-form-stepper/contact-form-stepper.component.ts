@@ -1497,7 +1497,7 @@ export class FormStepperComponent implements OnInit {
 
   client_types:any = [];
 
-  services:any = [
+  services: Array<any> = [
     {
       id: 1,
       desc: 'Desarrollo Web'
@@ -1598,8 +1598,11 @@ export class FormStepperComponent implements OnInit {
     country: new FormControl ('', [Validators.required]),
   });
   secondForm = this.formBuilder.group({
+    // service: new FormControl (2, [Validators.required]),
     service: new FormControl ('', [Validators.required]),
+    // subService: new FormControl ([7,9], [Validators.required]),
     subService: new FormControl ('', [Validators.required]),
+    // message: new FormControl ('Lo que puse en el correo', [Validators.required]),
     message: new FormControl ('', [Validators.required]),
   });
 
@@ -1659,6 +1662,11 @@ export class FormStepperComponent implements OnInit {
 
     console.log(data);
 
+  }
+
+  StringToNumb(input: any) {
+    var numeric = Number(input);
+    return numeric;
   }
 
 }
