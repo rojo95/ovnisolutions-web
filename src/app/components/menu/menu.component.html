@@ -58,80 +58,39 @@
 <!-- end menu web -->
 
 <!-- menu phone -->
-<div class="d-none">
-  <!-- <div class="d-block d-lg-none"> -->
-  <div class="menu-phone">
-    <div class="container">
+<div class="d-lg-none">
+  <div class="sticky-navbar" *ngIf="show">
+    <button class="btn btn-lg btn-outline-primary close-button" (click)="actionMenu()">
+      <mat-icon matSuffix>close</mat-icon>
+    </button>
+    <div class="content">
       <div class="row">
-        <div class="col text-left">
-          <button class="btn-phone" (click)="actionMenu()">
-            <fa-icon [icon]="bars"></fa-icon>
-          </button>
+        <div class="col col-12">
+          <div class="row">
+            <div class="col col-12 col-md-6 nav-phone">
+              <div>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(1,true);">Inicio</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(2,true);">¿Quiénes somos?</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(3,true);">Servicios</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(4,true);">Proyectos</button>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(5,true);">Contáctanos</button>
+                <hr>
+              </div>
+            </div>
+            <div class="col" (click)="actionMenu()"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="drawer {{show ? 'active' : ''}}" (click)="actionMenu()">
-    <div class="content-menu">
-      <div class="container">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <a class="btn-phone-menu" routerLink="home" routerLinkActive="active" >
-              <h5>
-                INICIO
-              </h5>
-            </a>
-          </li>
-          <!-- <li class="list-group-item">
-            <a class="btn-phone-menu" routerLink="services" routerLinkActive="active" >
-              <h5>
-                SERVICIOS
-              </h5>
-            </a>
-          </li> -->
-          <li class="list-group-item">
-            <a class="btn-phone-menu" routerLink="projects" routerLinkActive="active">
-              <h5>
-                PROYECTOS
-              </h5>
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a class="btn-phone-menu" routerLink="us" routerLinkActive="active">
-              <h5>
-                QUIENES SOMOS
-              </h5>
-            </a>
-          </li>
-          <!-- <li class="list-group-item">
-            <a class="btn-phone-menu" routerLink="more" routerLinkActive="active">
-              <h5>
-                ALGO MÁS
-              </h5>
-            </a>
-          </li> -->
-          <li class="list-group-item">
-            <a class="btn-phone-menu" routerLink="contact" routerLinkActive="active">
-              <h5>
-                CONTÁCTANOS
-              </h5>
-            </a>
-          </li>
-          <li class="list-group-item li-select">
-            <form [formGroup]="langForm">
-              <mat-form-field appearance="standard" >
-                <mat-select formControlName="langControl">
-                  <mat-option value="1">Español</mat-option>
-                  <mat-option value="2">English</mat-option>
-                </mat-select>
-                <mat-icon matSuffix>language</mat-icon>
-              </mat-form-field>
-            </form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <button class="btn btn-lg btn-primary button-open" (click)="actionMenu()">
+    <mat-icon matSuffix>menu</mat-icon>
+  </button>
 </div>
 <!-- menu phone -->

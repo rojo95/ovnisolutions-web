@@ -28,11 +28,6 @@ h5 {
   font-size: 25px !important;
 }
 
-// .btn:hover {
-//   background: linear-gradient(to left, #7f3fe7 50%, #69b3e7 50%) right;
-//   background-size: 200% 100%;
-// }
-
 .btn {
   width: 100%;
   border: 0px;
@@ -40,10 +35,6 @@ h5 {
   height: 100%;
   transition: 0.3s !important;
 }
-
-// a.active {
-//   background: #7f3fe7 !important;
-// }
 
 .menu-phone {
   width: 100%;
@@ -73,11 +64,6 @@ h5 {
   z-index: 9;
   transition: .5s;
 }
-
-// div.drawer.active {
-//   left: 0%;
-//   transition: .5s;
-// }
 
 .content-menu {
   width: 80%;
@@ -116,4 +102,39 @@ mat-icon{
 .bg-menu {
   background-color: #69b3e7;
 
+}
+
+.button-open {
+  position: fixed;
+  z-index: 10;
+  height: 40px;
+  background-color: #69b3e7;
+}
+
+.nav-phone {
+  background-color: white;
+  height: 100vh !important;
+  padding-top: 70px;
+}
+
+.sticky-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  background-color: rgba(75, 75, 75, 0.657);
+  height: 100%;
+}
+
+.close-button {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  right: 6px;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .close-button {
+    color: #69b3e7;
+  }
 }

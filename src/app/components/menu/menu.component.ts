@@ -24,8 +24,11 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  emit(id: number) {
+  emit(id: number, close:boolean = false) {
     this.emitter.emit(id);
+    if (close) {
+      this.actionMenu();
+    }
   }
 
   ngOnInit(): void {
