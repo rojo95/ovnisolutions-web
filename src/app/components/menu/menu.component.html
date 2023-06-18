@@ -18,20 +18,6 @@
         </h5>
       </a>
     </div>
-    <!-- <div class="col">
-      <a class="btn" routerLinkActive="active">
-        <div ngbDropdown class="d-inline-block">
-          <h5 class="item" id="dropdownBasic1" ngbDropdownToggle>
-            Servicios
-          </h5>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button ngbDropdownItem (click)="emit(3)">Desarrollo Informático</button>
-            <button ngbDropdownItem>Another Action</button>
-            <button ngbDropdownItem>Something else is here</button>
-          </div>
-        </div>
-      </a>
-    </div> -->
     <div class="col" (click)="emit(3)">
       <a class="btn" routerLink="services" routerLinkActive="active">
         <h5 class="item">
@@ -59,7 +45,7 @@
 
 <!-- menu phone -->
 <div class="d-lg-none">
-  <div class="sticky-navbar" *ngIf="show">
+  <div class="sticky-navbar" [ngClass]="show ? 'deploy' : 'undeploy'">
     <button class="btn btn-lg btn-outline-primary close-button" (click)="actionMenu()">
       <mat-icon matSuffix>close</mat-icon>
     </button>
@@ -89,7 +75,7 @@
     </div>
   </div>
 
-  <button class="btn btn-lg btn-primary button-open" (click)="actionMenu()">
+  <button class="btn btn-lg btn-primary button-open right" (click)="actionMenu()">
     <mat-icon matSuffix>menu</mat-icon>
   </button>
 </div>

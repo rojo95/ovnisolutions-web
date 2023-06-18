@@ -1,4 +1,4 @@
-@import '~@angular/cdk/overlay-prebuilt.css';
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 @font-face {
   font-family: "Highway Gothic Wide";
@@ -10,8 +10,13 @@
   src: url("../fonts/Montserrat-Regular.otf") format("woff2");
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Highway Gothic Wide' !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Highway Gothic Wide" !important;
   font-weight: bold;
 }
 
@@ -27,7 +32,8 @@ h3 {
   font-size: 28pt !important;
 }
 
-h4, h5 {
+h4,
+h5 {
   font-size: 23pt !important;
 }
 
@@ -39,10 +45,64 @@ h5 {
   color: #fff;
 }
 
-p,li {
+p,
+li {
   font-size: 15pt;
 }
 
 p {
-  font-family: 'Montserrat' !important;
+  font-family: "Montserrat" !important;
+}
+
+.title {
+  color: #fff;
+  font-size: 60pt;
+}
+
+.subtitle {
+  font-size: 40px !important;
+}
+
+.center {
+  text-align: center;
+}
+@media screen and (max-width: 320px) {
+  .title {
+    font-size: 35px !important;
+  }
+  .subtitle {
+    font-size: large !important;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  /* sm */
+  .title {
+    font-size: 40px !important;
+  }
+  .subtitle {
+    font-size: large !important;
+  }
+  .center {
+    top: 40%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* md */
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* lg */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  /* xl */
+}
+@media only screen and (min-width: 1400px) {
+  /* xxl */
+}
+
+@media only screen and (min-width: 992px) {
+  /* lg en adelante*/
+  .subtitle {
+    line-height: 40px;
+    font-weight: bold;
+  }
 }

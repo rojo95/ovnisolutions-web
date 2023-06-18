@@ -4,42 +4,39 @@ import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent implements OnInit {
-
   ParallaxSliderConfBackground: IParallaxScrollConfig = {
-    parallaxSpeed: .06,
+    parallaxSpeed: 0.06,
     parallaxSmoothness: 0,
     parallaxDirection: 'reverse',
     parallaxTimingFunction: 'ease-in',
-    parallaxThrottleTime: 0
+    parallaxThrottleTime: 0,
   };
   ParallaxSliderConfMoon: IParallaxScrollConfig = {
-    parallaxSpeed: .1,
+    parallaxSpeed: 0.1,
     parallaxSmoothness: 0,
     parallaxDirection: 'reverse',
     parallaxTimingFunction: 'ease-in',
-    parallaxThrottleTime: 0
+    parallaxThrottleTime: 0,
   };
   ParallaxSliderConfOvni: IParallaxScrollConfig = {
-    parallaxSpeed: .5,
+    parallaxSpeed: 0.5,
     parallaxSmoothness: 0,
     parallaxDirection: 'reverse',
     parallaxTimingFunction: 'ease-in',
-    parallaxThrottleTime: 0
+    parallaxThrottleTime: 0,
   };
   ParallaxSliderConfPlanet: IParallaxScrollConfig = {
-    parallaxSpeed: .15,
+    parallaxSpeed: 0.15,
     parallaxSmoothness: 0,
     parallaxDirection: 'normal',
     parallaxTimingFunction: 'ease-in',
-    parallaxThrottleTime: 0
+    parallaxThrottleTime: 0,
   };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

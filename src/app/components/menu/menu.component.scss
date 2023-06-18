@@ -7,8 +7,8 @@
 }
 
 img {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100px;
   z-index: 2;
 }
@@ -20,8 +20,16 @@ a {
 }
 
 h5.item {
-  position:relative;
+  position: relative;
+  transition: 0.3s;
   top: 40%;
+}
+
+a:hover {
+  & .item {
+    color: #660fef;
+    text-decoration: solid;
+  }
 }
 
 h5 {
@@ -62,7 +70,7 @@ h5 {
   height: 100% !important;
   background-color: rgba(0, 0, 0, 0.552);
   z-index: 9;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .content-menu {
@@ -71,7 +79,6 @@ h5 {
   background-color: #fff;
   padding-top: 80px;
 }
-
 
 .btn-phone-menu {
   color: black;
@@ -89,19 +96,18 @@ mat-form-field {
   width: 100%;
 }
 
-mat-icon{
+mat-icon {
   width: auto;
   height: auto;
 }
 
 // final
 .pointer {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .bg-menu {
   background-color: #69b3e7;
-
 }
 
 .button-open {
@@ -123,6 +129,17 @@ mat-icon{
   z-index: 11;
   background-color: rgba(75, 75, 75, 0.657);
   height: 100%;
+  transition: 0.5s;
+}
+
+.deploy {
+  left: 0px;
+  animation: normal 0.5s deploy;
+}
+
+.undeploy {
+  animation: normal 0.5s undeploy;
+  left: -100vh;
 }
 
 .close-button {
@@ -137,4 +154,8 @@ mat-icon{
   .close-button {
     color: #69b3e7;
   }
+}
+
+.right {
+  text-align: right;
 }

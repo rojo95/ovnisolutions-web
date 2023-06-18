@@ -1,5 +1,5 @@
 <div class="row parallax-hidden section relative">
-  <div class="col d-none d-md-block">
+  <div class="col">
     <div class="absolute title_slider center">
       <h1 class="title">
         OVNISOLUTIONS
@@ -7,33 +7,20 @@
       <br>
       <br>
       <p class="subtitle">
-        Somos un equipo multidisciplinario de diseño y desarrolo web, trabajamos para darte soluciones fuera de este mundo.
+        Somos un equipo multidisciplinario de diseño y desarrollo web, trabajamos para darte soluciones fuera de este mundo.
       </p>
     </div>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfBackground" class="moon_slider absolute center">
+    <ngx-parallax-scroll [config]="ParallaxSliderConfBackground" class="d-none d-md-block absolute moon_slider center">
       <img src="assets/image/backgrounds/moon_top.png">
     </ngx-parallax-scroll>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfOvni"  class="absolute ovni_slider">
+    <ngx-parallax-scroll [config]="ParallaxSliderConfOvni"  class="d-none d-md-block absolute ovni_slider">
       <img src="assets/image/backgrounds/ovni_slider.png">
     </ngx-parallax-scroll>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfPlanet"  class="absolute planet_slider">
+    <ngx-parallax-scroll [config]="ParallaxSliderConfPlanet"  class="d-none d-md-block absolute planet_slider">
       <img src="assets/image/backgrounds/planeta_morado.png">
     </ngx-parallax-scroll>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfBackground">
+    <ngx-parallax-scroll [config]="ParallaxSliderConfBackground" class="d-none d-md-block">
       <img src="assets/image/backgrounds/slider.png" class="background slider relative">
     </ngx-parallax-scroll>
-  </div>
-  <div class="col d-block d-md-none">
-    <div class="absolute title_slider center-sm">
-      <h1 class="title-sm">
-        OVNISOLUTIONS
-      </h1>
-      <br>
-      <br>
-      <p class="subtitle-sm">
-        Somos un equipo multidisciplinario de diseño y desarrolo web, trabajamos para darte soluciones fuera de este mundo.
-      </p>
-    </div>
-    <img src="assets/image/backgrounds/slider.png" class="background slider relative" height="100%">
   </div>
 </div>

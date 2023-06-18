@@ -4,66 +4,93 @@
       <h2 class="card-title">Contáctanos</h2>
     </div>
     <div>
-
       <mat-stepper [linear]="true" #stepper>
-
         <!-- first form -->
         <mat-step [stepControl]="firstForm" label="Cuéntanos de tí">
           <form [formGroup]="firstForm">
             <div class="container">
               <div class="row">
-
                 <div class="col">
-                  <mat-form-field appearance="outline" style="width: 100%;">
+                  <mat-form-field appearance="outline" style="width: 100%">
                     <mat-label>Nombre/s</mat-label>
-                    <input matInput placeholder="Nombre/s" formControlName="name" class="capitalized" >
+                    <input
+                      matInput
+                      placeholder="Nombre/s"
+                      formControlName="name"
+                      class="capitalized"
+                    />
                     <mat-icon matSuffix>face</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-hint>Nombre/s de la persona de contacto.</mat-hint>
                   </mat-form-field>
                 </div>
 
                 <div class="col">
                   <mat-form-field appearance="outline">
-                    <mat-label>Apellidos</mat-label>
-                    <input matInput placeholder="Apellidos" formControlName="lastname" class="capitalized">
+                    <mat-label>Apellido/s</mat-label>
+                    <input
+                      matInput
+                      placeholder="Apellidos"
+                      formControlName="lastname"
+                      class="capitalized"
+                    />
                     <mat-icon matSuffix>face</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-hint>Apellidos de la persona de contacto.</mat-hint>
                   </mat-form-field>
                 </div>
-
               </div>
               <div class="row">
                 <div class="col">
                   <mat-form-field appearance="outline">
                     <mat-label>Número de teléfono</mat-label>
-                    <input matInput placeholder="+00 000 00 00" formControlName="phone">
+                    <input
+                      matInput
+                      placeholder="+00 000 00 00"
+                      formControlName="phone"
+                    />
                     <mat-icon matSuffix>phone</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-hint>Número de teléfono de contacto</mat-hint>
                   </mat-form-field>
                 </div>
 
                 <div class="col">
                   <mat-form-field appearance="outline">
                     <mat-label>Correo electrónico</mat-label>
-                    <input matInput placeholder="Correo electrónico" formControlName="email">
+                    <input
+                      matInput
+                      placeholder="Correo electrónico"
+                      formControlName="email"
+                    />
                     <mat-icon matSuffix>mail</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-hint>Correo electrónico de contacto.</mat-hint>
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
-
                 <div class="col">
                   <mat-form-field appearance="outline">
                     <mat-label>Típo de Establecimiento</mat-label>
                     <mat-select formControlName="client_type">
-                      <input matInput #searchType (keyup)="filterType(searchType.value)" autocomplete="off" class="filter">
-                      <mat-option *ngFor="let client_type of client_types" [value]="client_type.id">
-                        {{client_type.name}}
+                      <input
+                        matInput
+                        #searchType
+                        (keyup)="filterType(searchType.value)"
+                        autocomplete="off"
+                        class="filter"
+                      />
+                      <mat-option
+                        *ngFor="let client_type of client_types"
+                        [value]="client_type.id"
+                      >
+                        {{ client_type.name }}
                       </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="firstForm.controls.client_type.hasError('required')">Campo requerido</mat-error>
-                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-error
+                      *ngIf="
+                        firstForm.controls.client_type.hasError('required')
+                      "
+                      >Campo requerido</mat-error
+                    >
+                    <!-- <mat-hint>Hint/Insinuación</mat-hint> -->
                     <mat-icon matSuffix>business</mat-icon>
                   </mat-form-field>
                 </div>
@@ -72,21 +99,40 @@
                   <mat-form-field appearance="outline">
                     <mat-label>¿Desde dónde nos escribes?</mat-label>
                     <mat-select formControlName="country">
-                      <input matInput #searchCountry (keyup)="filterCountry(searchCountry.value)" autocomplete="off" class="filter">
-                      <mat-option *ngFor="let country of countries_showed" [value]="country.code">
-                        {{country.name_es}}
+                      <input
+                        matInput
+                        #searchCountry
+                        (keyup)="filterCountry(searchCountry.value)"
+                        autocomplete="off"
+                        class="filter"
+                      />
+                      <mat-option
+                        *ngFor="let country of countries_showed"
+                        [value]="country.code"
+                      >
+                        {{ country.name_es }}
                       </mat-option>
                     </mat-select>
                     <mat-icon matSuffix>flag</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <mat-error *ngIf="firstForm.controls.country.hasError('required')">Campo requerido</mat-error>
+                    <mat-hint
+                      >País al que está dirigido el requerimiento.</mat-hint
+                    >
+                    <mat-error
+                      *ngIf="firstForm.controls.country.hasError('required')"
+                      >Campo requerido</mat-error
+                    >
                   </mat-form-field>
                 </div>
-
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="btn btn-primary" [disabled]="firstForm.invalid" matStepperNext>Siguiente</button>
+                  <button
+                    class="btn btn-primary"
+                    [disabled]="firstForm.invalid"
+                    matStepperNext
+                  >
+                    Siguiente
+                  </button>
                 </div>
               </div>
             </div>
@@ -94,22 +140,31 @@
         </mat-step>
 
         <!-- second form -->
-        <mat-step [stepControl]="secondForm" label="Descripción detallada de la solicitud">
+        <mat-step [stepControl]="secondForm" label="Detalles de la solicitud">
           <form [formGroup]="secondForm">
             <div class="container">
               <div class="row">
-
                 <div class="col">
                   <mat-form-field appearance="outline">
                     <mat-label>¿Qué tipo de servicio necesitas?</mat-label>
-                    <mat-select formControlName="service" #service (valueChange)="fillSubService(service.value)">
-                      <mat-option *ngFor="let service of services" [value]="service.id">
-                        {{service.desc}}
+                    <mat-select
+                      formControlName="service"
+                      #service
+                      (valueChange)="fillSubService(service.value)"
+                    >
+                      <mat-option
+                        *ngFor="let service of services"
+                        [value]="service.id"
+                      >
+                        {{ service.desc }}
                       </mat-option>
                     </mat-select>
                     <mat-icon matSuffix>flag</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <mat-error *ngIf="secondForm.controls.service.hasError('required')">Campo requerido</mat-error>
+                    <!-- <mat-hint>Hint/Insinuación</mat-hint> -->
+                    <mat-error
+                      *ngIf="secondForm.controls.service.hasError('required')"
+                      >Campo requerido</mat-error
+                    >
                   </mat-form-field>
                 </div>
 
@@ -117,36 +172,58 @@
                   <mat-form-field appearance="outline">
                     <mat-label>Especifícanos un póco más</mat-label>
                     <mat-select formControlName="subService" multiple>
-                      <input matInput #searchCountry (keyup)="filterCountry(searchCountry.value)" autocomplete="off" class="filter">
-                      <mat-option *ngFor="let subService of showedSubService" [value]="subService.id">
-                        {{subService.desc}}
+                      <input
+                        matInput
+                        #searchCountry
+                        (keyup)="filterCountry(searchCountry.value)"
+                        autocomplete="off"
+                        class="filter"
+                      />
+                      <mat-option
+                        *ngFor="let subService of showedSubService"
+                        [value]="subService.id"
+                      >
+                        {{ subService.desc }}
                       </mat-option>
                     </mat-select>
                     <mat-icon matSuffix>flag</mat-icon>
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <mat-error *ngIf="secondForm.controls.subService.hasError('required')">Campo requerido</mat-error>
+                    <!-- <mat-hint>Hint/Insinuación</mat-hint> -->
+                    <mat-error
+                      *ngIf="
+                        secondForm.controls.subService.hasError('required')
+                      "
+                      >Campo requerido</mat-error
+                    >
                   </mat-form-field>
                 </div>
-
               </div>
 
               <div class="row">
-
                 <div class="col">
                   <mat-form-field appearance="outline">
-                    <mat-label>Descripción detallada de lo necesitado</mat-label>
-                    <textarea rows="6" matInput formControlName="message" placeholder="Descripción detallada de lo necesitado"
-                      required>
+                    <mat-label
+                      >Descripción detallada de lo necesitado</mat-label
+                    >
+                    <textarea
+                      rows="6"
+                      matInput
+                      formControlName="message"
+                      placeholder="Descripción detallada de lo necesitado"
+                      required
+                    >
                     </textarea>
                   </mat-form-field>
                 </div>
-
               </div>
 
               <div class="row">
                 <div class="col">
                   <button mat-button matStepperPrevious>Atrás</button>
-                  <button matStepperNext class="btn btn-primary" [disabled]="secondForm.invalid" (click)="sendMessage()">
+                  <button
+                    matStepperNext
+                    class="btn btn-primary"
+                    [disabled]="secondForm.invalid"
+                  >
                     Siguiente
                   </button>
                 </div>
@@ -157,22 +234,27 @@
 
         <!-- confirmation -->
         <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
+          <ng-template matStepLabel>Confirmar</ng-template>
           <h2>Confirmar datos.</h2>
           <div class="container">
-
-
             <div class="row">
-
               <div class="col col-12 col-md-6 col-lg-6">
                 <div class="row">
                   <div class="col mt-2">
-                    <strong>Nombre/s:</strong><br> {{firstForm.get('name')?.value}}
+                    <strong>Nombre/s:</strong>
+                    <br />
+                    <div class="capitalized info">
+                      {{ firstForm.get("name")?.value }}
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-2">
-                    <strong>Apellidos:</strong><br> {{firstForm.get('lastname')?.value}}
+                    <strong>Apellidos:</strong>
+                    <br />
+                    <div class="capitalized info">
+                      {{ firstForm.get("lastname")?.value }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -180,25 +262,20 @@
               <div class="col col-12 col-md-6 col-lg-6">
                 <div class="row">
                   <div class="col mt-2">
-                    <strong>Número de teléfono:</strong><br> {{firstForm.get('phone')?.value}}
+                    <strong>Número de teléfono:</strong>
+                    <br />
+                    <div class="info">
+                      {{ firstForm.get("phone")?.value }}
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-2">
-                    <strong>Correo electrónico:</strong><br> {{firstForm.get('email')?.value}}
-                  </div>
-                </div>
-              </div>
-
-              <div class="col col-12 col-md-6 col-lg-6">
-                <div class="row">
-                  <div class="col mt-2">
-                    <strong>País:</strong><br> {{firstForm.get('country')?.value}}
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col mt-2">
-                    <strong>Establecimiento/s:</strong><br> {{firstForm.get('client_type')?.value && ct[StringToNumb(firstForm.get('client_type')?.value)-1].name}}
+                    <strong>Correo electrónico:</strong>
+                    <br />
+                    <div class="info">
+                      {{ firstForm.get("email")?.value }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -206,12 +283,76 @@
               <div class="col col-12 col-md-6 col-lg-6">
                 <div class="row">
                   <div class="col mt-2">
-                    <strong>Servicio:</strong><br> {{secondForm.get('service')?.value && services[StringToNumb(secondForm.get('service')?.value)-1].desc}}
+                    <strong>País:</strong>
+                    <br />
+                    <div class="info">
+                      <ng-container *ngFor="let country of countries">
+                        <p
+                          *ngIf="
+                            firstForm.controls.country.value?.includes(
+                              country.code
+                            )
+                          "
+                          class="info"
+                        >
+                          {{ country.name_es }}
+                        </p>
+                      </ng-container>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col mt-2">
-                    <strong>Subservicio:</strong><br> {{secondForm.get('subService')?.value}}
+                    <strong>Establecimiento/s:</strong>
+                    <br />
+                    <div class="info">
+                      {{
+                        firstForm.get("client_type")?.value &&
+                          ct[
+                            StringToNumb(firstForm.get("client_type")?.value) -
+                              1
+                          ].name
+                      }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Servicio:</strong>
+                    <br />
+                    <div class="info">
+                      {{
+                        secondForm.get("service")?.value &&
+                          services[
+                            StringToNumb(secondForm.get("service")?.value) - 1
+                          ].desc
+                      }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mt-2">
+                    <strong>Subservicio:</strong>
+                    <br />
+                    <div>
+                      <ul>
+                        <ng-container *ngFor="let subService of subServices">
+                          <li
+                            *ngIf="
+                              secondForm.controls.subService.value?.includes(
+                                subService.id
+                              )
+                            "
+                            class="info"
+                          >
+                            {{ subService.desc }}
+                          </li>
+                        </ng-container>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -219,25 +360,28 @@
               <div class="row">
                 <div class="col mt-2">
                   <strong>Descripción:</strong>
-                  <br>
-                  {{secondForm.get('message')?.value}}
+                  <br />
+                  {{ secondForm.get("message")?.value }}
                 </div>
               </div>
-
             </div>
 
             <div class="row">
               <div class="col">
-                <br>
+                <br />
                 <button mat-button matStepperPrevious>Atrás</button>
-                  <button mat-button class="btn btn-success" (click)="stepper.reset()">Enviar Mensaje <mat-icon matSuffix>send</mat-icon></button>
+                <button
+                  mat-button
+                  class="btn btn-success"
+                  (click)="sendMessage(); stepper.reset()"
+                >
+                  Enviar Mensaje <mat-icon matSuffix>send</mat-icon>
+                </button>
               </div>
             </div>
           </div>
         </mat-step>
-
       </mat-stepper>
-
     </div>
   </div>
 </div>
