@@ -1,5 +1,5 @@
-.text-justify {
-  text-align: justify;
+.slogan {
+  font-size: 20px;
 }
 
 .row {
@@ -12,64 +12,108 @@
   padding: 0px;
 }
 
-.parallax-hidden {
-  overflow: hidden;
-}
-
 .section {
-  height: 650px;
+  height: 850px;
   overflow: hidden;
 }
 
-img.background {
-  width: 100%;
-  z-index: 0;
-  // min-height: 100% !important;
+.objetives {
+  position: relative;
+  padding-left: 450px;
+  padding-right: 450px;
+  top: 700px;
 }
 
 .relative {
   position: relative;
 }
 
-.slider {
-  top: -10px;
+.slider_content {
+  background: #0c0c0c;
+}
+
+.star_body {
+  position: absolute;
+  transform: rotate(25.1deg);
+  animation: shooting-star 20s linear infinite;
+}
+
+.tail {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 10%,
+    40%,
+    #fff 90%,
+    #b700ff 100%
+  );
+  box-shadow: 0px 0px 40px 0px #b700ff, 0px 0px 40px #00bbff,
+    0px 0px 0px #0c0c0c00;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: rgba(183, 0, 255, 0.7);
+  transform: rotate(45deg);
+  box-shadow: 0px 0px 40px 0px rgba(183, 0, 255, 0.7),
+    0px 0px 40px 0px rgba(183, 0, 255, 0.7),
+    0px 0px 40px 0px rgba(183, 0, 255, 0.7),
+    0px 0px 40px 0px rgba(183, 0, 255, 0.7);
+}
+
+@keyframes shooting-star {
+  0% {
+    top: 50px;
+    left: 50px;
+    opacity: 0;
+  }
+  8% {
+    top: 50px;
+    left: 50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  12% {
+    top: 100vh;
+    left: 100vw;
+    opacity: 0;
+  }
+  100% {
+    top: 100vh;
+    left: 100vw;
+    opacity: 0;
+  }
 }
 
 .absolute {
   position: absolute;
 }
 
-.moon_slider {
-  top: 400px;
+.planet {
+  top: 150px;
+  left: -300px;
   z-index: 2;
   width: 100%;
 }
 
 .ovni_slider {
   top: 350px;
-  left: 100px;
+  left: 690px;
   z-index: 5 !important;
 }
 
 .title_slider {
-  top: 120px;
+  top: 200px;
+  left: 600px;
   z-index: 4 !important;
-  width: 100vw;
   color: #fff;
   padding-left: 30px;
   padding-right: 30px;
   margin: 0px;
-}
-
-.planet_slider {
-  top: 350px;
-  right: 150px;
-  z-index: 1;
-}
-
-.planet_slider img {
-  width: 300px;
-  height: 300px;
 }
 
 @media only screen and (max-width: 768px) {

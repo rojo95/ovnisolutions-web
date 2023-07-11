@@ -1,26 +1,45 @@
-<div class="row parallax-hidden section relative">
+<div class="row section relative slider_content">
   <div class="col">
-    <div class="absolute title_slider center">
-      <h1 class="title">
-        OVNISOLUTIONS
-      </h1>
-      <br>
-      <br>
-      <p class="subtitle">
-        Somos un equipo multidisciplinario de diseño y desarrollo web, trabajamos para darte soluciones fuera de este mundo.
-      </p>
+    <div class="row">
+      <div class="col">
+        <div class="absolute title_slider center">
+          <h1 class="title">OVNISOLUTIONS</h1>
+          <br />
+          <p class="slogan">Soluciones fuera de este mundo.</p>
+        </div>
+      </div>
     </div>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfBackground" class="d-none d-md-block absolute moon_slider center">
-      <img src="assets/image/backgrounds/moon_top.png">
-    </ngx-parallax-scroll>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfOvni"  class="d-none d-md-block absolute ovni_slider">
-      <img src="assets/image/backgrounds/ovni_slider.png">
-    </ngx-parallax-scroll>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfPlanet"  class="d-none d-md-block absolute planet_slider">
-      <img src="assets/image/backgrounds/planeta_morado.png">
-    </ngx-parallax-scroll>
-    <ngx-parallax-scroll [config]="ParallaxSliderConfBackground" class="d-none d-md-block">
-      <img src="assets/image/backgrounds/slider.png" class="background slider relative">
-    </ngx-parallax-scroll>
+    <div class="row">
+      <div class="col">
+        <ngx-parallax-scroll
+          [config]="ParallaxSliderConfOvni"
+          class="d-none d-md-block absolute ovni_slider"
+        >
+          <img src="assets/image/backgrounds/ovni_slider.png" />
+        </ngx-parallax-scroll>
+        <div class="star_body d-flex">
+          <div class="tail"></div>
+          <div class="star"></div>
+        </div>
+        <ngx-parallax-scroll
+          [config]="ParallaxSliderConfBackground"
+          class="d-none d-md-block absolute planet"
+        >
+          <img src="assets/image/backgrounds/planet.png" />
+        </ngx-parallax-scroll>
+      </div>
+    </div>
+    <div class="row objetives">
+      <div class="col text-white pe-1 slogan">
+        Somos un equipo multidisciplinario de diseño y desarrollo web,
+        trabajamos para darte soluciones fuera de este mundo.
+      </div>
+      <div class="col ps-1 text-gray">
+        Ofreciendo los servicios de Diseño gràfico y desarrollo web con el
+        objetivo de potenciar la identidad corpoorativa. de tu empresa. Somos un
+        un equipo joven, talentoso y destacado en las áreas del diseño e la
+        informática.
+      </div>
+    </div>
   </div>
 </div>
