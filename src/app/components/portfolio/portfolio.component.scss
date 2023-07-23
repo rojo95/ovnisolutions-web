@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .nav-link.active {
+    color: #660fef;
+  }
+
+  & .nav-link:not(.active) {
+    color: #b1b1b1;
+  }
+}

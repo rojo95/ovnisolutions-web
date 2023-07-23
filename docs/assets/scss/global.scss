@@ -10,9 +10,14 @@
   src: url("../fonts/Montserrat-Bold.ttf") format("woff2");
 }
 
-$primary-color: #007bff;
+$primary-color: #660fef;
+// $primary-color: #007bff;
 $dark-color: #0c0c0c;
+$grey-color: #b1b1b1;
 
+.text-primary {
+  color: $primary-color !important;
+}
 .vertical-center {
   height: 100%;
   display: flex !important;
@@ -84,7 +89,10 @@ li {
 }
 
 .text-gray {
-  color: #b1b1b1;
+  color: $grey-color;
+}
+.text-wite {
+  color: white;
 }
 
 .center {
