@@ -1,57 +1,77 @@
 @import "~@angular/cdk/overlay-prebuilt.css";
 
 @font-face {
-  font-family: "Highway Gothic Wide";
-  src: url("../fonts/HWYGWDE.ttf") format("woff2");
-}
-
-@font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Regular.otf") format("woff2");
 }
 
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.ttf") format("woff2");
+}
+
+$primary-color: #007bff;
+$dark-color: #0c0c0c;
+
+.vertical-center {
+  height: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.text-dark {
+  color: $dark-color;
+}
+
+body {
+  background-color: $dark-color;
+}
+
 h1,
 h2,
-h3,
+h3 {
+  font-family: "Montserrat-Bold" !important;
+}
 h4,
 h5,
-h6 {
-  font-family: "Highway Gothic Wide" !important;
-  font-weight: bold;
+p {
+  font-family: "Montserrat" !important;
 }
 
 h1 {
   font-size: 60pt !important;
+  font-weight: 800 !important;
 }
-
 h2 {
-  font-size: 33pt !important;
+  font-size: 20pt !important;
+  // font-weight: 800 !important;
 }
-
 h3 {
-  font-size: 28pt !important;
+  font-size: 15pt !important;
 }
-
-h4,
-h5 {
-  font-size: 23pt !important;
-}
-
 h4 {
-  color: #660fef;
+  font-weight: bolder !important;
+}
+h4,
+h5,
+p {
+  font-size: 13pt !important;
+}
+
+h3,
+h4,
+p {
+  color: #fff;
+  // color: #660fef;
 }
 
 h5 {
-  color: #fff;
+  color: #acacac;
 }
 
-p,
 li {
   font-size: 15pt;
-}
-
-p {
-  font-family: "Montserrat" !important;
 }
 
 .title {
