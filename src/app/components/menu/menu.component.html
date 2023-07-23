@@ -2,41 +2,36 @@
 <div class="menu d-none d-lg-block">
   <div class="row">
     <div class="col-1 my-1">
-      <img src="assets/image/logos/logotipo.png" alt="">
+      <img src="assets/image/logos/logotipo.png" alt="" />
     </div>
     <div class="col" (click)="emit(1)">
-      <a class="btn" routerLink="home" routerLinkActive="active" >
-        <h5 class="item">
-          Inicio
-        </h5>
+      <a class="btn" routerLink="home" routerLinkActive="active">
+        <h5 class="item">INICIO</h5>
       </a>
     </div>
-    <div class="col" (click)="emit(2)">
-      <a class="btn" routerLink="us" routerLinkActive="active">
-        <h5 class="item">
-          ¿Quiénes somos?
-        </h5>
+    <div class="col">
+      <a href="#" class="btn">
+        <h5 class="item">¿QUIÉNES SOMOS?</h5>
       </a>
     </div>
     <div class="col" (click)="emit(3)">
       <a class="btn" routerLink="services" routerLinkActive="active">
-        <h5 class="item">
-          Servicios
-        </h5>
+        <h5 class="item">SERVICIOS</h5>
       </a>
     </div>
     <div class="col" (click)="emit(4)">
       <a class="btn" routerLink="projects" routerLinkActive="active">
-        <h5 class="item">
-          Proyectos
-        </h5>
+        <h5 class="item">PORTAFOLIO</h5>
+      </a>
+    </div>
+    <div class="col" (click)="emit(2)">
+      <a class="btn" routerLink="us" routerLinkActive="active">
+        <h5 class="item">NOSOTROS</h5>
       </a>
     </div>
     <div class="col" (click)="emit(5)">
       <a class="btn" routerLink="contact" routerLinkActive="active">
-        <h5 class="item">
-          Contáctanos
-        </h5>
+        <h5 class="item">CONTÁCTANOS</h5>
       </a>
     </div>
   </div>
@@ -46,7 +41,10 @@
 <!-- menu phone -->
 <div class="d-lg-none">
   <div class="sticky-navbar" [ngClass]="show ? 'deploy' : 'undeploy'">
-    <button class="btn btn-lg btn-outline-primary close-button" (click)="actionMenu()">
+    <button
+      class="btn btn-lg btn-outline-primary close-button"
+      (click)="actionMenu()"
+    >
       <mat-icon matSuffix>close</mat-icon>
     </button>
     <div class="content">
@@ -55,17 +53,51 @@
           <div class="row">
             <div class="col col-12 col-md-6 nav-phone">
               <div>
-                <hr>
-                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(1,true);">Inicio</button>
-                <hr>
-                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(2,true);">¿Quiénes somos?</button>
-                <hr>
-                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(3,true);">Servicios</button>
-                <hr>
-                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(4,true);">Proyectos</button>
-                <hr>
-                <button type="button" class="btn btn-outline-primary btn-lg" (click)="emit(5,true);">Contáctanos</button>
-                <hr>
+                <hr />
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-lg"
+                  (click)="emit(1, true)"
+                >
+                  INICIO
+                </button>
+                <hr />
+                <button type="button" class="btn btn-outline-primary btn-lg">
+                  ¿QUIÉNES SOMOS?
+                </button>
+                <hr />
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-lg"
+                  (click)="emit(3, true)"
+                >
+                  SERVICIOS
+                </button>
+                <hr />
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-lg"
+                  (click)="emit(4, true)"
+                >
+                  PORTAFOLIO
+                </button>
+                <hr />
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-lg"
+                  (click)="emit(2, true)"
+                >
+                  NOSOTROS
+                </button>
+                <hr />
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-lg"
+                  (click)="emit(5, true)"
+                >
+                  CONTÁCTANOS
+                </button>
+                <hr />
               </div>
             </div>
             <div class="col" (click)="actionMenu()"></div>
@@ -75,7 +107,10 @@
     </div>
   </div>
 
-  <button class="btn btn-lg btn-primary button-open right" (click)="actionMenu()">
+  <button
+    class="btn btn-lg btn-primary button-open right"
+    (click)="actionMenu()"
+  >
     <mat-icon matSuffix>menu</mat-icon>
   </button>
 </div>

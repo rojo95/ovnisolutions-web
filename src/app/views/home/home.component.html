@@ -4,21 +4,16 @@
 </div>
 <!-- End Slider -->
 
-<!-- Nosotros -->
-<div #team>
-  <app-ovni-team></app-ovni-team>
-</div>
-<!-- End nosotros -->
-
 <!-- Inicio de servicios -->
 <div #services>
-  <!-- Servicios de Desarrollo -->
+  <app-services></app-services>
+  <!-- Servicios de Desarrollo
   <app-development></app-development>
-  <!-- End Servicios de Desarrollo -->
+  End Servicios de Desarrollo -->
 
-  <!-- Disenio web -->
+  <!-- Disenio web
   <app-web-design></app-web-design>
-  <!-- End Disenio web -->
+  End Disenio web -->
 
   <!-- Servicios web -->
   <!--
@@ -30,133 +25,15 @@
 
 <!-- Proyectos -->
 <div #projects>
-  <!-- Disenio grafico -->
-  <div class="container">
-    <div class="row pt-5 px-5">
-      <div class="col">
-        <h2>
-          Diseño Gráfico
-        </h2>
-      </div>
-    </div>
-    <div class="row p-md-5">
-      <div class="col-sm-12 col-md-4 px-2 pt-2">
-        <mat-card>
-          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
-          <mat-card-content class="text-center">
-            <p>
-              <b>
-               Identidad corporativa
-              </b>
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-      <div class="col-sm-12 col-md-4 px-2 pt-2">
-        <mat-card>
-          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
-          <mat-card-content class="text-center">
-            <p>
-              <b>
-                Diseño publicitario
-              </b>
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-      <div class="col-sm-12 col-md-4 px-2 pt-2">
-        <mat-card>
-          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
-          <mat-card-content class="text-center">
-            <p>
-              <b>
-                Diseño editorial
-              </b>
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-  </div>
-
-  <!-- Desarrollo -->
-  <div class="container py-5 p-md-5 px-sm-0">
-    <div class="row px-5">
-      <div class="col">
-        <h2>
-          Desarrollo Informático
-        </h2>
-      </div>
-    </div>
-    <div class="row p-xl-5">
-      <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-        <mat-card>
-          <mat-card-header>
-            <p><b>
-              Landing Page
-            </b></p>
-          </mat-card-header>
-          <img mat-card-image src="assets/image/projects/dhyana_thumb.png" alt="" width="100%" height="100%">
-          <mat-card-content class="text-center">
-            <a href="https://rojo95.github.io/dhyana/" target="_blank" class="btn btn-primary">
-              DEMO
-            </a>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-      <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-        <mat-card>
-          <mat-card-header>
-          <!-- <mat-card-header (click)="openInFullScreen(0)"> -->
-            <p><b>One page</b></p>
-          </mat-card-header>
-          <img mat-card-image src="assets/image/projects/barberia-El-Imperial_thumb.png" alt="El Imperial" width="100%" height="100%">
-          <!-- <img (click)="openInFullScreen(0)" mat-card-image src="assets/image/projects/barberia-El-Imperial_thumb.png" alt="El Imperial" width="100%" height="100%"> -->
-          <mat-card-content class="text-center">
-            <a href="https://rojo95.github.io/barberia-el-imperial-static/" target="_blank" class="btn btn-primary">
-              DEMO
-            </a>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-      <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-        <mat-card>
-          <mat-card-header>
-          <!-- <mat-card-header (click)="openInFullScreen(0)"> -->
-            <p><b>Aplicaciones Telefónicas</b></p>
-          </mat-card-header>
-          <img mat-card-image src="assets/image/projects/ionic_thumb.png" alt="El Imperial" width="100%" height="100%">
-          <!-- <img (click)="openInFullScreen(0)" mat-card-image src="assets/image/projects/barberia-El-Imperial_thumb.png" alt="El Imperial" width="100%" height="100%"> -->
-          <mat-card-content class="text-center">
-            <!-- <button type="button" class="btn btn-primary" color="primary"><i class="material-icons pmd-icon-sm">visibility</i></button> -->
-            <a href="https://rojo95.github.io/ionic-app/" target="_blank" class="btn btn-primary">
-              DEMO
-            </a>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-      <!-- <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-        <mat-card>
-          <img mat-card-image src="assets/image/backgrounds/background-section.png" alt="" width="100%" height="100%">
-          <mat-card-content class="text-center">
-            <p>
-              <b>
-                E-Commerce
-              </b>
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div> -->
-    </div>
-  </div>
-
+  <app-portfolio></app-portfolio>
 </div>
 <!-- end Proyectos -->
+
+<!-- Equipo -->
+<div #team>
+  <app-ovni-team></app-ovni-team>
+</div>
+<!-- End equipo -->
 
 <!-- contact us -->
 <div #contact>

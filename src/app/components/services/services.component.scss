@@ -1,0 +1,19 @@
+.margen {
+  background: linear-gradient(to right, #5029d3, #75cbf3);
+  width: 110px;
+  height: 5px;
+  transition: 0.5s;
+}
+
+.servicio:hover {
+  & .margen {
+    width: 100%;
+  }
+}
+
+.servicio img {
+  max-width: 110px;
+  width: auto;
+  max-height: 110px;
+  height: auto;
+}

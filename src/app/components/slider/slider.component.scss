@@ -1,7 +1,3 @@
-.slogan {
-  font-size: 20px;
-}
-
 .row {
   width: 100%;
   margin: 0px;
@@ -19,8 +15,8 @@
 
 .objetives {
   position: relative;
-  padding-left: 450px;
-  padding-right: 450px;
+  padding-left: 300px;
+  padding-right: 300px;
   top: 700px;
 }
 
@@ -119,8 +115,11 @@
 @media only screen and (max-width: 768px) {
   /* sm */
   .title_slider {
+    top: 150px;
     width: 100%;
     left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .ovni_slider {
     left: 0px;
@@ -129,7 +128,7 @@
     position: relative;
     padding-left: 5px;
     padding-right: 5px;
-    top: 600px;
+    top: 550px;
     text-align: center;
   }
 }

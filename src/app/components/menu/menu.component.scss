@@ -1,5 +1,5 @@
 .menu {
-  background-color: #69b3e7;
+  // background-color: #69b3e7;
   padding-left: 50px;
   padding-right: 50px;
   text-align: center;
@@ -23,6 +23,7 @@ h5.item {
   position: relative;
   transition: 0.3s;
   top: 40%;
+  font-size: medium !important;
 }
 
 a:hover {
@@ -81,7 +82,7 @@ h5 {
 }
 
 .btn-phone-menu {
-  color: black;
+  color: #0c0c0c;
 }
 
 .btn-phone-menu.active {
@@ -114,7 +115,7 @@ mat-icon {
   position: fixed;
   z-index: 10;
   height: 40px;
-  background-color: #69b3e7;
+  background-color: #0c0c0c;
 }
 
 .nav-phone {
@@ -139,7 +140,7 @@ mat-icon {
 
 .undeploy {
   animation: normal 0.5s undeploy;
-  left: -100vh;
+  left: -110%;
 }
 
 .close-button {
@@ -152,7 +153,7 @@ mat-icon {
 
 @media only screen and (max-width: 768px) {
   .close-button {
-    color: #69b3e7;
+    color: #0c0c0c;
   }
 }
 

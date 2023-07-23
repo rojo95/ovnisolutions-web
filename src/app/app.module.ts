@@ -8,18 +8,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes,RouterModule } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatIconModule } from "@angular/material/icon";
-import { MatStepperModule } from "@angular/material/stepper";
-import { MatButtonModule } from "@angular/material/button";
-import { MatSelectModule } from "@angular/material/select";
+import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
-import { MatCardModule } from "@angular/material/card";
-import { GalleryModule } from  'ng-gallery';
-import { LightboxModule } from  'ng-gallery/lightbox';
+import { MatCardModule } from '@angular/material/card';
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule } from 'ng-gallery/lightbox';
 
 import { DevelopmentComponent } from './components/development/development.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -32,12 +32,13 @@ import { SliderComponent } from './components/slider/slider.component';
 import { OvniTeamComponent } from './components/ovni-team/ovni-team.component';
 import { WebDesignComponent } from './components/web-design/web-design.component';
 import { WebServicesComponent } from './views/web-services/web-services.component';
-
+import { ServicesComponent } from './components/services/services.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const routes: Routes = [
   {
     path: '**',
-    component: HomeComponent
+    component: HomeComponent,
   },
 ];
 
@@ -56,6 +57,8 @@ const routes: Routes = [
     OvniTeamComponent,
     WebDesignComponent,
     WebServicesComponent,
+    ServicesComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,9 +78,9 @@ const routes: Routes = [
     NgxParallaxScrollModule,
     MatCardModule,
     GalleryModule,
-    LightboxModule
+    LightboxModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
