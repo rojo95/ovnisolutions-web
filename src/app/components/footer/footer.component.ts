@@ -1,5 +1,5 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
-import { faInstagram,faFacebookSquare,faLinkedin,faBehance,faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram,faFacebookSquare,faLinkedin,faBehance,faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-footer',
@@ -16,6 +16,7 @@ export class FooterComponent implements OnInit {
   linkedin = faLinkedin;
   behanse = faBehance;
   twitter = faTwitter;
+  whatsapp = faWhatsapp;
 
   constructor() { }
 
