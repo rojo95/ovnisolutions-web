@@ -17,3 +17,15 @@
   max-height: 110px;
   height: auto;
 }
+
+.service-desc {
+  transition: .3s;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.service-desc:hover {
+  -webkit-line-clamp: 5;
+}
