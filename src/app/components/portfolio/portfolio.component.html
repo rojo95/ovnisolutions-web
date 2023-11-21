@@ -12,54 +12,41 @@
           </div-->
           <div class="row p-md-5">
             <div class="col-sm-12 col-md-4 px-2 pt-2">
-              <mat-card>
-                <img
-                  mat-card-image
-                  src="assets/image/backgrounds/background-section.png"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
+             
+                <div class="image-container">
+                  <img  src="assets/image/projects/dhyana.png">
+                </div> 
                 <mat-card-content class="text-center">
-                  <p>
-                    <b> Identidad corporativa </b>
-                  </p>
-                </mat-card-content>
-              </mat-card>
+                    <p>
+                      <b > Identidad corporativa </b>
+                    </p>
+                  </mat-card-content>
             </div>
 
             <div class="col-sm-12 col-md-4 px-2 pt-2">
-              <mat-card>
-                <img
-                  mat-card-image
-                  src="assets/image/backgrounds/background-section.png"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
+              <div class="image-container">
+                <img  src="assets/image/projects/dhyana.png">
+              </div>
+
                 <mat-card-content class="text-center">
                   <p>
                     <b> Diseño publicitario </b>
                   </p>
                 </mat-card-content>
-              </mat-card>
+              
             </div>
 
             <div class="col-sm-12 col-md-4 px-2 pt-2">
-              <mat-card>
-                <img
-                  mat-card-image
-                  src="assets/image/backgrounds/background-section.png"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
+              <div class="image-container">
+                <img  src="assets/image/projects/dhyana.png">
+              </div>
+
                 <mat-card-content class="text-center">
                   <p>
                     <b> Diseño editorial </b>
                   </p>
                 </mat-card-content>
-              </mat-card>
+              
             </div>
           </div>
         </div>
@@ -69,7 +56,7 @@
       <a ngbNavLink>Desarrollo Informático</a>
       <ng-template ngbNavContent>
         <!-- Desarrollo -->
-        <div class="container py-5 p-md-5 px-sm-0">
+        <div class="borde py-5 p-md-5 px-sm-0">
           <!--div class="row px-5">
             <div class="col">
               <h2>Desarrollo Informático</h2>
@@ -77,80 +64,47 @@
           </div-->
           <div class="row p-xl-5">
             <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-              <mat-card>
-                <mat-card-header>
-                  <p><b> Landing Page </b></p>
-                </mat-card-header>
-                <img
-                  mat-card-image
-                  src="assets/image/projects/dhyana_thumb.png"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-                <mat-card-content class="text-center">
-                  <a
-                    href="https://rojo95.github.io/dhyana/"
-                    target="_blank"
-                    class="btn btn-primary"
-                  >
-                    DEMO
-                  </a>
-                </mat-card-content>
-              </mat-card>
+              <div class="card"
+                style="--i: url(assets/image/projects/dhyana_thumb.png)"
+              >
+                <div class="content">
+                  <H2>Landing Page</H2>
+
+                  <a href="https://rojo95.github.io/dhyana/"> Ver Demo </a>
+                </div>
+              </div>
             </div>
 
             <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-              <mat-card>
-                <mat-card-header>
-                  <!-- <mat-card-header (click)="openInFullScreen(0)"> -->
-                  <p><b>One page</b></p>
-                </mat-card-header>
-                <img
-                  mat-card-image
-                  src="assets/image/projects/barberia-El-Imperial_thumb.png"
-                  alt="El Imperial"
-                  width="100%"
-                  height="100%"
-                />
-                <!-- <img (click)="openInFullScreen(0)" mat-card-image src="assets/image/projects/barberia-El-Imperial_thumb.png" alt="El Imperial" width="100%" height="100%"> -->
-                <mat-card-content class="text-center">
+              <div
+                class="card"
+                style="
+                  --i: url(assets/image/projects/barberia-El-Imperial_thumb.png);
+                "
+              >
+                <div class="content">
+                  <H2>One Page</H2>
+
                   <a
                     href="https://rojo95.github.io/barberia-el-imperial-static/"
-                    target="_blank"
-                    class="btn btn-primary"
                   >
-                    DEMO
+                    Ver Demo
                   </a>
-                </mat-card-content>
-              </mat-card>
+                </div>
+              </div>
             </div>
 
             <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">
-              <mat-card>
-                <mat-card-header>
-                  <!-- <mat-card-header (click)="openInFullScreen(0)"> -->
-                  <p><b>Aplicaciones Telefónicas</b></p>
-                </mat-card-header>
-                <img
-                  mat-card-image
-                  src="assets/image/projects/ionic_thumb.png"
-                  alt="El Imperial"
-                  width="100%"
-                  height="100%"
-                />
-                <!-- <img (click)="openInFullScreen(0)" mat-card-image src="assets/image/projects/barberia-El-Imperial_thumb.png" alt="El Imperial" width="100%" height="100%"> -->
-                <mat-card-content class="text-center">
-                  <!-- <button type="button" class="btn btn-primary" color="primary"><i class="material-icons pmd-icon-sm">visibility</i></button> -->
-                  <a
-                    href="https://rojo95.github.io/ionic-app/"
-                    target="_blank"
-                    class="btn btn-primary"
-                  >
-                    DEMO
-                  </a>
-                </mat-card-content>
-              </mat-card>
+              <div
+                class="card"
+                style="--i: url(assets/image/projects/ionic_thumb.png)"
+              >
+                <div class="content">
+                  <H2>Aplicaciones Telefónicas</H2>
+
+                  <a href="https://rojo95.github.io/ionic-app/"> Ver Demo </a>
+                </div>
+              </div>
             </div>
 
             <!-- <div class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2">

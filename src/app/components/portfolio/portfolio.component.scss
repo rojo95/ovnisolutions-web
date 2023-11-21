@@ -10,3 +10,69 @@
     color: #b1b1b1;
   }
 }
+
+.card:hover {
+  
+  box-shadow:0 6px 6px rgba(124, 68, 255);
+  background: linear-gradient(#3374FF,#FF33E9,#FF339F);
+  border-radius: 5%;
+  animation: rotar 10s linear infinite;
+}
+
+.card {
+  border: 10px;
+  margin: 20px;
+  width: 280px;
+  height: 350px;
+  border-radius: 5px;
+  background: var(--i) center;
+  background-size: cover;
+  box-shadow: 3px 5px 5px rgba(3, 32, 51, 0.8);
+}
+
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgb(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.content h2,
+a {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 10px 5;
+}
+.card:hover .content {
+  opacity: 1;
+}
+
+@keyframes rotar {
+  0% {
+      transform: rotate(360deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+.image-container {
+  margin: 50px;
+  
+  
+  display: inline-block;
+ }
+ 
+ .image-container img {
+  width: 250px;
+  height: auto;
+  transition: transform 0.3s;
+ }
+ 
+ .image-container:hover img {
+  transform: scale(1.5);
+ }
