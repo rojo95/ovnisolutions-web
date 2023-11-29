@@ -111,17 +111,22 @@ export class SliderComponent implements OnInit {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
+  async changeMessage() {
+    this.state = 'salir';
+    await this.delay(300);
+    const num = this.randomNumber(0, this.frases.length - 1);
+    console.log(num);
+    this.activeStringIndex = num;
+    // (this.activeStringIndex + 1) % this.frases.length;
+    this.currentText = this.frases[this.activeStringIndex];
+    await this.delay(300);
+    this.state = 'ingresar';
+    await this.delay(300);
+  }
+
   changeText() {
     setInterval(async () => {
-      this.state = 'ingresar';
-      await this.delay(9500);
-      this.state = 'salir';
-      await this.delay(300);
-      const num = this.randomNumber(0, this.frases.length - 1);
-      console.log(num);
-      this.activeStringIndex = num;
-      // (this.activeStringIndex + 1) % this.frases.length;
-      this.currentText = this.frases[this.activeStringIndex];
-    }, 11000);
+      this.changeMessage();
+    }, 13000);
   }
 }

@@ -37,8 +37,8 @@
         </h3>
       </div>
       <div class="col ps-1 py-2 text-gray">
-        <h5 [@aniText]="state">
-          {{currentText}}
+        <h5 [@aniText]="state" (click)="changeMessage()">
+          {{ currentText }}
         </h5>
       </div>
     </div>
