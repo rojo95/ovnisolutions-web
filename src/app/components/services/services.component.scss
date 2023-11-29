@@ -5,9 +5,16 @@
   transition: 0.5s;
 }
 
+.servicio {
+  transition: .3s;
+}
+
 .servicio:hover {
   & .margen {
     width: 100%;
+  }
+  & .service-desc {
+    -webkit-line-clamp: 5;
   }
 }
 
@@ -24,8 +31,4 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.service-desc:hover {
-  -webkit-line-clamp: 5;
 }

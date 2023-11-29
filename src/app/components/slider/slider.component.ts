@@ -84,13 +84,15 @@ export class SliderComponent implements OnInit {
 
   public state: string = 'ingresar';
 
-  frases:string[] = [
+  frases: string[] = [
     'Ofreciendo los servicios de Diseño gráfico y desarrollo web con el objetivo de potenciar la identidad corporativa. de tu empresa. Somos un un equipo joven, talentoso y destacado en las áreas del diseño e la informática.',
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam eos ratione harum delectus vel temporibus exercitationem qui, provident velit nisi aut corporis deserunt recusandae? Iste temporibus molestias neque similique exercitationem!',
-    'lorem 2',
-    'Lorem 3',
+    '¿Está buscando llevar su negocio al siguiente nivel con tecnología de vanguardia? ¡Nosotros somos su aliado! Somos una empresa de Informática que se dedica a acercar la tecnología a las organizaciones.',
+    'Ofrecemos servicios de mantenimiento y asesoramiento tecnológico adaptado a las necesidades de cada organización. Aseguramos que sus sistemas informáticos están en manos de un equipo de profesionales dedicados a garantizar su éxito.',
+    'Somos una empresa líder en innovación y desarrollo tecnológico, comprometida con la seguridad informática de las organizaciones de todos los tamaños, independientemente de su volumen. ',
+    'Ya sea que te encuentres en el sector público o privado, a nivel nacional o internacional, nos adaptamos a tus necesidades para proporcionarte soluciones de seguridad informática personalizadas.',
+    'Todo el equipo de ovnisolutios quiere hacerlos saber que ¡los queremos mucho! <3',
   ];
-  activeStringIndex = 0;
+  activeStringIndex = this.randomNumber(0, this.frases.length - 1);
   currentText: string = this.frases[this.activeStringIndex];
 
   constructor() {}
@@ -103,14 +105,22 @@ export class SliderComponent implements OnInit {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
+  randomNumber(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
   changeText() {
     setInterval(async () => {
       this.state = 'ingresar';
       await this.delay(9500);
       this.state = 'salir';
       await this.delay(300);
-      this.activeStringIndex =
-        (this.activeStringIndex + 1) % this.frases.length;
+      const num = this.randomNumber(0, this.frases.length - 1);
+      console.log(num);
+      this.activeStringIndex = num;
+      // (this.activeStringIndex + 1) % this.frases.length;
       this.currentText = this.frases[this.activeStringIndex];
     }, 11000);
   }

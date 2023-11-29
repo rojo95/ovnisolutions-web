@@ -1,0 +1,72 @@
+.portfolio-card {
+  transition: .3s;
+  overflow: hidden;
+  // background-color: #660fef;
+  width: 300px;
+  height: 450px;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: none;
+}
+
+.portfolio-card > .imagen {
+  filter: blur(5px) brightness(0.4);
+  transition: 0.3s;
+}
+
+.portfolio-card > .imagen:hover {
+  filter: blur(0);
+}
+
+.portfolio-card img {
+  width: auto;
+  height: 100%;
+}
+
+.portfolio-card .text {
+  position: absolute;
+  top: 200px;
+}
+
+.border {
+  border-radius: 5px;
+  transition: .3s;
+  margin: 10px;
+  border: none;
+}
+
+.border:hover {
+  // animation: neon-glow 1s linear infinite;
+  width: 300px;
+  height: 450px;
+  left: -20px;
+}
+
+.portfolio-card:hover {
+  width: 350px;
+  height: 500px;
+  left: -20px;
+  & .text {
+    top: -100px;
+  }
+}
+
+// @keyframes neon-glow {
+//   0% {
+//     // background-position: 50% 0%;
+//     box-shadow:
+//       0 0 2px #660fef, /* Brillo verde */
+//       0 0 10px #660fef, /* Brillo verde más intenso */
+//   }
+//   50% {
+//     // background-position: 100% 50%;
+//   }
+//   100% {
+//     // background-position: 0% 50%;
+//     box-shadow:
+//       0 0 10px #660fef, /* Brillo verde más fuerte */
+//       0 0 2px #660fef, /* Brillo verde */
+//   }
+// }

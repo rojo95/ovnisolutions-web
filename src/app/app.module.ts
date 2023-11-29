@@ -34,6 +34,7 @@ import { WebDesignComponent } from './components/web-design/web-design.component
 import { WebServicesComponent } from './views/web-services/web-services.component';
 import { ServicesComponent } from './components/services/services.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { CardPortfolioComponent } from './components/card-portfolio/card-portfolio.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,7 @@ const routes: Routes = [
     WebServicesComponent,
     ServicesComponent,
     PortfolioComponent,
+    CardPortfolioComponent,
   ],
   imports: [
     BrowserModule,
