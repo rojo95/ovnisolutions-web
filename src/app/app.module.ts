@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import { MatCardModule } from '@angular/material/card';
-import { GalleryModule } from 'ng-gallery';
+import { GalleryModule, GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
 
 import { DevelopmentComponent } from './components/development/development.component';
@@ -82,7 +82,15 @@ const routes: Routes = [
     GalleryModule,
     LightboxModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: GALLERY_CONFIG,
+      useValue: {
+        autoHeight: true,
+        imageSize: 'cover'
+      } as GalleryConfig
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GalleryItem, ImageItem } from 'ng-gallery';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,8 +8,71 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
   constructor() {}
-  active = 2;
+  imagenes = [
+    {
+      src: 'logotipos.webp',
+      thumb: 'logotipos.webp',
+    },
+    {
+      src: '4Mesa-de-trabajo-1-20.webp',
+      thumb:
+        '4Mesa-de-trabajo-1-20.webp',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni delectus, porro distinctio rerum dignissimos labore optio dolorem reiciendis vero laboriosam accusantium soluta, officia ad pariatur. Dolorem in dignissimos consectetur nesciunt.',
+    },
+    {
+      src: '5Mesa-de-trabajo-1-20.webp',
+      thumb:
+        '5Mesa-de-trabajo-1-20.webp',
+    },
+    {
+      src: '6Mesa-de-trabajo-1-20.webp',
+      thumb: '6Mesa-de-trabajo-1-20.webp',
+    },
+    {
+      src: '8Mesa-de-trabajo-1-20.webp',
+      thumb: '8Mesa-de-trabajo-1-20.webp',
+    },
+    {
+      src: 'empaqueMesa-de-trabajo-1-20.webp',
+      thumb: 'empaqueMesa-de-trabajo-1-20.webp',
+    },
+  ];
 
+  options: any[] = [
+    {
+      imageSize: 'contain',
+      previewImageSize: 'contain',
+      downloadable: false,
+      swipe: true,
+      zoom: true,
+      zoomStep: 0.1,
+      fullWidth: false,
+      thumbnails: true,
+      imageBgColor: 'white',
+      previewBgColor: 'white',
+      descriptionFontSize: '14px',
+      imageArrowAutoHide: false,
+      arrowPrevIcon: 'icon-arrow-left',
+      arrowNextIcon: 'icon-arrow-right',
+      closeIcon: 'icon-close',
+      downloadIcon: 'icon-download',
+      thumbnailSize: '50px',
+      thumbnailMargin: '10px',
+      thumbnailArrow: true,
+      thumbnailArrowPrevIcon: 'icon-arrow-left',
+      thumbnailArrowNextIcon: 'icon-arrow-right',
+      thumbnailLabel: {
+        enable: true,
+        position: 'top',
+        display: 'always',
+      },
+    },
+  ];
+
+  images: GalleryItem[] = [];
+  interval: any;
+  name: any;
+  active: number = 2;
   data: any = {
     des: [
       {
@@ -49,14 +113,19 @@ export class PortfolioComponent implements OnInit {
     ],
   };
 
-  onMouseOver(event: MouseEvent): void {
-    const activeElement = event.target as HTMLElement;
-
-    this.changeLetters(activeElement);
+  ngOnInit(): void {
+    this.images = this.imagenes.map((info: any) => {
+      return new ImageItem({
+        src: 'assets/image/projects/designs/'+info.src,
+        thumb: 'assets/image/projects/designs/'+info.thumb,
+      });
+    });
   }
 
-  interval: any;
-  name: any;
+  onMouseOver(event: MouseEvent): void {
+    const activeElement = event.target as HTMLElement;
+    this.changeLetters(activeElement);
+  }
 
   changeLetters(element: HTMLElement) {
     // Este código define todas las letras mayúsculas del alfabeto inglés en una cadena
@@ -95,6 +164,4 @@ export class PortfolioComponent implements OnInit {
       }, 30);
     }
   }
-
-  ngOnInit(): void {}
 }
