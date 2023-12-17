@@ -11,7 +11,28 @@
   }
 }
 
+.container-gallery {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .gallery {
-  height: auto;
-  // width: 200px;
+  border: #660fef 1px solid;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  // sm
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  // md
+}
+@media only screen and (min-width: 992px) {
+  // lg
+  .gallery {
+    width: 1000px;
+  }
 }

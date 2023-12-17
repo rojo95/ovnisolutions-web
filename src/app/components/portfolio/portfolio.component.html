@@ -4,15 +4,17 @@
       <a ngbNavLink>Diseño Gráfico</a>
       <ng-template ngbNavContent>
         <!-- Disenio grafico -->
-        <div class="p-0 p-md-5 pb-5 gallery">
-          <gallery [items]="images" thumbPosition="left"></gallery>
-          <!-- <gallery [items]="images">
-            <ng-container *galleryImageDef="let item; let active = active">
-              <div *ngIf="active" class="item-text">
-                {{ item?.desc }}
-              </div>
-            </ng-container>
-          </gallery> -->
+        <div class="container-gallery">
+          <div class="p-0 p-lg-5 pb-5 gallery">
+            <gallery [items]="images" thumbPosition="left"></gallery>
+            <!-- <gallery [items]="images">
+              <ng-container *galleryImageDef="let item; let active = active">
+                <div *ngIf="active" class="item-text">
+                  {{ item?.desc }}
+                </div>
+              </ng-container>
+            </gallery> -->
+          </div>
         </div>
       </ng-template>
     </li>
