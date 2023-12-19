@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryItem, ImageItem } from 'ng-gallery';
-
+import 'hammerjs';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -36,43 +36,24 @@ export class PortfolioComponent implements OnInit {
       src: 'empaqueMesa-de-trabajo-1-20.webp',
       thumb: 'empaqueMesa-de-trabajo-1-20.webp',
     },
-  ];
-
-  options: any[] = [
     {
-      imageSize: 'contain',
-      previewImageSize: 'contain',
-      downloadable: false,
-      swipe: true,
-      zoom: true,
-      zoomStep: 0.1,
-      fullWidth: false,
-      thumbnails: true,
-      imageBgColor: 'white',
-      previewBgColor: 'white',
-      descriptionFontSize: '14px',
-      imageArrowAutoHide: false,
-      arrowPrevIcon: 'icon-arrow-left',
-      arrowNextIcon: 'icon-arrow-right',
-      closeIcon: 'icon-close',
-      downloadIcon: 'icon-download',
-      thumbnailSize: '50px',
-      thumbnailMargin: '10px',
-      thumbnailArrow: true,
-      thumbnailArrowPrevIcon: 'icon-arrow-left',
-      thumbnailArrowNextIcon: 'icon-arrow-right',
-      thumbnailLabel: {
-        enable: true,
-        position: 'top',
-        display: 'always',
-      },
+      src: 'empaque.webp',
+      thumb: 'empaque.webp'
+    },
+    {
+      src: 'identidad.webp',
+      thumb: 'identidad.webp'
+    },
+    {
+      src: 'social.webp',
+      thumb: 'social.webp'
     },
   ];
 
   images: GalleryItem[] = [];
   interval: any;
   name: any;
-  active: number = 2;
+  active: number = 1;
   data: any = {
     des: [
       {
