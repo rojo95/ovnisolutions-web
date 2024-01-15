@@ -1,41 +1,16 @@
-<div class="row p-md-5">
+<div class="row py-5 p-md-5">
   <div class="col center">
     <h2 class="text-white">Equipo Ovnisolutions</h2>
 
     <div class="row">
-      <div class="col team-mate pt-2 col-sm-6 col-lg-4">
-        <div class="row">
-          <div class="col">
-            <img src="assets/image/team/johan.png" class="team-avatar" alt="" />
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col">
-            <h3>Johan Román</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4>Desarrollador Web</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>
-              Ingeniero en Informática especializado en el desarrollo de
-              sistemas informáticos, maneja diferentes lenguajes de
-              programación, frameworks, librerías, experiencia en desarrollo
-              tanto front-end como back-end.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col team-mate pt-2 col-sm-6 col-lg-4">
+      <div
+        class="col team-mate pt-2 col-sm-6 col-lg-4 pb-sm-5"
+        *ngFor="let teamMember of team"
+      >
         <div class="row">
           <div class="col">
             <img
-              src="assets/image/team/marian.png"
+              [src]="'assets/image/team/' + teamMember.image"
               class="team-avatar"
               alt=""
             />
@@ -43,70 +18,26 @@
         </div>
         <div class="row mt-3">
           <div class="col">
-            <h3>Marian Román</h3>
+            <h3>{{ teamMember.name }}</h3>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <h4>
-              Diseñadora Gráfica
-              <br />
-              Community Manager
+              <p *ngFor="let cargo of teamMember.cargos">{{ cargo }}</p>
             </h4>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <p>
-              Creativa y organizada con capacidad de resolución de problemas.
-              Analiza las necesidades del cliente con un panorama al mercado
-              actual para expresar el mensaje visual requerido.
+              {{ teamMember.description }}
             </p>
           </div>
         </div>
       </div>
-
-      <div class="col team-mate pt-2 col-sm-12 col-lg-4">
-        <div class="row">
-          <div class="col d-none d-md-block d-lg-none"></div>
-
-          <div class="col col-sm-5 col-md-5 col-lg-12">
-            <div class="row">
-              <div class="col">
-                <img
-                  src="assets/image/team/moy.png"
-                  class="team-avatar"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <h3>Gregory Moy</h3>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <h4>Técnico de soporte TIC</h4>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <p>
-                  Ingeniero en Informática especializado en la asesoría y
-                  soporte técnico a los usuarios de las tecnologías de la
-                  información y las comunicaciones de las empresas. Conocedor a
-                  detalle de los sistemas informáticos, redes, hardware y
-                  software.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col d-none d-md-block d-lg-none"></div>
-        </div>
-      </div>
     </div>
+
   </div>
 </div>
 

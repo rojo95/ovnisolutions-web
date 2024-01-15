@@ -138,3 +138,11 @@ li {
     font-weight: bold;
   }
 }
+
+.logoShiny {
+  transition: 0.5s;
+}
+
+.logoShiny:hover {
+  filter: drop-shadow(0 0 2em #646cff);
+}

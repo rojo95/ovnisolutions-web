@@ -1,8 +1,8 @@
 <!-- menu web -->
 <div class="menu d-none d-lg-block">
   <div class="row">
-    <div class="col-1 my-1">
-      <img src="assets/image/logos/logotipo.png" alt="" />
+    <div class="col-1 my-1 logoShiny">
+      <img src="assets/image/logos/logotipo.png" alt="logo" />
     </div>
     <div class="col" (click)="emit(1)">
       <a class="btn" routerLink="home" routerLinkActive="active">
@@ -16,7 +16,7 @@
     </div>
     <div class="col" (click)="emit(4)">
       <a class="btn" routerLink="projects" routerLinkActive="active">
-        <h5 class="item">PORTAFOLIO</h5>
+        <h5 class="item">PROYECTOS</h5>
       </a>
     </div>
     <div class="col" (click)="emit(2)">
@@ -70,7 +70,7 @@
                   class="btn btn-outline-primary btn-lg"
                   (click)="emit(4, true)"
                 >
-                  PORTAFOLIO
+                  PROYECTOS
                 </button>
                 <hr />
                 <button
