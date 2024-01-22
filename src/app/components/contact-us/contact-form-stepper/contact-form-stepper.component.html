@@ -287,7 +287,7 @@
                     <br />
                     <div class="info">
                       <ng-container *ngFor="let country of countries">
-                        <p
+                        <div
                           *ngIf="
                             firstForm.controls.country.value?.includes(
                               country.code
@@ -296,7 +296,7 @@
                           class="info"
                         >
                           {{ country.name_es }}
-                        </p>
+                        </div>
                       </ng-container>
                     </div>
                   </div>
@@ -371,14 +371,23 @@
                 <br />
                 <button mat-button matStepperPrevious>Atrás</button>
                 <button
+                  matStepperNext
                   mat-button
                   class="btn btn-success"
-                  (click)="sendMessage(); stepper.reset()"
+                  (click)="sendMessage()"
                 >
                   Enviar Mensaje <mat-icon matSuffix>send</mat-icon>
                 </button>
               </div>
             </div>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Finalizado</ng-template>
+          <h2>Confirmar datos.</h2>
+          <div class="container">
+            <div class="row" (click)="stepper.reset()">Cumplido</div>
           </div>
         </mat-step>
       </mat-stepper>

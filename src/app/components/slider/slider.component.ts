@@ -92,6 +92,7 @@ export class SliderComponent implements OnInit {
     'Ya sea que te encuentres en el sector público o privado, a nivel nacional o internacional, nos adaptamos a tus necesidades para proporcionarte soluciones de seguridad informática personalizadas.',
     'Todo el equipo de ovnisolutios quiere hacerlos saber que ¡los queremos mucho! <3',
   ];
+
   activeStringIndex = this.randomNumber(0, this.frases.length - 1);
   currentText: string = this.frases[this.activeStringIndex];
 
@@ -114,10 +115,12 @@ export class SliderComponent implements OnInit {
   async changeMessage() {
     this.state = 'salir';
     await this.delay(300);
-    const num = this.randomNumber(0, this.frases.length - 1);
-    console.log(num);
+    let lastNum = this.activeStringIndex;
+    let num;
+    do {
+      num = this.randomNumber(0, this.frases.length - 1);
+    } while (lastNum === num);
     this.activeStringIndex = num;
-    // (this.activeStringIndex + 1) % this.frases.length;
     this.currentText = this.frases[this.activeStringIndex];
     await this.delay(300);
     this.state = 'ingresar';

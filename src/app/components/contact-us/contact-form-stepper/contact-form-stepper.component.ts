@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { trigger, style, animate, transition } from '@angular/animations';
+
+import { NewServiceService } from '../../../services/client/new-service.service';
 
 @Component({
   selector: 'app-contact-form-stepper',
@@ -1580,44 +1582,26 @@ export class FormStepperComponent implements OnInit {
   showedSubService: any[] = [];
 
   public firstForm = this.formBuilder.group({
-    // name: new FormControl('johan', [
-    //   Validators.required,
-    //   Validators.minLength(3),
-    // ]),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    // lastname: new FormControl('Román Pacheco', [
-    //   Validators.required,
-    //   Validators.minLength(3),
-    // ]),
     lastname: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),
-    // phone: new FormControl('+585555555555', [
-    //   Validators.required,
-    //   Validators.minLength(7),
-    // ]),
     phone: new FormControl('', [Validators.required, Validators.minLength(7)]),
-    // email: new FormControl('r.johan95@gmail.com', [
-    //   Validators.required,
-    //   Validators.email,
-    // ]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    // client_type: new FormControl(2, [Validators.required]),
     client_type: new FormControl('', [Validators.required]),
-    // country: new FormControl('VE', [Validators.required]),
     country: new FormControl('', [Validators.required]),
   });
   secondForm = this.formBuilder.group({
-    // service: new FormControl(2, [Validators.required]),
     service: new FormControl('', [Validators.required]),
-    // subService: new FormControl([7, 9], [Validators.required]),
     subService: new FormControl('', [Validators.required]),
-    // message: new FormControl('Lo que puse en el correo', [Validators.required]),
     message: new FormControl('', [Validators.required]),
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private newServiceService: NewServiceService
+  ) {}
 
   ngOnInit(): void {
     this.client_types = this.ct;
@@ -1666,7 +1650,6 @@ export class FormStepperComponent implements OnInit {
   fillSubService(id: number) {
     this.showedSubService = this.subServices.filter((subService: any) => {
       if (subService.service_id == id) {
-        console.log(id);
         return subService;
       }
     });
@@ -1682,7 +1665,8 @@ export class FormStepperComponent implements OnInit {
     //   service: this.secondFormGroup.get("service")?.value,
     //   subservice: this.secondFormGroup.get("subService")?.value,
     //   message: this.secondFormGroup.get("message")?.value,
-    const data = {
+
+    const data: any = {
       name: this.capitalizeTxt(this.firstForm.get('name')?.value),
       lastname: this.capitalizeTxt(this.firstForm.get('lastname')?.value),
       phone: this.firstForm.get('phone')?.value,
@@ -1694,7 +1678,15 @@ export class FormStepperComponent implements OnInit {
       message: this.secondForm.get('message')?.value,
     };
 
-    console.log(data);
+    this.newServiceService
+      .sendServiceRequest(data)
+      .then((response: any) => {
+        console.log(data);
+        console.log('response: ', response);
+      })
+      .catch((error: any) => {
+        console.error('Error axios: ', error.response);
+      });
   }
 
   StringToNumb(input: any) {

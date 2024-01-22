@@ -35,6 +35,7 @@ import { WebServicesComponent } from './views/web-services/web-services.componen
 import { ServicesComponent } from './components/services/services.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { CardPortfolioComponent } from './components/card-portfolio/card-portfolio.component';
+import axios from 'axios';
 
 const routes: Routes = [
   {
@@ -87,9 +88,10 @@ const routes: Routes = [
       provide: GALLERY_CONFIG,
       useValue: {
         autoHeight: true,
-        imageSize: 'cover'
-      } as GalleryConfig
-    }
+        imageSize: 'cover',
+      } as GalleryConfig,
+    },
+    { provide: 'axios', useValue: axios },
   ],
   bootstrap: [AppComponent],
 })
