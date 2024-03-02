@@ -1,5 +1,6 @@
 .contenedor {
-  min-height: 500px;
+  min-height: 300px;
+  // min-height: 500px;
 }
 
 .logo {
@@ -21,4 +22,44 @@
   100% {
     transform: rotateY(720deg);
   }
+}
+
+.temporal-margin {
+  padding-top: 70px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+@media screen and (max-width: 320px) {
+  .temporal-margin {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  /* sm */
+  .temporal-margin {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* md */
+  .temporal-margin {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* lg */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  /* xl */
+}
+@media only screen and (min-width: 1400px) {
+  /* xxl */
+}
+
+@media only screen and (min-width: 992px) {
+  /* lg en adelante*/
 }

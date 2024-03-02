@@ -1,9 +1,10 @@
 <div class="contenedor bg-white">
   <div class="container">
     <div class="row pt-md-3">
-      <div class="col d-none d-md-grid">
+      <div class="col d-grid">
+        <!-- <div class="col d-none d-md-grid"> -->
         <div class="vertical-center">
-          <div class="text-center">
+          <div class="text-center temporal-margin">
             <p class="text-dark">
               ¿Quieres impulsar tu negocio en el mundo digital?
             </p>
@@ -12,16 +13,29 @@
               a tu negocio.
             </h4>
             <p class="text-dark">
-              ¡Contáctenos hoy, llena el formulario y descubramos cómo podemos
+              ¡Contáctenos hoy, a éste correo y descubramos cómo podemos
               ayudarle a innovar y crecer!
+              <br />
+              <a
+                class="text-primary"
+                [href]="
+                  'mailto:' +
+                  email +
+                  '?subject=Solicitud de Servicios&body=¡Hola! Saludos cordiales, nos gustaría solicitar sus servicios para '
+                "
+              >
+                {{ email }}
+              </a>
             </p>
           </div>
         </div>
       </div>
+      <!--
       <div class="col">
         <app-contact-form-stepper></app-contact-form-stepper>
         <br />
       </div>
+       -->
     </div>
   </div>
 </div>
