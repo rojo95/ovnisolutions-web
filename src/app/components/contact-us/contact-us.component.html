@@ -1,20 +1,58 @@
 <div class="contenedor bg-white">
+  <div class="texto">
+    <p class="text-dark">¿Quieres impulsar tu negocio en el mundo digital?</p>
+    <h4 class="text-dark">
+      Agenda una cita con nosotros para darle una dirección estratégica a tu
+      negocio.
+    </h4>
+    <p class="text-dark">
+      ¡Contáctenos hoy, a éste correo y descubramos cómo podemos ayudarle a
+      innovar y crecer!
+      <br />
+      <a
+        class="text-primary"
+        [href]="
+          'mailto:' +
+          email +
+          '?subject=Solicitud de Servicios&body=¡Hola! Saludos cordiales, nos gustaría solicitar sus servicios para '
+        "
+      >
+        {{ email }}
+      </a>
+    </p>
+  </div>
+</div>
+
+<!-- div class="contenedor bg-white">
   <div class="container">
-    <div class="row pt-md-3">
-      <div class="col d-none d-md-grid">
-        <div class="vertical-center">
-          <div class="text-center">
-            <p class="text-dark">
-              ¿Quieres impulsar tu negocio en el mundo digital?
-            </p>
-            <h4 class="text-dark">
-              Agenda una cita con nosotros para darle una dirección estratégica
-              a tu negocio.
-            </h4>
-            <p class="text-dark">
-              ¡Contáctenos hoy, llena el formulario y descubramos cómo podemos
-              ayudarle a innovar y crecer!
-            </p>
+    <div class="row pt-3">
+      <div class="col d-grid">
+        <div class="col d-none d-lg-grid">
+          <div class="vertical-center">
+            <div class="text-center">
+              <p class="text-dark">
+                ¿Quieres impulsar tu negocio en el mundo digital?
+              </p>
+              <h4 class="text-dark">
+                Agenda una cita con nosotros para darle una dirección
+                estratégica a tu negocio.
+              </h4>
+              <p class="text-dark">
+                ¡Contáctenos hoy, a éste correo y descubramos cómo podemos
+                ayudarle a innovar y crecer!
+                <br />
+                <a
+                  class="text-primary"
+                  [href]="
+                    'mailto:' +
+                    email +
+                    '?subject=Solicitud de Servicios&body=¡Hola! Saludos cordiales, nos gustaría solicitar sus servicios para '
+                  "
+                >
+                  {{ email }}
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -24,4 +62,4 @@
       </div>
     </div>
   </div>
-</div>
+</div-->

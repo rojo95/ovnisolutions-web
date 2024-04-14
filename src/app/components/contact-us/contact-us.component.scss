@@ -1,24 +1,33 @@
+// .contenedor {
+//   min-height: 500px;
+// }
+
+// .logo {
+//   top: 40px;
+//   position: relative;
+//   transition: 2s;
+// }
+
+// .cont_logo:hover {
+//   & .logo {
+//     animation: rotate 2s linear;
+//   }
+// }
+
+// @keyframes rotate {
+//   0% {
+//     transform: rotateY(0deg);
+//   }
+//   100% {
+//     transform: rotateY(720deg);
+//   }
+// }
+
 .contenedor {
-  min-height: 500px;
-}
-
-.logo {
-  top: 40px;
-  position: relative;
-  transition: 2s;
-}
-
-.cont_logo:hover {
-  & .logo {
-    animation: rotate 2s linear;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(720deg);
-  }
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  height: 300px; /* Altura del contenedor */
+  text-align: center;
+  padding: 10px;
 }
