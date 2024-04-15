@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
         ? contact
         : null;
 
-    console.log('Element: ', elem);
+    // console.log('Element: ', elem);
     if (elem) {
       elem.scrollIntoView({
         behavior: 'smooth',
