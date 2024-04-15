@@ -45,9 +45,7 @@ export class HomeComponent implements OnInit {
   constructor(
     public gallery: Gallery,
     private lightbox: Lightbox,
-    private seo: SeoService,
-    private meta: Meta,
-    private title: Title
+    private seo: SeoService
   ) {
     // title.setTitle('OVNISOLUTIONS');
     // meta.updateTag({
