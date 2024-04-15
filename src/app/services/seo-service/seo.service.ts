@@ -22,11 +22,12 @@ export class SeoService {
       keywords: [
         'ovni solutions',
         'desarrollo web',
-        'app phone',
-        'web development',
-        'diseno web',
+        'Aplicaciones Móviles',
+        'Branding Digital',
+        'Redes Sociales',
         'seo',
         'diseno logos',
+        'Asesoría Informatica',
       ],
       ...(config && config),
     };
