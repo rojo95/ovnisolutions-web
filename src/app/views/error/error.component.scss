@@ -1,0 +1,21 @@
+#black-hole {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(0, 0, 0) 0%,
+    rgb(55, 55, 55) 100%
+  );
+  box-shadow: 0 0 10px 5px white;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

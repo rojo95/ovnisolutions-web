@@ -1,25 +1,27 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HomeComponent } from './views/home/home.component';
 
-import { NgbDatepickerModule, NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+import {
+  NgbDatepickerModule,
+  NgbOffcanvas,
+  OffcanvasDismissReasons,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   @ViewChild(HomeComponent) home: any;
 
   title = 'ovnisolution';
 
-  idioma:any = [];
+  idioma: any = [];
 
-  loaded:boolean = false;
+  loaded: boolean = false;
 
-  scrollNav(id: number) :void {
+  scrollNav(id: number): void {
     this.home.scrollToElement(id);
   }
 
@@ -28,5 +30,4 @@ export class AppComponent {
   ngOnInit(): void {
     // this.loaded = true;
   }
-
 }

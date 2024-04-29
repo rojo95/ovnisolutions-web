@@ -20,6 +20,7 @@ import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import { MatCardModule } from '@angular/material/card';
 import { GalleryModule, GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DevelopmentComponent } from './components/development/development.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -36,6 +37,13 @@ import { ServicesComponent } from './components/services/services.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { CardPortfolioComponent } from './components/card-portfolio/card-portfolio.component';
 import axios from 'axios';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './views/login/login.component';
+import { DashboardComponent } from './views/dashboard/dashboard/dashboard.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { GuestLayoutComponent } from './layouts/guest-layout/guest-layout.component';
+import { AuthMenuComponent } from './components/menu/authMenu/auth-menu/auth-menu.component';
+import { ErrorComponent } from './views/error/error.component';
 
 const routes: Routes = [
   {
@@ -62,6 +70,12 @@ const routes: Routes = [
     ServicesComponent,
     PortfolioComponent,
     CardPortfolioComponent,
+    LoginComponent,
+    DashboardComponent,
+    AuthLayoutComponent,
+    GuestLayoutComponent,
+    AuthMenuComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +96,8 @@ const routes: Routes = [
     MatCardModule,
     GalleryModule,
     LightboxModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [
     {

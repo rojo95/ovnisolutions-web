@@ -1,0 +1,17 @@
+.active {
+  background-color: #650fef46 !important;
+  border: #fff;
+  color: #fff;
+  font-weight: 500;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item-action:hover {
+  background-color: #650fef46 !important;
+  transition: 0.3s;
+  color: #fff;
+  border: #fff;
+}

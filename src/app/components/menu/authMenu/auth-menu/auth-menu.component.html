@@ -1,0 +1,38 @@
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title text-dark" id="offcanvas-basic-title">Menu</h3>
+
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="offcanvas.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <ul class="list-group list-group-flush">
+      <li
+        *ngFor="let route of routesList"
+        [ngClass]="
+          'list-group-item list-group-item-action' +
+          (currentUrl === route.path ? ' active' : '')
+        "
+        (click)="offcanvas.dismiss('Cross click')"
+        [routerLink]="route.path"
+      >
+        {{ route.name }}
+      </li>
+      <li class="list-group-item list-group-item-action" (click)="logout()">
+        Cerrar Sesión
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button mat-icon-button matSuffix type="button" (click)="open(content)">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</nav>
