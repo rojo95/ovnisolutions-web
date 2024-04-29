@@ -32,7 +32,6 @@ const routes: Routes = [
     ],
   },
   { path: 'not-found/:errorCode', component: ErrorComponent },
-
   { path: '**', redirectTo: '/not-found/404', pathMatch: 'full' }, // Redirecciona a /redirect por defecto
 ];
 

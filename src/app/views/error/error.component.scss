@@ -1,21 +1,130 @@
-#black-hole {
+.div-spaceship {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgb(0, 0, 0) 0%,
-    rgb(55, 55, 55) 100%
-  );
-  box-shadow: 0 0 10px 5px white;
-  animation: rotate 2s infinite linear;
+  position: relative;
+  animation: rotate 3s infinite linear;
 }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
+  0% {
+    filter: drop-shadow(0 0 2em #646cff);
+    transform: rotate(10deg);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    filter: drop-shadow(0 0 1em #646cff);
   }
+  50% {
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 0 2em #646cff);
+  }
+  75% {
+    filter: drop-shadow(0 0 1em #646cff);
+  }
+  100% {
+    filter: drop-shadow(0 0 2em #646cff);
+    transform: rotate(10deg);
+  }
+}
+
+.spaceship {
+  filter: drop-shadow(0 0 2em #646cff);
+  top: 60px;
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 100% / 125% 125% 100% 100%;
+}
+
+.bar {
+  top: 95px;
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 25px;
+}
+
+.bar.center {
+  left: 95px;
+  top: 105px;
+}
+
+.bar:first-of-type {
+  rotate: 10deg !important;
+  left: 50px !important;
+}
+.bar:last-of-type {
+  rotate: -10deg !important;
+  right: 50px !important;
+}
+
+.dome {
+  top: 40px;
+  position: absolute;
+  border: solid 3px #333;
+  left: 60px;
+  width: 80px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 70% / 100% 100% 50% 50%;
+}
+
+.alien {
+  position: absolute;
+  top: 55px;
+  left: 88px;
+  width: 25px;
+  height: 30px;
+  background-color: #333;
+  border-radius: 150% / 100% 100% 200% 200%;
+}
+
+.eye {
+  top: 11px;
+  width: 8px;
+  height: 6px;
+  background-color: #6c63ff;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+}
+
+.eye:first-of-type {
+  rotate: 20deg;
+  left: 2px;
+}
+.eye:last-of-type {
+  rotate: -20deg;
+  right: 4px;
+}
+
+.bubble {
+  left: 150px;
+  position: relative;
+  width: 250px;
+  height: 150px;
+  background-color: #fff;
+  color: #333 !important;
+  border-radius: 48%;
+  text-align: center;
+  padding: 60px 0px 60px 0px;
+}
+
+.bubble:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 45px solid #fff;
+  transform: translateX(-60px) translateY(-25px) rotate(40deg);
+}
+
+.bubble p {
+  margin: 0;
+  text-align: center;
 }
