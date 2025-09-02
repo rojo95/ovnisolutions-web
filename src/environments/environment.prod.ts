@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  officialEmail: 'ovnisolutions@ovni-solutions.com',
-  backend: 'api.ovni-solutions.com',
+  officialEmail: 'ovnisolutions@ovnisolutions.com',
+  backend: 'api.ovnisolutions.com',
   appToken: '%NcyKc!9_1WERvqWc,Fv:?1R6RkderDFM!w&$-Xh',
 };

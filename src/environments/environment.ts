@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  officialEmail: 'dev.ovnisolutions@ovni-solutions.com',
+  officialEmail: 'dev.ovnisolutions@ovnisolutions.com',
   backend: 'http://localhost:3001/1.0.0',
   appToken: 'ECBzPC.q-n@S?RM@Y&_5Lfj/8W$WBRf-4ikU4U0!',
 };
