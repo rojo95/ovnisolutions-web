@@ -1,108 +1,30 @@
 # ovnisolutions-web
+página web de ovnisolutions en angular con conexión a API rest node.
 
-Web corporativa de **OVNISOLUTIONS** — agencia de desarrollo web y marketing digital — construida con **Angular 14**. Incluye portafolio, servicios, equipo, formulario de contacto (con conexión a una API REST de Node) y un área autenticada (`login`/`dashboard`).
+# Ovnisolution
 
-> Stack: Angular 14 · TypeScript (estricto) · SCSS · Angular Material · Bootstrap 5 · ng-bootstrap · FontAwesome · ng-gallery · ngx-parallax-scroll · SweetAlert2 · axios
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
----
+## Development server
 
-## Requisitos previos
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-- Node.js 16+ (proyecto Angular CLI 14)
-- **pnpm** como gestor de paquetes (ver [Instalación](#instalación))
-- Backend corriendo para el formulario de contacto: repo hermano [`ovnisolutions-api`](../ovnisolutions-api) (Node/Express/Sequelize/PostgreSQL)
+## Code scaffolding
 
-## Instalación
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-> **Importante:** usar **pnpm**. El lockfile vigente es `pnpm-lock.yaml`; `package-lock.json` está desactualizado y **no** debe usarse.
+## Build
 
-```bash
-pnpm install
-```
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Configuración
+## Running unit tests
 
-Las variables de entorno viven en `src/environments/`:
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-| Variable | Dev (`environment.ts`) | Prod (`environment.prod.ts`) |
-|---|---|---|
-| `backend` | `http://localhost:3001/1.0.0` | `api.ovnisolutions.com` |
-| `appToken` | token de la app (dev) | token de la app (prod) |
-| `officialEmail` | `dev.ovnisolutions@ovnisolutions.com` | `contacto@ovnisolutions.com` |
+## Running end-to-end tests
 
-- El build de producción reemplaza `environment.ts` por `environment.prod.ts` automáticamente (`fileReplacements` en `angular.json`).
-- **Nota**: la app espera la API en el puerto `3001` en dev, pero `ovnisolutions-api` escucha en `3000` por defecto — verifica cómo se levanta (posiblemente vía su `docker-compose.yml`).
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Comandos
+## Further help
 
-| Comando | Descripción |
-|---|---|
-| `pnpm start` | Dev server en `http://localhost:4200` (hot reload) |
-| `pnpm run build` | Build de producción en `build/`, base-href `/` |
-| `pnpm run build-git` | Build para GitHub Pages en `docs/`, base-href `ovnisolutions-web` |
-| `pnpm run build-dev` | Build de desarrollo en `dist/`, base-href `/` |
-| `pnpm test` | Tests unitarios (Karma + Jasmine; requiere Chrome, sin headless configurado) |
-| `pnpm run watch` | Build con watch en configuración de desarrollo |
-
-### Scaffolding
-
-```bash
-ng generate component <nombre>        # genera .ts/.html/.scss/.spec.ts (SCSS por defecto)
-ng generate service|guard|pipe|class  # y demás generadores de Angular CLI
-```
-
-## Estructura
-
-```
-src/
-├── app/
-│   ├── components/      # menu, footer, slider, services, portfolio, contact-us,
-│   │                    # development, ovni-team, card-portfolio, web-design
-│   ├── layouts/         # guest-layout (público) y auth-layout (autenticado)
-│   ├── guard/           # auth.guard y guest.guard
-│   ├── services/        # auth (login), client (formulario), seo (meta tags)
-│   ├── shared/          # servicios compartidos
-│   ├── views/           # home, login, dashboard, web-services, error, not-found, ...
-│   ├── app-routing.module.ts   # ← rutas reales
-│   └── app.module.ts
-├── environments/        # environment.ts / environment.prod.ts
-└── ...
-```
-
-## Arquitectura y flujo
-
-- **Rutas** (`app-routing.module.ts`): `/home` y `/login` bajo `GuestLayout` (con `GuestGuard`); `/dashboard` bajo `AuthLayout` (con `AuthGuard`); `/not-found/:errorCode`; `**` → `/not-found/404`.
-- **Formulario de contacto**: `ContactUsComponent`/`FormStepper` → `NewServiceService.sendServiceRequest()` → `POST {backend}/ovnisolutions/clients/new-web-requirement` con header `x-app-authorization-token: environment.appToken`.
-- **Login**: `AuthService.login()` guarda el "token" en `localStorage`; los guards lo consultan. Actualmente usa un mock (`mockapi.io`), no el backend real.
-- **SEO**: `SeoService.generateTagsConfig()` setea título y meta tags (OG/keywords) por página.
-- **Gotcha**: `app.module.ts` registra un `RouterModule.forRoot` extra con catch-all `**` → `HomeComponent`. Las rutas nuevas van **solo** en `app-routing.module.ts`.
-
-## Deploy
-
-El sitio se publica en **GitHub Pages** desde la rama `gh-pages`, que contiene la carpeta `docs/`:
-
-```bash
-pnpm run build-git   # genera docs/ con base-href ovnisolutions-web
-git add docs && git commit && git push origin gh-pages
-```
-
-`/docs` no está en `.gitignore`: se commitea a propósito.
-
-## Git
-
-- Remote: `https://github.com/rojo95/ovnisolutions-web`
-- Ramas: `main`, `addAuth` (trabajo actual), `SEOBranch`, `contactForm`, `moyBranch`, `gh-pages`
-- Convención: mensajes de commit en **español**.
-
-## Convenciones de código
-
-- TypeScript estricto (`strict` + `strictTemplates` en `tsconfig.json`).
-- `.editorconfig`: 2 espacios, comillas simples en TS.
-- Componentes con prefijo `app`, estilos en SCSS.
-- No hay lint configurado.
-
-## Documentación del repo
-
-- [`AGENTS.md`](AGENTS.md) — guía operativa para agentes (comandos, gotchas, deploy).
-- [`KNOWLEDGE_MAP.md`](KNOWLEDGE_MAP.md) — mapa de dominio, arquitectura y ADRs.
-- El repo está indexado con **CodeGraph** (`.codegraph/`): usa `codegraph explore "<consulta>"` o `codegraph node <símbolo>` desde la raíz del repo para navegar el código (sincroniza con `codegraph sync` tras cambios).
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
