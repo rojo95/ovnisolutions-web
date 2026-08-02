@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ViewportScroller, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Gallery, GalleryItem, ImageItem } from 'ng-gallery';
 import { Lightbox } from 'ng-gallery/lightbox';
 import { SeoService } from 'src/app/services/seo-service/seo.service';
@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
     private lightbox: Lightbox,
     private seo: SeoService,
     private route: ActivatedRoute,
-    private viewport: ViewportScroller,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     // title.setTitle('OVNISOLUTIONS');
@@ -64,14 +63,27 @@ export class HomeComponent implements OnInit {
     }
     this.seo.generateTagsConfig();
 
-    // Carga inicial con fragment (p. ej. abrir /home#services directamente):
-    // el router con `anchorScrolling` no alcanza a scrollear porque el DOM
-    // aún no existe cuando se emite el primer NavigationEnd. Aquí se espera
-    // al siguiente tick, cuando la vista ya está renderizada.
-    const fragment = this.route.snapshot.fragment;
-    if (fragment) {
-      setTimeout(() => this.viewport.scrollToAnchor(fragment));
-    }
+    // Navegación por anclas: cuando la URL lleva un fragment (#home, #services,
+    // #team, #contact, ...) se hace scroll directo a la sección. Se usa
+    // `scrollIntoView` en lugar de depender solo del `anchorScrolling` del
+    // router, que no siempre scrollea (falla al navegar con fragment dentro de
+    // la misma ruta y con SSR/hidratación activada). El subscribe cubre:
+    //  - la carga inicial con fragment (p. ej. abrir /home#services),
+    //  - los clics del menú y del footer estando en el home (misma ruta),
+    //  - los clics llegando desde otra ruta (/login → /home#contact).
+    this.route.fragment.subscribe((fragment) => {
+      if (!fragment || !isPlatformBrowser(this.platformId)) {
+        return;
+      }
+      // Se espera al siguiente tick para que el DOM de la sección ya exista
+      // (clave cuando el home se acaba de crear al llegar desde otra ruta).
+      setTimeout(() => {
+        const el = document.getElementById(fragment);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   }
 
   openInFullScreen(index: number) {

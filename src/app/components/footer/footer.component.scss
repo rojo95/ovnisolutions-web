@@ -56,3 +56,22 @@ a {
 .pointer {
   cursor: pointer;
 }
+
+// Menú de navegación del footer: misma apariencia clicable que el header
+// (enlaces tipo botón con hover en el color primario del sitio).
+.footer-nav .col {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.footer-nav a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  background-color: #660fef;
+}
