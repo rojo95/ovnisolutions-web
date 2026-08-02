@@ -1,9 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ViewportScroller } from '@angular/common';
+import { ViewportScroller, isPlatformBrowser } from '@angular/common';
 import { Gallery, GalleryItem, ImageItem } from 'ng-gallery';
 import { Lightbox } from 'ng-gallery/lightbox';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from 'src/app/services/seo-service/seo.service';
 
 @Component({
@@ -45,7 +44,8 @@ export class HomeComponent implements OnInit {
     private lightbox: Lightbox,
     private seo: SeoService,
     private route: ActivatedRoute,
-    private viewport: ViewportScroller
+    private viewport: ViewportScroller,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     // title.setTitle('OVNISOLUTIONS');
     // meta.updateTag({
@@ -56,13 +56,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // let items = this.data.map((item:any) =>
-    //   this.items.push(
-    //     new ImageItem({ src: item.srcUrl, thumb: item.previewUrl })
-    //   )
-    // );
-    const galleryRef = this.gallery.ref(this.galleryId);
-    galleryRef.load(this.items);
+    // La galería (ng-gallery) requiere DOM de navegador: no se inicializa
+    // durante el prerender/SSR.
+    if (isPlatformBrowser(this.platformId)) {
+      const galleryRef = this.gallery.ref(this.galleryId);
+      galleryRef.load(this.items);
+    }
     this.seo.generateTagsConfig();
 
     // Carga inicial con fragment (p. ej. abrir /home#services directamente):

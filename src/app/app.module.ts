@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -95,5 +95,6 @@ import { ErrorComponent } from './views/error/error.component';
         },
         { provide: 'axios', useValue: axios },
         provideHttpClient(withXhr(), withInterceptorsFromDi()),
+        provideClientHydration(),
     ] })
 export class AppModule {}

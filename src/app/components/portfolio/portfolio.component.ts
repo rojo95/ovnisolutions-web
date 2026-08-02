@@ -1,6 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, afterNextRender } from '@angular/core';
 import { GalleryItem, ImageItem } from 'ng-gallery';
-import 'hammerjs';
 @Component({
     selector: 'app-portfolio',
     templateUrl: './portfolio.component.html',
@@ -9,7 +8,17 @@ import 'hammerjs';
     standalone: false
 })
 export class PortfolioComponent implements OnInit {
-  constructor() {}
+  /**
+   * ng-gallery usa requestAnimationFrame (no existe en SSR), así que la
+   * galería solo se monta en el navegador, después de la hidratación.
+   */
+  isBrowser = false;
+
+  constructor() {
+    afterNextRender(() => {
+      this.isBrowser = true;
+    });
+  }
   imagenes = [
     {
       src: 'logotipos.webp',

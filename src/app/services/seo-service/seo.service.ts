@@ -1,6 +1,8 @@
 
-import { Inject, Injectable, DOCUMENT } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -24,13 +26,15 @@ export class SeoService {
   constructor(
     private meta: Meta,
     @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private title: Title
   ) {}
 
   generateTagsConfig(config?: any) {
     const pageTitle = config?.title || this.defaultTitle;
     const pageDescription = config?.description || this.defaultDescription;
-    const pageUrl = `${this.document.location.origin}${this.document.location.pathname}`;
+    const siteUrl = this.getSiteUrl();
+    const pageUrl = `${siteUrl}${this.getPagePath()}`;
 
     this.title.setTitle(pageTitle);
 
@@ -54,7 +58,7 @@ export class SeoService {
     });
     this.meta.updateTag({
       property: 'og:image',
-      content: `${this.document.location.origin}/assets/image/og-image.png`,
+      content: `${siteUrl}/assets/image/og-image.png`,
     });
     this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
     this.meta.updateTag({ property: 'og:image:width', content: '1200' });
@@ -73,7 +77,7 @@ export class SeoService {
     });
     this.meta.updateTag({
       name: 'twitter:image',
-      content: `${this.document.location.origin}/assets/image/og-image.png`,
+      content: `${siteUrl}/assets/image/og-image.png`,
     });
 
     // Canonical dinámico (refleja el origen real donde se sirve la app)
@@ -87,6 +91,30 @@ export class SeoService {
       link.setAttribute('rel', 'canonical');
       link.setAttribute('href', pageUrl);
       this.document.head.appendChild(link);
+    }
+  }
+
+  /**
+   * URL base del sitio. En el navegador se usa el origen real; durante el
+   * prerender/SSR no hay `window`, así que se toma del environment para que
+   * og:image y canonical queden con el dominio público y no con localhost.
+   */
+  private getSiteUrl(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return this.document.location.origin;
+    }
+    return environment.siteUrl;
+  }
+
+  /**
+   * Ruta actual de la página. En SSR el location de Domino refleja la ruta
+   * que se está prerenderizando; si no estuviera disponible se asume `/`.
+   */
+  private getPagePath(): string {
+    try {
+      return this.document.location.pathname || '/';
+    } catch {
+      return '/';
     }
   }
 }

@@ -1,5 +1,6 @@
 // auth.service.ts
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -18,7 +19,11 @@ export class AuthService {
   private apiUrl =
     'https://661fc6c216358961cd957340.mockapi.io/homeller/v1/buyers/1'; // URL del backend de autenticación
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   login(data: login): Observable<any> {
     const { email, password } = data;
@@ -51,6 +56,10 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
+    // En SSR (prerender) no existe localStorage: se asume sesión no iniciada.
+    if (!isPlatformBrowser(this.platformId)) {
+      return false;
+    }
     // Comprobar si el usuario está autenticado
     return !!localStorage.getItem('token');
   }

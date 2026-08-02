@@ -5,10 +5,13 @@ import {
   OnDestroy,
   ChangeDetectionStrategy,
   ElementRef,
+  Inject,
   NgZone,
+  PLATFORM_ID,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +28,7 @@ export class MenuComponent implements OnInit, AfterViewInit, OnDestroy {
   show:boolean = false;
 
   public langForm = this.formBuilder.group({
-    langControl: new FormControl (localStorage.getItem('lang')||'1', [Validators.required])
+    langControl: new FormControl(this.getSavedLang(), [Validators.required])
   });
 
   /**
@@ -57,13 +60,21 @@ export class MenuComponent implements OnInit, AfterViewInit, OnDestroy {
   private navSuppressTimer: number | null = null;
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private formBuilder: FormBuilder,
     private ngZone: NgZone,
     private renderer: Renderer2
   ) {
-    if(!localStorage.getItem('lang')){
-      localStorage.setItem('lang','1');
+    if (isPlatformBrowser(this.platformId) && !localStorage.getItem('lang')) {
+      localStorage.setItem('lang', '1');
     }
+  }
+
+  /** Lee el idioma guardado solo en el navegador (en SSR no existe localStorage). */
+  private getSavedLang(): string {
+    return isPlatformBrowser(this.platformId)
+      ? localStorage.getItem('lang') || '1'
+      : '1';
   }
 
   ngOnInit(): void {
@@ -73,25 +84,29 @@ export class MenuComponent implements OnInit, AfterViewInit, OnDestroy {
     // El listener corre FUERA de la zona de Angular: los eventos de scroll no
     // disparan ciclos de detección de cambios. Además es pasivo (no bloquea
     // el scroll) y manipula el DOM directamente con Renderer2.
-    this.lastScrollY = window.scrollY || 0;
-    this.ngZone.runOutsideAngular(() => {
-      window.addEventListener('scroll', this.onScroll, { passive: true });
-      window.addEventListener('resize', this.onResize, { passive: true });
-      window.addEventListener('scrollend', this.onScrollEnd, { passive: true });
-    });
-    this.syncScrollPadding();
+    if (isPlatformBrowser(this.platformId)) {
+      this.lastScrollY = window.scrollY || 0;
+      this.ngZone.runOutsideAngular(() => {
+        window.addEventListener('scroll', this.onScroll, { passive: true });
+        window.addEventListener('resize', this.onResize, { passive: true });
+        window.addEventListener('scrollend', this.onScrollEnd, { passive: true });
+      });
+      this.syncScrollPadding();
+    }
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onResize);
-    window.removeEventListener('scrollend', this.onScrollEnd);
-    if (this.navSuppressTimer !== null) {
-      window.clearTimeout(this.navSuppressTimer);
-      this.navSuppressTimer = null;
+    if (isPlatformBrowser(this.platformId)) {
+      window.removeEventListener('scroll', this.onScroll);
+      window.removeEventListener('resize', this.onResize);
+      window.removeEventListener('scrollend', this.onScrollEnd);
+      if (this.navSuppressTimer !== null) {
+        window.clearTimeout(this.navSuppressTimer);
+        this.navSuppressTimer = null;
+      }
+      // Quita el offset de anclas al salir de la página para no afectar a otras rutas.
+      this.renderer.removeStyle(document.documentElement, 'scroll-padding-top');
     }
-    // Quita el offset de anclas al salir de la página para no afectar a otras rutas.
-    this.renderer.removeStyle(document.documentElement, 'scroll-padding-top');
   }
 
   actionMenu() {

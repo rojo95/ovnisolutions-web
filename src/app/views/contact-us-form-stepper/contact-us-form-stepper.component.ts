@@ -104,7 +104,11 @@ export class ContactUsFormStepperComponent implements OnInit {
       service: this.secondFormGroup.get("service")?.value,
       subservice: this.secondFormGroup.get("subService")?.value,
       message: this.secondFormGroup.get("message")?.value,
-      lang: Number(localStorage.getItem("lang")),
+      lang: Number(
+        typeof localStorage !== 'undefined'
+          ? localStorage.getItem('lang')
+          : '1'
+      ),
     };
     console.log(requires);
     if(!this.firstFormGroup.invalid){

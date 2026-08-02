@@ -1,4 +1,13 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface IParallaxScrollConfig {
   parallaxSpeed?: number;
@@ -23,17 +32,24 @@ export class NgxParallaxScrollDirective implements OnInit, OnDestroy {
   private readonly element: HTMLElement;
   private readonly onScroll = (): void => this.update();
 
-  constructor(elementRef: ElementRef<HTMLElement>) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    elementRef: ElementRef<HTMLElement>
+  ) {
     this.element = elementRef.nativeElement;
   }
 
   ngOnInit(): void {
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-    this.update();
+    if (isPlatformBrowser(this.platformId)) {
+      window.addEventListener('scroll', this.onScroll, { passive: true });
+      this.update();
+    }
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.onScroll);
+    if (isPlatformBrowser(this.platformId)) {
+      window.removeEventListener('scroll', this.onScroll);
+    }
   }
 
   private update(): void {

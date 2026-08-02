@@ -7,6 +7,7 @@
         <div class="container-gallery">
           <div class="p-0 p-lg-5 pb-5 gallery">
             <gallery
+              *ngIf="isBrowser"
               [items]="images"
               thumbPosition="left"
               imageSize="contain"
