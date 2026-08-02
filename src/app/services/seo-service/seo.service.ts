@@ -39,11 +39,14 @@ export class SeoService {
       name: 'keywords',
       content: this.defaultKeywords.join(', '),
     });
+    this.meta.updateTag({ name: 'author', content: 'OVNISOLUTIONS C.A.' });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
 
     // Open Graph
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:site_name', content: 'OVNI Solutions' });
-    this.meta.updateTag({ property: 'og:locale', content: 'es_ES' });
+    this.meta.updateTag({ property: 'og:locale', content: 'es_419' });
+    this.meta.updateTag({ property: 'og:locale:alternate', content: 'es_ES' });
     this.meta.updateTag({ property: 'og:title', content: pageTitle });
     this.meta.updateTag({
       property: 'og:description',
@@ -53,12 +56,16 @@ export class SeoService {
       property: 'og:image',
       content: `${this.document.location.origin}/assets/image/og-image.png`,
     });
+    this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
     this.meta.updateTag({ property: 'og:image:width', content: '1200' });
     this.meta.updateTag({ property: 'og:image:height', content: '630' });
+    this.meta.updateTag({ property: 'og:image:alt', content: 'OVNI Solutions — Soluciones de diseño y desarrollo web' });
     this.meta.updateTag({ property: 'og:url', content: pageUrl });
 
-    // Twitter Card (sin twitter:site: no existe cuenta activa)
+    // Twitter Card
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:site', content: '@ovnisolutions' });
+    this.meta.updateTag({ name: 'twitter:creator', content: '@ovnisolutions' });
     this.meta.updateTag({ name: 'twitter:title', content: pageTitle });
     this.meta.updateTag({
       name: 'twitter:description',
