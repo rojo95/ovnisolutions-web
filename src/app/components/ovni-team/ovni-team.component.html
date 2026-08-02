@@ -1,11 +1,13 @@
 <div class="row py-5 p-md-5">
   <div class="col center">
-    <h2 class="text-white">Equipo Ovnisolutions</h2>
+    <h2 class="text-white" appReveal="up">Equipo Ovnisolutions</h2>
 
     <div class="row">
-      @for (teamMember of team; track teamMember) {
+      @for (teamMember of team; track teamMember; let i = $index) {
         <div
           class="col team-mate pt-2 col-sm-6 col-lg-4 pb-4"
+          appReveal="up"
+          [appRevealDelay]="150 + i * 120"
           >
           <div class="row">
             <div class="col">

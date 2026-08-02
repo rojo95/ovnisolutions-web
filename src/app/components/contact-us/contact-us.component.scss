@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center; /* Centrado horizontal */
   align-items: center; /* Centrado vertical */
-  height: 300px; /* Altura del contenedor */
+  min-height: 100vh; /* La sección de contacto ocupa toda la pantalla */
   text-align: center;
   padding: 10px;
 }

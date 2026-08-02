@@ -51,3 +51,38 @@ $ovnisolution-theme: mat.m2-define-light-theme(
 // that you are using.
 @include mat.all-component-themes($ovnisolution-theme);
 
+// ============================================================================
+// Animaciones de aparición con IntersectionObserver (directiva appReveal)
+// La directiva agrega la clase `app-reveal` solo en el navegador, por lo que
+// SSR/prerender nunca ve contenido oculto.
+// ============================================================================
+.app-reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+// Direcciones de entrada (estado inicial, antes de ser visible)
+.app-reveal-up { transform: translateY(48px); }
+.app-reveal-down { transform: translateY(-48px); }
+.app-reveal-left { transform: translateX(56px); }
+.app-reveal-right { transform: translateX(-56px); }
+.app-reveal-zoom { transform: scale(0.92); }
+
+// Estado visible (agregado por la directiva al intersectar)
+.app-reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+// Accesibilidad: sin animaciones para quienes lo prefieran
+@media (prefers-reduced-motion: reduce) {
+  .app-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+

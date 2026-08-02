@@ -9,7 +9,9 @@
 }
 
 .section {
-  height: 850px;
+  // El hero ocupa al menos toda la pantalla (100vh), conservando su mínimo
+  // histórico de 850px para que el layout absoluto interno nunca se corte.
+  min-height: max(100vh, 850px);
   overflow: hidden;
 }
 
@@ -92,14 +94,14 @@
 }
 
 .planet {
-  top: 150px;
+  top: 350px;
   left: -300px;
   z-index: 2;
   width: 100%;
 }
 
 .ovni_slider {
-  top: 320px;
+  top: 120px;
   left: 650px;
   z-index: 5 !important;
 }

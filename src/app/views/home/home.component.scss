@@ -139,3 +139,13 @@ mat-card {
   background-color: #660fef;
   color: #fff;
 }
+
+// Cada sección del home ocupa al menos el alto de la pantalla.
+// (#home no necesita regla: el hero del slider ya garantiza el mínimo vía
+//  `min-height: max(100vh, 850px)` en slider.component.scss.)
+#services,
+#projects,
+#team,
+#contact {
+  min-height: 100vh;
+}

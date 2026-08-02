@@ -19,7 +19,7 @@ import { NgxParallaxScrollDirective } from './directives/ngx-parallax-scroll.dir
 import { MatCardModule } from '@angular/material/card';
 import { GalleryModule, GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
-import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { DevelopmentComponent } from './components/development/development.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -43,6 +43,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { GuestLayoutComponent } from './layouts/guest-layout/guest-layout.component';
 import { AuthMenuComponent } from './components/menu/authMenu/auth-menu/auth-menu.component';
 import { ErrorComponent } from './views/error/error.component';
+import { RevealDirective } from './directives/reveal.directive';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -68,6 +69,7 @@ import { ErrorComponent } from './views/error/error.component';
         AuthMenuComponent,
     ErrorComponent,
     NgxParallaxScrollDirective,
+    RevealDirective,
   ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         NgbModule,
@@ -94,7 +96,7 @@ import { ErrorComponent } from './views/error/error.component';
             } as GalleryConfig,
         },
         { provide: 'axios', useValue: axios },
-        provideHttpClient(withXhr(), withInterceptorsFromDi()),
+        provideHttpClient(withInterceptorsFromDi()),
         provideClientHydration(),
     ] })
 export class AppModule {}

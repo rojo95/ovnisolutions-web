@@ -58,7 +58,7 @@ import {
 })
 export class SliderComponent implements OnInit {
   ParallaxSliderConfBackground: IParallaxScrollConfig = {
-    parallaxSpeed: 0.9,
+    parallaxSpeed: 0.4,
     parallaxSmoothness: 0,
     parallaxDirection: 'reverse',
     parallaxTimingFunction: 'ease-in',
