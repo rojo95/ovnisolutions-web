@@ -12,7 +12,11 @@
   // El hero ocupa al menos toda la pantalla (100vh), conservando su mínimo
   // histórico de 850px para que el layout absoluto interno nunca se corte.
   min-height: max(100vh, 850px);
-  overflow: hidden;
+  // `overflow: visible` permite que el planeta (parallax) sobresalga de las
+  // sección: el sticky-scroll aplica transforms que lo proyectan fuera del
+  // contenedor; con `overflow: hidden` se lo recortaba y un `z-index` alto
+  // no bastaba (el z-index ordena hermanos, pero no escapa al clipping).
+  overflow: visible;
 }
 
 .objetives {
@@ -96,7 +100,12 @@
 .planet {
   top: 150px;
   left: -300px;
-  z-index: 2;
+  // z-index alto: el planeta (el propio <ngx-parallax-scroll> con .absolute)
+  // se dibuja por encima de .objetives (z-index: 2) y del título (z-index: 4),
+  // dejándose sobresalir de la sección. El z-index funciona ahora que el
+  // .section pasó a `overflow: visible`; antes overflow:hidden lo recortaba
+  // y ningún z-index bastaba.
+  z-index: 9;
   width: 100%;
 }
 
