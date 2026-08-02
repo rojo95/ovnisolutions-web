@@ -4,6 +4,24 @@
   padding-right: 50px;
   text-align: center;
   color: #fff;
+
+  // Header sticky inteligente: permanece fijo al tope cuando está visible,
+  // se oculta al bajar y reaparece deslizándose al subir.
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12, 12, 12, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  will-change: transform;
+  // Entrada (reaparecer): desliza desde arriba del viewport hacia su posición.
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.header-hidden {
+    // Salida (ocultar): se desliza completamente fuera del viewport.
+    transform: translateY(-100%);
+    transition: transform 0.25s ease;
+  }
 }
 
 img {
@@ -116,6 +134,14 @@ mat-icon {
   z-index: 10;
   height: 40px;
   background-color: #0c0c0c;
+  will-change: transform;
+  // `!important` para ganarle al `transition: 0.3s !important` de `.btn`.
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+  &.header-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.25s ease !important;
+  }
 }
 
 .nav-phone {

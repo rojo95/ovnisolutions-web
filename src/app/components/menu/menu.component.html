@@ -1,31 +1,31 @@
 <!-- menu web -->
-<div class="menu d-none d-lg-block">
+<div class="menu d-none d-lg-block" #desktopMenu>
   <div class="row">
     <div class="col-1 my-1 logoShiny">
       <img src="assets/image/logos/logotipo.png" alt="logo" />
     </div>
     <div class="col">
-      <a class="btn" [routerLink]="['/home']" fragment="home">
+      <a class="btn" [routerLink]="['/home']" fragment="home" (click)="onNavItemClick()">
         <h5 class="item">INICIO</h5>
       </a>
     </div>
     <div class="col">
-      <a class="btn" [routerLink]="['/home']" fragment="services">
+      <a class="btn" [routerLink]="['/home']" fragment="services" (click)="onNavItemClick()">
         <h5 class="item">SERVICIOS</h5>
       </a>
     </div>
     <div class="col">
-      <a class="btn" [routerLink]="['/home']" fragment="projects">
+      <a class="btn" [routerLink]="['/home']" fragment="projects" (click)="onNavItemClick()">
         <h5 class="item">PROYECTOS</h5>
       </a>
     </div>
     <div class="col">
-      <a class="btn" [routerLink]="['/home']" fragment="team">
+      <a class="btn" [routerLink]="['/home']" fragment="team" (click)="onNavItemClick()">
         <h5 class="item">NOSOTROS</h5>
       </a>
     </div>
     <div class="col">
-      <a class="btn" [routerLink]="['/home']" fragment="contact">
+      <a class="btn" [routerLink]="['/home']" fragment="contact" (click)="onNavItemClick()">
         <h5 class="item">CONTÁCTANOS</h5>
       </a>
     </div>
@@ -54,7 +54,7 @@
                   class="btn btn-outline-primary btn-lg"
                   [routerLink]="['/home']"
                   fragment="home"
-                  (click)="actionMenu()"
+                  (click)="onNavItemClick()"
                 >
                   INICIO
                 </button>
@@ -64,7 +64,7 @@
                   class="btn btn-outline-primary btn-lg"
                   [routerLink]="['/home']"
                   fragment="services"
-                  (click)="actionMenu()"
+                  (click)="onNavItemClick()"
                 >
                   SERVICIOS
                 </button>
@@ -74,7 +74,7 @@
                   class="btn btn-outline-primary btn-lg"
                   [routerLink]="['/home']"
                   fragment="projects"
-                  (click)="actionMenu()"
+                  (click)="onNavItemClick()"
                 >
                   PROYECTOS
                 </button>
@@ -84,7 +84,7 @@
                   class="btn btn-outline-primary btn-lg"
                   [routerLink]="['/home']"
                   fragment="team"
-                  (click)="actionMenu()"
+                  (click)="onNavItemClick()"
                 >
                   NOSOTROS
                 </button>
@@ -94,7 +94,7 @@
                   class="btn btn-outline-primary btn-lg"
                   [routerLink]="['/home']"
                   fragment="contact"
-                  (click)="actionMenu()"
+                  (click)="onNavItemClick()"
                 >
                   CONTÁCTANOS
                 </button>
@@ -110,6 +110,7 @@
 
   <button
     class="btn btn-lg btn-primary button-open right"
+    #mobileMenuButton
     (click)="actionMenu()"
   >
     <mat-icon matSuffix>menu</mat-icon>
