@@ -65,9 +65,9 @@ export class SliderComponent implements OnInit {
     parallaxThrottleTime: 0,
   };
   ParallaxSliderConfOvni: IParallaxScrollConfig = {
-    parallaxSpeed: 0.5,
+    parallaxSpeed: 0.3,
     parallaxSmoothness: 0,
-    parallaxDirection: 'reverse',
+    parallaxDirection: 'normal',
     parallaxTimingFunction: 'ease-in',
     parallaxThrottleTime: 0,
   };

@@ -1,0 +1,25 @@
+{
+  "name": "OVNI Solutions",
+  "short_name": "OVNISOLUTIONS",
+  "description": "Desarrollo web, branding digital, diseño de empaques, apps móviles, redes sociales y asesoría tecnológica para tu negocio.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0c0c0c",
+  "theme_color": "#660fef",
+  "icons": [
+    {
+      "src": "assets/image/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/image/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
