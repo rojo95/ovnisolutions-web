@@ -32,7 +32,8 @@ No hay lint configurado: `eslint` es solo una dependencia, sin config ni script.
   - `/home` y `/login` → bajo `GuestLayout` (`GuestGuard`)
   - `/dashboard` → bajo `AuthLayout` (`AuthGuard`)
   - `/not-found/:errorCode`; `**` redirige a `/not-found/404`
-- **Gotcha**: `app.module.ts` registra un `RouterModule.forRoot` extra con catch-all `**` → `HomeComponent`, además de importar `AppRoutingModule`. Al agregar rutas, hazlo **solo** en `app-routing.module.ts`; no dupliques el catch-all.
+- **Router**: un único `RouterModule.forRoot(routes, { anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' })` en `app-routing.module.ts`. **No** registres otro `forRoot` (antes existía uno duplicado con catch-all `**` → `HomeComponent`; fue eliminado porque rompía la navegación).
+- **Navegación por anclas (one-page)**: las secciones del home tienen `id` (`home`, `services`, `projects`, `team`, `contact`) en `views/home/home.component.html`. Los enlaces del menú y footer usan `[routerLink]="['/home']" fragment="..."` (routerLink con fragment, no hrefs ni eventos custom). El smooth scroll se mantiene con `scroll-behavior: smooth` en `src/styles.scss`. No hay header fijo, por lo que no se usa `scrollOffset`.
 - El **único** servicio que toca el backend real es `services/client/new-service.service.ts`: `POST {backend}/ovnisolutions/clients/new-web-requirement` con header `x-app-authorization-token` = `environment.appToken`. Usa `axios` inyectado por DI (token `'axios'`, provisto en `AppModule`).
 - `services/auth/auth.service.ts` usa un **mock de `mockapi.io` hardcodeado** (NO `environment.backend`); guarda el token en `localStorage` y eso es lo que consultan los guards.
 - `services/seo-service/seo.service.ts` setea título + meta tags OG/keywords por página.

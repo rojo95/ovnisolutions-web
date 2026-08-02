@@ -4,28 +4,28 @@
     <div class="col-1 my-1 logoShiny">
       <img src="assets/image/logos/logotipo.png" alt="logo" />
     </div>
-    <div class="col" (click)="emit(1)">
-      <a class="btn" routerLink="home" routerLinkActive="active">
+    <div class="col">
+      <a class="btn" [routerLink]="['/home']" fragment="home">
         <h5 class="item">INICIO</h5>
       </a>
     </div>
-    <div class="col" (click)="emit(3)">
-      <a class="btn" routerLink="services" routerLinkActive="active">
+    <div class="col">
+      <a class="btn" [routerLink]="['/home']" fragment="services">
         <h5 class="item">SERVICIOS</h5>
       </a>
     </div>
-    <div class="col" (click)="emit(4)">
-      <a class="btn" routerLink="projects" routerLinkActive="active">
+    <div class="col">
+      <a class="btn" [routerLink]="['/home']" fragment="projects">
         <h5 class="item">PROYECTOS</h5>
       </a>
     </div>
-    <div class="col" (click)="emit(2)">
-      <a class="btn" routerLink="us" routerLinkActive="active">
+    <div class="col">
+      <a class="btn" [routerLink]="['/home']" fragment="team">
         <h5 class="item">NOSOTROS</h5>
       </a>
     </div>
-    <div class="col" (click)="emit(5)">
-      <a class="btn" routerLink="contact" routerLinkActive="active">
+    <div class="col">
+      <a class="btn" [routerLink]="['/home']" fragment="contact">
         <h5 class="item">CONTÁCTANOS</h5>
       </a>
     </div>
@@ -52,7 +52,9 @@
                 <button
                   type="button"
                   class="btn btn-outline-primary btn-lg"
-                  (click)="emit(1, true)"
+                  [routerLink]="['/home']"
+                  fragment="home"
+                  (click)="actionMenu()"
                 >
                   INICIO
                 </button>
@@ -60,7 +62,9 @@
                 <button
                   type="button"
                   class="btn btn-outline-primary btn-lg"
-                  (click)="emit(3, true)"
+                  [routerLink]="['/home']"
+                  fragment="services"
+                  (click)="actionMenu()"
                 >
                   SERVICIOS
                 </button>
@@ -68,7 +72,9 @@
                 <button
                   type="button"
                   class="btn btn-outline-primary btn-lg"
-                  (click)="emit(4, true)"
+                  [routerLink]="['/home']"
+                  fragment="projects"
+                  (click)="actionMenu()"
                 >
                   PROYECTOS
                 </button>
@@ -76,7 +82,9 @@
                 <button
                   type="button"
                   class="btn btn-outline-primary btn-lg"
-                  (click)="emit(2, true)"
+                  [routerLink]="['/home']"
+                  fragment="team"
+                  (click)="actionMenu()"
                 >
                   NOSOTROS
                 </button>
@@ -84,7 +92,9 @@
                 <button
                   type="button"
                   class="btn btn-outline-primary btn-lg"
-                  (click)="emit(5, true)"
+                  [routerLink]="['/home']"
+                  fragment="contact"
+                  (click)="actionMenu()"
                 >
                   CONTÁCTANOS
                 </button>

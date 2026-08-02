@@ -22,10 +22,9 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ovnisolution');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should render the app shell with the footer', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ovnisolution app is running!');
+    expect(compiled.querySelector('app-footer')).toBeTruthy();
   });
 });

@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 import { Gallery, GalleryItem, ImageItem } from 'ng-gallery';
 import { Lightbox } from 'ng-gallery/lightbox';
 import { Meta, Title } from '@angular/platform-browser';
@@ -12,12 +14,6 @@ import { SeoService } from 'src/app/services/seo-service/seo.service';
     standalone: false
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('home', { static: true }) home!: ElementRef;
-  @ViewChild('team', { static: true }) team!: ElementRef;
-  @ViewChild('services', { static: true }) services!: ElementRef;
-  @ViewChild('projects', { static: true }) projects!: ElementRef;
-  @ViewChild('contact', { static: true }) contact!: ElementRef;
-
   data: any = [
     // {
     //   image: 'assets/image/projects/barberia-El-Imperial.png',
@@ -47,7 +43,9 @@ export class HomeComponent implements OnInit {
   constructor(
     public gallery: Gallery,
     private lightbox: Lightbox,
-    private seo: SeoService
+    private seo: SeoService,
+    private route: ActivatedRoute,
+    private viewport: ViewportScroller
   ) {
     // title.setTitle('OVNISOLUTIONS');
     // meta.updateTag({
@@ -66,45 +64,20 @@ export class HomeComponent implements OnInit {
     const galleryRef = this.gallery.ref(this.galleryId);
     galleryRef.load(this.items);
     this.seo.generateTagsConfig();
+
+    // Carga inicial con fragment (p. ej. abrir /home#services directamente):
+    // el router con `anchorScrolling` no alcanza a scrollear porque el DOM
+    // aún no existe cuando se emite el primer NavigationEnd. Aquí se espera
+    // al siguiente tick, cuando la vista ya está renderizada.
+    const fragment = this.route.snapshot.fragment;
+    if (fragment) {
+      setTimeout(() => this.viewport.scrollToAnchor(fragment));
+    }
   }
 
   openInFullScreen(index: number) {
     this.lightbox.open(index, this.galleryId, {
       panelClass: 'fullscreen',
     });
-  }
-
-  /**
-   * funcion para realizar la navegacion de scroll, escuchado por el app-component principal
-   * @param id identificador que indica cual elemento debe seleccionar
-   */
-  scrollToElement(id: number): void {
-    const home = this.home.nativeElement;
-    const team = this.team.nativeElement;
-    const services = this.services.nativeElement;
-    const projects = this.projects.nativeElement;
-    const contact = this.contact.nativeElement;
-
-    let elem =
-      id == 1
-        ? home
-        : id == 2
-        ? team
-        : id == 3
-        ? services
-        : id == 4
-        ? projects
-        : id == 5
-        ? contact
-        : null;
-
-    // console.log('Element: ', elem);
-    if (elem) {
-      elem.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
   }
 }

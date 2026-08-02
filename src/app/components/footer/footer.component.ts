@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   faInstagram,
   faFacebookSquare,
@@ -17,7 +17,6 @@ import { environment } from 'src/environments/environment';
     standalone: false
 })
 export class FooterComponent implements OnInit {
-  @Output() emitter: EventEmitter<number> = new EventEmitter<number>();
 
   email = environment.officialEmail;
   date = new Date();
@@ -31,8 +30,4 @@ export class FooterComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  emit(id: number) {
-    this.emitter.emit(id);
-  }
 }

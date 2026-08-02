@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,8 +11,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class MenuComponent implements OnInit {
 
-  @Output() emitter: EventEmitter<number> = new EventEmitter<number>();
-
   bars = faBars;
   show:boolean = false;
 
@@ -23,13 +21,6 @@ export class MenuComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     if(!localStorage.getItem('lang')){
       localStorage.setItem('lang','1');
-    }
-  }
-
-  emit(id: number, close:boolean = false) {
-    this.emitter.emit(id);
-    if (close) {
-      this.actionMenu();
     }
   }
 

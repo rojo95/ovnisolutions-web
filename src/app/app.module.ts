@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -45,13 +44,6 @@ import { GuestLayoutComponent } from './layouts/guest-layout/guest-layout.compon
 import { AuthMenuComponent } from './components/menu/authMenu/auth-menu/auth-menu.component';
 import { ErrorComponent } from './views/error/error.component';
 
-const routes: Routes = [
-  {
-    path: '**',
-    component: HomeComponent,
-  },
-];
-
 @NgModule({ declarations: [
         AppComponent,
         HomeComponent,
@@ -79,7 +71,6 @@ const routes: Routes = [
   ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         NgbModule,
-        RouterModule.forRoot(routes),
         MatFormFieldModule,
         NgbDropdownModule,
         FontAwesomeModule,

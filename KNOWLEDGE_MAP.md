@@ -10,7 +10,7 @@ Web corporativa de **OVNISOLUTIONS** (agencia de desarrollo web y marketing digi
 
 ## Arquitectura
 
-- Angular 14, un solo módulo (`AppModule`) que declara todo; SCSS; Angular Material + Bootstrap 5 + ng-bootstrap + FontAwesome + ng-gallery.
+- **Angular 22** (migrado desde 14), un solo módulo (`AppModule`) que declara todo; SCSS; Angular Material + Bootstrap 5 + ng-bootstrap + FontAwesome + ng-gallery.
 - **Layouts**: `guest-layout` (páginas públicas `home`, `login`) y `auth-layout` (área autenticada, menú `AuthMenuComponent`).
 - **Guards**: `AuthGuard` (exige `localStorage.token`; si no, redirige a `/login?returnUrl=...`) y `GuestGuard` (si hay token, redirige a `/dashboard`).
 - **Servicios** (`src/app/services/`):
@@ -19,7 +19,8 @@ Web corporativa de **OVNISOLUTIONS** (agencia de desarrollo web y marketing digi
   - `seo-service/seo.service.ts` — setea título + meta tags OG/keywords por página.
 - **Environments**: dev `backend = http://localhost:3001/1.0.0`; prod `api.ovnisolutions.com` (swap automático por `fileReplacements` en `angular.json`).
 - `axios` se inyecta vía DI con el token `'axios'` (provisto en `AppModule`).
-- Rutas reales en `app-routing.module.ts`; ver ADR-003 para el gotcha del doble `forRoot`.
+- Rutas reales en `app-routing.module.ts` (único `forRoot`, con `anchorScrolling` + `scrollPositionRestoration`).
+- **Navegación por anclas (one-page)**: secciones con `id` en `views/home/home.component.html` (`home`, `services`, `projects`, `team`, `contact`); menú y footer navegan con `[routerLink]="['/home']" fragment="..."`; smooth scroll vía `scroll-behavior: smooth` en `styles.scss`. La carga inicial con fragment (`/home#services`) se cubre en `HomeComponent.ngOnInit` con `ViewportScroller.scrollToAnchor` (el router no alcanza a scrollear antes de que exista el DOM).
 
 ## Flujo de datos
 
@@ -36,8 +37,9 @@ Login → AuthService.login() → GET mockapi.io (mock) → localStorage.setItem
 
 - **ADR-001 — Deploy GitHub Pages**: la rama `gh-pages` contiene la carpeta `docs/` (build con `pnpm run build-git`, base-href `ovnisolutions-web`). `/docs` se commitea a propósito (no está en `.gitignore`).
 - **ADR-002 — Auth con mock**: `AuthService.login` consulta un endpoint de `mockapi.io` (GET sobre un recurso `buyers/1`) y guarda lo que devuelva como token; no está conectado al backend real.
-- **ADR-003 — Doble `RouterModule.forRoot`**: `app.module.ts` registra su propio `forRoot` con catch-all `**` → `HomeComponent`, además de importar `AppRoutingModule` (rutas reales). Las rutas nuevas van **solo** en `app-routing.module.ts`.
+- **ADR-003 — Router único**: anteriormente `app.module.ts` registraba un segundo `RouterModule.forRoot` con catch-all `**` → `HomeComponent`, además de `AppRoutingModule`. Ese `forRoot` duplicado fue **eliminado** (causaba navegación impredecible). Hoy existe un solo `forRoot` en `app-routing.module.ts`; las rutas nuevas van **solo** ahí.
 - **ADR-004 — Gestor de paquetes**: `pnpm` (lockfile vigente `pnpm-lock.yaml`); `package-lock.json` es de formato npm antiguo y no se mantiene.
+- **ADR-005 — Navegación por anclas con fragments**: los enlaces internos usan `[routerLink]="['/home']" fragment="..."` (smooth scroll vía `scroll-behavior: smooth`), reemplazando el mecanismo custom de `EventEmitter<number>` + `scrollIntoView` que existía antes y estaba roto (el menú nunca estaba conectado).
 
 ## Convenciones
 

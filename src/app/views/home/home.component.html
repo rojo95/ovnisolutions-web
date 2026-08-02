@@ -1,14 +1,14 @@
-<!--app-menu (emitter)="scrollNav($event)"></app-menu-->
+<!-- menu web (navegación por fragments hacia las secciones del home) -->
 <app-menu></app-menu>
 
 <!-- Slider -->
-<div #home>
+<div id="home" #home>
   <app-slider></app-slider>
 </div>
 <!-- End Slider -->
 
 <!-- Inicio de servicios -->
-<div #services>
+<div id="services" #services>
   <app-services></app-services>
   <!-- Servicios de Desarrollo
   <app-development></app-development>
@@ -27,19 +27,19 @@
 <!-- end de servicios -->
 
 <!-- Proyectos -->
-<div #projects class="bg-white">
+<div id="projects" #projects class="bg-white">
   <app-portfolio></app-portfolio>
 </div>
 <!-- end Proyectos -->
 
 <!-- Equipo -->
-<div #team>
+<div id="team" #team>
   <app-ovni-team></app-ovni-team>
 </div>
 <!-- End equipo -->
 
 <!-- contact us -->
-<div #contact>
+<div id="contact" #contact>
   <app-contact-us></app-contact-us>
 </div>
 <!-- end contact us -->

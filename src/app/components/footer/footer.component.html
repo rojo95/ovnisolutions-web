@@ -76,20 +76,20 @@
       </div>
     </div>
     <div class="row py-3 px-5 d-none d-lg-flex">
-      <div class="col text-center" (click)="emit(1)">
-        <b class="pointer">Inicio</b>
+      <div class="col text-center">
+        <a class="pointer" [routerLink]="['/home']" fragment="home">Inicio</a>
       </div>
-      <div class="col text-center" (click)="emit(2)">
-        <b class="pointer">¿Quiénes somos?</b>
+      <div class="col text-center">
+        <a class="pointer" [routerLink]="['/home']" fragment="team">¿Quiénes somos?</a>
       </div>
-      <div class="col text-center" (click)="emit(3)">
-        <b class="pointer">Servicios</b>
+      <div class="col text-center">
+        <a class="pointer" [routerLink]="['/home']" fragment="services">Servicios</a>
       </div>
-      <div class="col text-center" (click)="emit(4)">
-        <b class="pointer">Proyectos</b>
+      <div class="col text-center">
+        <a class="pointer" [routerLink]="['/home']" fragment="projects">Proyectos</a>
       </div>
-      <div class="col text-center" (click)="emit(5)">
-        <b class="pointer">Contáctanos</b>
+      <div class="col text-center">
+        <a class="pointer" [routerLink]="['/home']" fragment="contact">Contáctanos</a>
       </div>
     </div>
   </div>

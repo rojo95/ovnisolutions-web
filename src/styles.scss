@@ -5,6 +5,12 @@
 @use "./assets/scss/global.scss";
 // Plus imports for other components in your app.
 
+// Scroll suave para la navegación por anclas/fragments (routerLink + fragment).
+// Solo afecta scrolls programáticos (scrollTo/scrollIntoView/anclas), no el scroll manual.
+html {
+  scroll-behavior: smooth;
+}
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!

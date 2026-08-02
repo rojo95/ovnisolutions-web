@@ -1,5 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { HomeComponent } from './views/home/home.component';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   NgbDatepickerModule,
@@ -15,17 +14,11 @@ import {
     standalone: false
 })
 export class AppComponent {
-  @ViewChild(HomeComponent) home: any;
-
   title = 'ovnisolution';
 
   idioma: any = [];
 
   loaded: boolean = false;
-
-  scrollNav(id: number): void {
-    this.home.scrollToElement(id);
-  }
 
   // window.addEventListener('DOMContentLoaded', function(ev) { //Haz lo que quieras cuando cargue el DOM });
 
