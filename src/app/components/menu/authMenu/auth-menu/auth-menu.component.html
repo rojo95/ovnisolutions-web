@@ -11,17 +11,18 @@
   </div>
   <div class="offcanvas-body p-0">
     <ul class="list-group list-group-flush">
-      <li
-        *ngFor="let route of routesList"
+      @for (route of routesList; track route) {
+        <li
         [ngClass]="
           'list-group-item list-group-item-action' +
           (currentUrl === route.path ? ' active' : '')
         "
-        (click)="offcanvas.dismiss('Cross click')"
-        [routerLink]="route.path"
-      >
-        {{ route.name }}
-      </li>
+          (click)="offcanvas.dismiss('Cross click')"
+          [routerLink]="route.path"
+          >
+          {{ route.name }}
+        </li>
+      }
       <li class="list-group-item list-group-item-action" (click)="logout()">
         Cerrar Sesión
       </li>

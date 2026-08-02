@@ -1,25 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { trigger, style, animate, transition } from '@angular/animations';
 
 import { NewServiceService } from '../../../services/client/new-service.service';
 
 @Component({
-  selector: 'app-contact-form-stepper',
-  templateUrl: './contact-form-stepper.component.html',
-  styleUrls: ['./contact-form-stepper.component.scss'],
-  animations: [
-    trigger('enterAnimation', [
-      transition(':enter', [
-        style({ transform: 'translateX(100%)', opacity: 0 }),
-        animate('500ms', style({ transform: 'translateX(0)', opacity: 1 })),
-      ]),
-      transition(':leave', [
-        style({ transform: 'translateX(0)', opacity: 1 }),
-        animate('500ms', style({ transform: 'translateX(100%)', opacity: 0 })),
-      ]),
-    ]),
-  ],
+    selector: 'app-contact-form-stepper',
+    templateUrl: './contact-form-stepper.component.html',
+    styleUrls: ['./contact-form-stepper.component.scss'],
+    animations: [
+        trigger('enterAnimation', [
+            transition(':enter', [
+                style({ transform: 'translateX(100%)', opacity: 0 }),
+                animate('500ms', style({ transform: 'translateX(0)', opacity: 1 })),
+            ]),
+            transition(':leave', [
+                style({ transform: 'translateX(0)', opacity: 1 }),
+                animate('500ms', style({ transform: 'translateX(100%)', opacity: 0 })),
+            ]),
+        ]),
+    ],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class FormStepperComponent implements OnInit {
   countries = [

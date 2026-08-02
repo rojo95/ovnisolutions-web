@@ -16,11 +16,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
+import { NgxParallaxScrollDirective } from './directives/ngx-parallax-scroll.directive';
 import { MatCardModule } from '@angular/material/card';
 import { GalleryModule, GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 
 import { DevelopmentComponent } from './components/development/development.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -52,63 +52,57 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    DevelopmentComponent,
-    FooterComponent,
-    MenuComponent,
-    NotFoundComponent,
-    InConstructionComponent,
-    ContactUsComponent,
-    FormStepperComponent,
-    SliderComponent,
-    OvniTeamComponent,
-    WebDesignComponent,
-    WebServicesComponent,
-    ServicesComponent,
-    PortfolioComponent,
-    CardPortfolioComponent,
-    LoginComponent,
-    DashboardComponent,
-    AuthLayoutComponent,
-    GuestLayoutComponent,
-    AuthMenuComponent,
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        DevelopmentComponent,
+        FooterComponent,
+        MenuComponent,
+        NotFoundComponent,
+        InConstructionComponent,
+        ContactUsComponent,
+        FormStepperComponent,
+        SliderComponent,
+        OvniTeamComponent,
+        WebDesignComponent,
+        WebServicesComponent,
+        ServicesComponent,
+        PortfolioComponent,
+        CardPortfolioComponent,
+        LoginComponent,
+        DashboardComponent,
+        AuthLayoutComponent,
+        GuestLayoutComponent,
+        AuthMenuComponent,
     ErrorComponent,
+    NgxParallaxScrollDirective,
   ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    RouterModule.forRoot(routes),
-    MatFormFieldModule,
-    NgbDropdownModule,
-    FontAwesomeModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatIconModule,
-    MatStepperModule,
-    MatButtonModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        NgbModule,
+        RouterModule.forRoot(routes),
+        MatFormFieldModule,
+        NgbDropdownModule,
+        FontAwesomeModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatIconModule,
+        MatStepperModule,
+        MatButtonModule,
     MatSelectModule,
-    NgxParallaxScrollModule,
     MatCardModule,
-    GalleryModule,
-    LightboxModule,
-    HttpClientModule,
-    AppRoutingModule,
-  ],
-  providers: [
-    {
-      provide: GALLERY_CONFIG,
-      useValue: {
-        autoHeight: true,
-        imageSize: 'cover',
-      } as GalleryConfig,
-    },
-    { provide: 'axios', useValue: axios },
-  ],
-  bootstrap: [AppComponent],
-})
+        GalleryModule,
+        LightboxModule,
+        AppRoutingModule], providers: [
+        {
+            provide: GALLERY_CONFIG,
+            useValue: {
+                autoHeight: true,
+                imageSize: 'cover',
+            } as GalleryConfig,
+        },
+        { provide: 'axios', useValue: axios },
+        provideHttpClient(withXhr(), withInterceptorsFromDi()),
+    ] })
 export class AppModule {}

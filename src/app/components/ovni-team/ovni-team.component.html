@@ -3,39 +3,42 @@
     <h2 class="text-white">Equipo Ovnisolutions</h2>
 
     <div class="row">
-      <div
-        class="col team-mate pt-2 col-sm-6 col-lg-4 pb-4"
-        *ngFor="let teamMember of team"
-      >
-        <div class="row">
-          <div class="col">
-            <img
-              [src]="'assets/image/team/' + teamMember.image"
-              class="team-avatar"
-              alt=""
-            />
+      @for (teamMember of team; track teamMember) {
+        <div
+          class="col team-mate pt-2 col-sm-6 col-lg-4 pb-4"
+          >
+          <div class="row">
+            <div class="col">
+              <img
+                [src]="'assets/image/team/' + teamMember.image"
+                class="team-avatar"
+                alt=""
+                />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <h3>{{ teamMember.name }}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>
+                @for (cargo of teamMember.cargos; track cargo) {
+                  <p>{{ cargo }}</p>
+                }
+              </h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>
+                {{ teamMember.description }}
+              </p>
+            </div>
           </div>
         </div>
-        <div class="row mt-3">
-          <div class="col">
-            <h3>{{ teamMember.name }}</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4>
-              <p *ngFor="let cargo of teamMember.cargos">{{ cargo }}</p>
-            </h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>
-              {{ teamMember.description }}
-            </p>
-          </div>
-        </div>
-      </div>
+      }
     </div>
 
   </div>

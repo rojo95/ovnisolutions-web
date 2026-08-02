@@ -10,45 +10,47 @@
               [items]="images"
               thumbPosition="left"
               imageSize="contain"
-              slidingDirection="vertical"
+              orientation="vertical"
               [counter]="false"
-              [dots]="true"
-              thumbMode="free"
+              [bullets]="true"
               [thumbWidth]="100"
               [thumbHeight]="70"
               itemAutosize="true"
-              slidingDisabled="true"
+              disableScroll="true"
+              loadingAttr="eager"
+              loadingStrategy="preload"
               debug="true"
             ></gallery>
             <!-- <gallery [items]="images">
-              <ng-container *galleryImageDef="let item; let active = active">
-                <div *ngIf="active" class="item-text">
-                  {{ item?.desc }}
-                </div>
-              </ng-container>
-            </gallery> -->
-          </div>
+            <ng-container *galleryImageDef="let item; let active = active">
+              <div *ngIf="active" class="item-text">
+                {{ item?.desc }}
+              </div>
+            </ng-container>
+          </gallery> -->
         </div>
-      </ng-template>
-    </li>
+      </div>
+    </ng-template>
+  </li>
 
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>Desarrollo Informático</a>
-      <ng-template ngbNavContent>
-        <!-- Desarrollo -->
-        <div class="container py-5 p-md-5 px-sm-0">
-          <div class="row p-xl-5">
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Desarrollo Informático</a>
+    <ng-template ngbNavContent>
+      <!-- Desarrollo -->
+      <div class="container py-5 p-md-5 px-sm-0">
+        <div class="row p-xl-5">
+          @for (dev of data.devs; track dev) {
             <div
               class="col-sm-12 col-md-4 pt-2 pt-md-0 px-xl-2 py-xl-0 p-sm-2"
-              *ngFor="let dev of data.devs"
-            >
+              >
               <app-card-portfolio [data]="dev"></app-card-portfolio>
             </div>
-          </div>
+          }
         </div>
-      </ng-template>
-    </li>
-  </ul>
+      </div>
+    </ng-template>
+  </li>
+</ul>
 </div>
 
 <div [ngbNavOutlet]="nav" class="mt-2 text-center"></div>

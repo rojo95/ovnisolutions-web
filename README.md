@@ -1,14 +1,14 @@
 # ovnisolutions-web
 
-Web corporativa de **OVNISOLUTIONS** — agencia de desarrollo web y marketing digital — construida con **Angular 14**. Incluye portafolio, servicios, equipo, formulario de contacto (con conexión a una API REST de Node) y un área autenticada (`login`/`dashboard`).
+Web corporativa de **OVNISOLUTIONS** — agencia de desarrollo web y marketing digital — construida con **Angular 22**. Incluye portafolio, servicios, equipo, formulario de contacto (con conexión a una API REST de Node) y un área autenticada (`login`/`dashboard`).
 
-> Stack: Angular 14 · TypeScript (estricto) · SCSS · Angular Material · Bootstrap 5 · ng-bootstrap · FontAwesome · ng-gallery · ngx-parallax-scroll · SweetAlert2 · axios
+> Stack: Angular 22 · TypeScript 6 (estricto) · SCSS · Angular Material 22 · Bootstrap 5 · ng-bootstrap 21 · FontAwesome 7 · ng-gallery 12 · SweetAlert2 · axios
 
 ---
 
 ## Requisitos previos
 
-- Node.js 16+ (proyecto Angular CLI 14)
+- Node.js 22.22.3+ o 24.15.0+ (requisito de Angular 22; se recomienda Node 24 LTS)
 - **pnpm** como gestor de paquetes (ver [Instalación](#instalación))
 - Backend corriendo para el formulario de contacto: repo hermano [`ovnisolutions-api`](../ovnisolutions-api) (Node/Express/Sequelize/PostgreSQL)
 

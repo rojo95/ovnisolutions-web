@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { IParallaxScrollConfig } from '../../directives/ngx-parallax-scroll.directive';
 
 @Component({
-  selector: 'app-development',
-  templateUrl: './development.component.html',
-  styleUrls: ['./development.component.scss']
+    selector: 'app-development',
+    templateUrl: './development.component.html',
+    styleUrls: ['./development.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class DevelopmentComponent implements OnInit {
 

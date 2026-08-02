@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { IParallaxScrollConfig } from '../../directives/ngx-parallax-scroll.directive';
 
 @Component({
-  selector: 'app-ovni-team',
-  templateUrl: './ovni-team.component.html',
-  styleUrls: ['./ovni-team.component.scss'],
+    selector: 'app-ovni-team',
+    templateUrl: './ovni-team.component.html',
+    styleUrls: ['./ovni-team.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class OvniTeamComponent implements OnInit {
   team: any = [

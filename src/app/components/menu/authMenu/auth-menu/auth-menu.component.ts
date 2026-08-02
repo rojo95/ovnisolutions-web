@@ -1,4 +1,4 @@
-import { Component, inject, TemplateRef, OnInit, Input } from '@angular/core';
+import { Component, inject, TemplateRef, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import {
   NgbActiveOffcanvas,
@@ -12,10 +12,12 @@ export class NgbdOffcanvasContent {
 }
 
 @Component({
-  selector: 'app-auth-menu',
-  // standalone: true,
-  templateUrl: './auth-menu.component.html',
-  styleUrls: ['./auth-menu.component.scss'],
+    selector: 'app-auth-menu',
+    // standalone: true,
+    templateUrl: './auth-menu.component.html',
+    styleUrls: ['./auth-menu.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AuthMenuComponent implements OnInit {
   private offcanvasService = inject(NgbOffcanvas);

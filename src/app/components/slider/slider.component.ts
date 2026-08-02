@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IParallaxScrollConfig } from 'ngx-parallax-scroll';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { IParallaxScrollConfig } from '../../directives/ngx-parallax-scroll.directive';
 import {
   trigger,
   state,
@@ -10,61 +10,51 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss'],
-  animations: [
-    trigger('aniText', [
-      state(
-        'ingresar',
-        style({
-          opacity: 1,
-          transform: 'translateX(0px)',
-        })
-      ),
-      state(
-        'salir',
-        style({
-          opacity: 0,
-          transform: 'translateX(100px)',
-        })
-      ),
-      transition('ingresar => salir', [
-        animate(
-          300,
-          keyframes([
-            style({
-              opacity: 1,
-              transform: 'translateX(0px)',
-              offset: 0,
-            }),
-            style({
-              opacity: 0,
-              transform: 'translateX(100px)',
-              offset: 1,
-            }),
-          ])
-        ),
-      ]),
-      transition('salir => ingresar', [
-        animate(
-          300,
-          keyframes([
-            style({
-              opacity: 0,
-              transform: 'translateX(100px)',
-              offset: 0,
-            }),
-            style({
-              opacity: 1,
-              transform: 'translateX(0px)',
-              offset: 1,
-            }),
-          ])
-        ),
-      ]),
-    ]),
-  ],
+    selector: 'app-slider',
+    templateUrl: './slider.component.html',
+    styleUrls: ['./slider.component.scss'],
+    animations: [
+        trigger('aniText', [
+            state('ingresar', style({
+                opacity: 1,
+                transform: 'translateX(0px)',
+            })),
+            state('salir', style({
+                opacity: 0,
+                transform: 'translateX(100px)',
+            })),
+            transition('ingresar => salir', [
+                animate(300, keyframes([
+                    style({
+                        opacity: 1,
+                        transform: 'translateX(0px)',
+                        offset: 0,
+                    }),
+                    style({
+                        opacity: 0,
+                        transform: 'translateX(100px)',
+                        offset: 1,
+                    }),
+                ])),
+            ]),
+            transition('salir => ingresar', [
+                animate(300, keyframes([
+                    style({
+                        opacity: 0,
+                        transform: 'translateX(100px)',
+                        offset: 0,
+                    }),
+                    style({
+                        opacity: 1,
+                        transform: 'translateX(0px)',
+                        offset: 1,
+                    }),
+                ])),
+            ]),
+        ]),
+    ],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SliderComponent implements OnInit {
   ParallaxSliderConfBackground: IParallaxScrollConfig = {
