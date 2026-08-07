@@ -15,8 +15,11 @@ const routes: Routes = [
     path: '',
     component: GuestLayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirige '/' a '/home'
+      // '/' abre el Home directamente (sin redirección, el HTML prerenderizado
+      // de la raíz ya contiene la página completa)
+      { path: '', component: HomeComponent, canActivate: [GuestGuard] },
       { path: 'login', component: LoginComponent, canActivate: [GuestGuard] },
+      // Alias del Home (compatible con enlaces internos /home#seccion)
       { path: 'home', component: HomeComponent, canActivate: [GuestGuard] },
     ],
   },

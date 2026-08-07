@@ -109,10 +109,16 @@ export class SeoService {
   /**
    * Ruta actual de la página. En SSR el location de Domino refleja la ruta
    * que se está prerenderizando; si no estuviera disponible se asume `/`.
+   * `/` y `/home` sirven el mismo contenido (Home), así que la URL canónica
+   * del Home es siempre la raíz para evitar contenido duplicado.
    */
   private getPagePath(): string {
     try {
-      return this.document.location.pathname || '/';
+      let path = this.document.location.pathname || '/';
+      if (path === '/home' || path === '/home/') {
+        path = '/';
+      }
+      return path;
     } catch {
       return '/';
     }
