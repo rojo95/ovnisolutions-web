@@ -44,7 +44,7 @@
     <meta property="og:image:alt" content="OVNI Solutions — Soluciones de diseño y desarrollo web" />
     <meta property="og:url" content="https://ovnisolutions.com/" />
 
-    <!-- Twitter Card (sin twitter:site: no existe cuenta activa) -->
+    <!-- Twitter Card (sin twitter:site ni twitter:creator: no existe cuenta activa) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="OVNISOLUTIONS | Diseño Web, Branding y Apps Móviles" />
     <meta
@@ -52,6 +52,10 @@
       content="Desarrollo web, branding digital, diseño de empaques, apps móviles, redes sociales y asesoría tecnológica para tu negocio. Soluciones fuera de este mundo."
     />
     <meta name="twitter:image" content="https://ovnisolutions.com/assets/image/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="OVNI Solutions — Soluciones de diseño y desarrollo web"
+    />
 
     <!-- Datos estructurados: Organization -->
     <script type="application/ld+json">
@@ -114,6 +118,23 @@
             }
           }
         ]
+      }
+    </script>
+
+    <!-- Datos estructurados: WebSite (complementa a Organization) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "OVNI Solutions",
+        "alternateName": "OVNISOLUTIONS",
+        "url": "https://ovnisolutions.com/",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "OVNI Solutions",
+          "logo": "https://ovnisolutions.com/assets/image/logos/logotipo.png"
+        }
       }
     </script>
 

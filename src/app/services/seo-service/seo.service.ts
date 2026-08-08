@@ -66,10 +66,8 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:image:alt', content: 'OVNI Solutions — Soluciones de diseño y desarrollo web' });
     this.meta.updateTag({ property: 'og:url', content: pageUrl });
 
-    // Twitter Card
+    // Twitter Card (sin twitter:site ni twitter:creator: no existe cuenta activa)
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:site', content: '@ovnisolutions' });
-    this.meta.updateTag({ name: 'twitter:creator', content: '@ovnisolutions' });
     this.meta.updateTag({ name: 'twitter:title', content: pageTitle });
     this.meta.updateTag({
       name: 'twitter:description',
@@ -78,6 +76,10 @@ export class SeoService {
     this.meta.updateTag({
       name: 'twitter:image',
       content: `${siteUrl}/assets/image/og-image.png`,
+    });
+    this.meta.updateTag({
+      name: 'twitter:image:alt',
+      content: 'OVNI Solutions — Soluciones de diseño y desarrollo web',
     });
 
     // Canonical dinámico (refleja el origen real donde se sirve la app)
